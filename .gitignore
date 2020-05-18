@@ -1,0 +1,4 @@
+*.DS_Store
+*Icon*
+*ipynb_checkpoints*
+*.gdoc
