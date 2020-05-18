@@ -1,3 +1,5 @@
 #+title: Data science and machine learning in chemical engineering
 
 All the magic happens in [[./org/index.org]].
+
+You probably do not want to be here, and instead should visit: https://kitchingroup.cheme.cmu.edu/s20-06681 where this class is published.
