@@ -1,0 +1,1676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-18 Mon 16:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Kitchin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org66bcd8e">1. Introduction to Pandas</a>
+<ul>
+<li><a href="#org3a2b11f">1.1. Review of the numpy array way</a></li>
+<li><a href="#org7aa9413">1.2. Now, with Pandas</a></li>
+</ul>
+</li>
+<li><a href="#org982f9a4">2. Pandas</a>
+<ul>
+<li><a href="#orgdfd5faa">2.1. Dataframes and visualization</a></li>
+<li><a href="#orgbdc8d09">2.2. Reading data in Pandas</a></li>
+</ul>
+</li>
+<li><a href="#orgc2c2ea6">3. Another real-life example</a>
+<ul>
+<li><a href="#org48ae81f">3.1. Visualizing the data</a>
+<ul>
+<li><a href="#org28e8138">3.1.1. Plot a column</a></li>
+<li><a href="#org0854e5b">3.1.2. Plot distributions of a column</a></li>
+<li><a href="#org12743f8">3.1.3. Plot column correlations</a></li>
+</ul>
+</li>
+<li><a href="#orgdc60ead">3.2. Getting parts of a Pandas DataFrame</a></li>
+<li><a href="#orge4b7655">3.3. Operating on columns in the DataFrame</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org66bcd8e" class="outline-2">
+<h2 id="org66bcd8e"><span class="section-number-2">1</span> Introduction to Pandas</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Before we jump into Pandas, let us review what we have considered so far.
+</p>
+
+<p>
+First, we learned how to read data from files into numpy arrays. We learned how to use variables to store that data, and to either slice the array into a few variables, or use slices themselves for something. We also learned how to make a <i>record</i> array that enabled us to access columns of the array by a <i>name</i>.
+</p>
+
+<p>
+When we loaded a json file, we got a <i>dictionary</i> data structure, which also allowed us to access data by a <i>name</i>.
+</p>
+
+<p>
+Second, we imported a visualization library, and made plots that used the arrays as arguments.
+</p>
+
+<p>
+For "small" data sets, i.e. not too many columns, this is a perfectly reasonable thing to do. For larger datasets, however, it can be tedious to create a lot of variable names, and it is also hard to remember what is in each column.
+</p>
+
+<p>
+Many tasks are pretty standard, e.g. read a data set, summarize and visualize it. It would be nice if we had a simple way to do this, with few lines of code, since those lines will be the same every time.
+</p>
+
+<p>
+The <a href="https://pandas.pydata.org/">Pandas</a> library was developed to address all these issues. From the website: "<b>pandas</b> is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language."
+</p>
+</div>
+
+<div id="outline-container-org3a2b11f" class="outline-3">
+<h3 id="org3a2b11f"><span class="section-number-3">1.1</span> Review of the numpy array way</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Let's review what we learned already.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">url</span> = <span style="color: #008000;">'https://drive.google.com/uc?id=12HpXqZyjatSDcV2cb3p6LIVLyjDT1kQz'</span>
+
+<span style="color: #0000FF;">import</span> urllib.request
+urllib.request.urlretrieve(url, <span style="color: #008000;">'03-raman.txt'</span>)
+
+<span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+<span style="color: #BA36A5;">data</span> = np.loadtxt(<span style="color: #008000;">'03-raman.txt'</span>)
+
+<span style="color: #BA36A5;">wavenumber</span>, <span style="color: #BA36A5;">intensity</span> = data.T  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">the transpose has data in rows for unpacking</span>
+<span style="color: #BA36A5;">ind</span> = (wavenumber &gt;= 1000) &amp; (wavenumber &lt; 1500)
+
+%matplotlib inline
+<span style="color: #0000FF;">import</span> matplotlib.pyplot <span style="color: #0000FF;">as</span> plt
+plt.figure()
+plt.plot(wavenumber[ind], intensity[ind])
+plt.xlabel(<span style="color: #008000;">'Wavenumber'</span>)
+plt.ylabel(<span style="color: #008000;">'Intensity'</span>);
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/ce78a4c1eacbbb3e62317b49f962b3502da46c3d/406ae7b9a876d7e355441d8d1c7d48a2559f477e.png" alt="406ae7b9a876d7e355441d8d1c7d48a2559f477e.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7aa9413" class="outline-3">
+<h3 id="org7aa9413"><span class="section-number-3">1.2</span> Now, with Pandas</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+We will unpack this code shortly. For now, look how short it is to create this plot. Note that we have condensed all the code in the example above basically into three lines of code. That is pretty remarkable, but should give you some pause. We now have to learn how to use such a dense syntax!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> pandas <span style="color: #0000FF;">as</span> pd
+
+<span style="color: #BA36A5;">df</span> = pd.read_csv(<span style="color: #008000;">'03-raman.txt'</span>, delimiter = <span style="color: #008000;">'\t'</span>, index_col=0,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>names=[<span style="color: #008000;">'wavenumber'</span>, <span style="color: #008000;">'intensity'</span>])
+df[(df.index &gt;= 1000) &amp; (df.index&lt;1500)].plot()
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/ce78a4c1eacbbb3e62317b49f962b3502da46c3d/b4182ac708a09b5c71aa958ddfbbfeec137b08cb.png" alt="b4182ac708a09b5c71aa958ddfbbfeec137b08cb.png" />
+</p>
+</div>
+
+<p>
+And to summarize.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.describe()
+</pre>
+</div>
+
+<pre class="example">
+          intensity
+count   7620.000000
+mean     558.388392
+std      982.659031
+min       77.104279
+25%      113.666535
+50%      219.409340
+75%      552.632848
+max    15275.059000
+</pre>
+
+<p>
+What is the benefit of this dense syntax? Because it is so short, it is faster to type (at least, when you know what to type). That means it is also faster for you to read.
+</p>
+
+<p>
+The downside is that it is like learning a whole new language within Python, and a new mental model for how the data is stored and accessed. You have to decide if it is worthwhile doing that. If you do this a lot, it is probably worthwhile.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org982f9a4" class="outline-2">
+<h2 id="org982f9a4"><span class="section-number-2">2</span> Pandas</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The main object we will work with is called a <code>DataFrame</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #006FE0;">type</span>(df)
+</pre>
+</div>
+
+<pre class="example">
+pandas.core.frame.DataFrame
+</pre>
+
+<p>
+Jupyter notebooks can show you a fancy rendering of your dataframe.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df
+</pre>
+</div>
+
+<pre class="example">
+             intensity
+wavenumber
+500.00000   294.378690
+500.39374   288.922000
+500.78751   286.066220
+501.18124   275.222840
+501.57501   275.119380
+...                ...
+3498.42500   86.151878
+3498.81880   85.178947
+3499.21240   87.969734
+3499.60620   83.638931
+3500.00000   84.009064
+
+[7620 rows x 1 columns]
+</pre>
+
+<p>
+The dataframe combines a few ideas we used from arrays and dictionaries. First, we can access a column by name. When we do this, we get a <code>Series</code> object.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #006FE0;">type</span>(df[<span style="color: #008000;">'intensity'</span>])
+</pre>
+</div>
+
+<pre class="example">
+pandas.core.series.Series
+</pre>
+
+<p>
+You can extract the values into a numpy array like this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df[<span style="color: #008000;">'intensity'</span>].values
+</pre>
+</div>
+
+<pre class="example">
+array([294.37869 , 288.922   , 286.06622 , ...,  87.969734,  83.638931,
+        84.009064])
+</pre>
+
+<p>
+A Series (and DataFrame) are like numpy arrays in some ways, and different in others. Suppose we want to see the first five entries of the intensity. If we want to use <i>integer-based</i> indexing like we have so far, you have to use the <code>iloc</code> attribute on the series like this. <code>iloc</code> is for integer location.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython">df[<span style="color: #008000;">'intensity'</span>].iloc[0:5]
+</pre>
+</div>
+
+<pre class="example">
+wavenumber
+500.00000    294.37869
+500.39374    288.92200
+500.78751    286.06622
+501.18124    275.22284
+501.57501    275.11938
+Name: intensity, dtype: float64
+</pre>
+
+<p>
+What about the wavenumbers? These are called the <i>index</i> of the dataframe.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.index
+</pre>
+</div>
+
+<pre class="example">
+Float64Index([             500.0, 500.39374000000004, 500.78750999999994,
+              501.18124000000006, 501.57500999999996,          501.96875,
+                       502.36252, 502.75625999999994, 503.15002000000004,
+              503.54375999999996,
+              ...
+                       3496.4563,          3496.8501,          3497.2437,
+                       3497.6375,          3498.0313,           3498.425,
+                       3498.8188,          3499.2124,          3499.6062,
+                          3500.0],
+             dtype='float64', name='wavenumber', length=7620)
+</pre>
+
+<p>
+You can index the index with integers as you can with an array.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.index[0:5]
+</pre>
+</div>
+
+<pre class="example">
+Float64Index([             500.0, 500.39374000000004, 500.78750999999994,
+              501.18124000000006, 501.57500999999996],
+             dtype='float64', name='wavenumber')
+</pre>
+
+<p>
+Finally, you can combine these so that you index a column with a slice of the index like this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df[<span style="color: #008000;">'intensity'</span>][df.index[0:5]]
+</pre>
+</div>
+
+<pre class="example">
+wavenumber
+500.00000    294.37869
+500.39374    288.92200
+500.78751    286.06622
+501.18124    275.22284
+501.57501    275.11938
+Name: intensity, dtype: float64
+</pre>
+
+<p>
+In summary, we can think of a dataframe as a hybrid array/dictionary where we have an index which is like the independent variable, and a set of columns that are like dependent variables. You can access the columns like a dictionary.
+</p>
+</div>
+
+<div id="outline-container-orgdfd5faa" class="outline-3">
+<h3 id="orgdfd5faa"><span class="section-number-3">2.1</span> Dataframes and visualization</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Dataframes also provide easy access to <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">visualization</a>. The simplest method is to just call the plot method on a dataframe. Note this automatically makes the plot with labels and a legend. If there are many columns, you will have a curve for each one of them. We will see that later.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.plot()
+</pre>
+</div>
+
+<p>
+The plot method returns a Matplotlib AxesSubplot object. If you save it in a variable, you can add things to your plot. Here we add a shaded area to highlight part of the graph.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">ax</span> = df.plot();
+<span style="color: #BA36A5;">x</span> = np.linspace(1000, 1500)
+ax.fill_between(x, 0, 16000, color=<span style="color: #008000;">'gray'</span>, alpha=0.2)
+</pre>
+</div>
+
+<p>
+:results:
+</p>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/ce78a4c1eacbbb3e62317b49f962b3502da46c3d/962db551529397b6ee216e10dfcfd9d1d4201550.png" alt="962db551529397b6ee216e10dfcfd9d1d4201550.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbdc8d09" class="outline-3">
+<h3 id="orgbdc8d09"><span class="section-number-3">2.2</span> Reading data in Pandas</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Let's get back to how we got the data into Pandas. Let's retrieve the data file we used before with several columns in it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">fname</span> = <span style="color: #008000;">'03-p-t.dat'</span>
+<span style="color: #BA36A5;">url</span> = <span style="color: #008000;">'https://www.itl.nist.gov/div898/handbook/datasets/MODEL-4_4_4.DAT'</span>
+
+<span style="color: #0000FF;">import</span> urllib.request
+urllib.request.urlretrieve(url, fname)
+</pre>
+</div>
+
+<pre class="example">
+('03-p-t.dat', &lt;http.client.HTTPMessage at 0x11ed4ae50&gt;)
+</pre>
+
+<p>
+Let's refresh our memory of what is in this file:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">! head 03-p-t.dat
+</pre>
+</div>
+
+<p>
+ Run          Ambient                            Fitted
+Order  Day  Temperature  Temperature  Pressure    Value    Residual
+ 1      1      23.820      54.749      225.066   222.920     2.146
+ 2      1      24.120      23.323      100.331    99.411     0.920
+ 3      1      23.434      58.775      230.863   238.744    -7.881
+ 4      1      23.993      25.854      106.160   109.359    -3.199
+ 5      1      23.375      68.297      277.502   276.165     1.336
+ 6      1      23.233      37.481      148.314   155.056    -6.741
+ 7      1      24.162      49.542      197.562   202.456    -4.895
+ 8      1      23.667      34.101      138.537   141.770    -3.232
+</p>
+
+<p>
+We use <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">Pandas.read_csv</a> to read this, similar to how we used <code>numpy.loadtxt</code>. It also takes a lot of arguments to fine-tune the output. We use spaces as the delimiter here. <code>'\s+'</code> is a <i>regular expression</i> for multiple spaces. We still skip two rows, and we have to manually define the column names. We <i>do not</i> specify an index column here, we get a default one based on integers. Pandas is smart enough to recognize the first two columns are integers, so we do not have to do anything special here.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">df</span> = pd.read_csv(<span style="color: #008000;">'03-p-t.dat'</span>, delimiter=<span style="color: #008000;">'\s+'</span>, skiprows=2,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>names=[<span style="color: #008000;">'Run order'</span>, <span style="color: #008000;">'Day'</span>, <span style="color: #008000;">'Ambient Temperature'</span>, <span style="color: #008000;">'Temperature'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #008000;">'Pressure'</span>, <span style="color: #008000;">'Fitted Value'</span>, <span style="color: #008000;">'Residual'</span>])
+df
+</pre>
+</div>
+
+<pre class="example">
+    Run order  Day  Ambient Temperature  Temperature  Pressure  Fitted Value  \
+0           1    1               23.820       54.749   225.066       222.920
+1           2    1               24.120       23.323   100.331        99.411
+2           3    1               23.434       58.775   230.863       238.744
+3           4    1               23.993       25.854   106.160       109.359
+4           5    1               23.375       68.297   277.502       276.165
+5           6    1               23.233       37.481   148.314       155.056
+6           7    1               24.162       49.542   197.562       202.456
+7           8    1               23.667       34.101   138.537       141.770
+8           9    1               24.056       33.901   137.969       140.983
+9          10    1               22.786       29.242   117.410       122.674
+10         11    2               23.785       39.506   164.442       163.013
+11         12    2               22.987       43.004   181.044       176.759
+12         13    2               23.799       53.226   222.179       216.933
+13         14    2               23.661       54.467   227.010       221.813
+14         15    2               23.852       57.549   232.496       233.925
+15         16    2               23.379       61.204   253.557       248.288
+16         17    2               24.146       31.489   139.894       131.506
+17         18    2               24.187       68.476   273.931       276.871
+18         19    2               24.159       51.144   207.969       208.753
+19         20    2               23.803       68.774   280.205       278.040
+20         21    3               24.381       55.350   227.060       225.282
+21         22    3               24.027       44.692   180.605       183.396
+22         23    3               24.342       50.995   206.229       208.167
+23         24    3               23.670       21.602    91.464        92.649
+24         25    3               24.246       54.673   223.869       222.622
+25         26    3               25.082       41.449   172.910       170.651
+26         27    3               24.575       35.451   152.073       147.075
+27         28    3               23.803       42.989   169.427       176.703
+28         29    3               24.660       48.599   192.561       198.748
+29         30    3               24.097       21.448    94.448        92.042
+30         31    4               22.816       56.982   222.794       231.697
+31         32    4               24.167       47.901   199.003       196.008
+32         33    4               22.712       40.285   168.668       166.077
+33         34    4               23.611       25.609   109.387       108.397
+34         35    4               23.354       22.971    98.445        98.029
+35         36    4               23.669       25.838   110.987       109.295
+36         37    4               23.965       49.127   202.662       200.826
+37         38    4               22.917       54.936   224.773       223.653
+38         39    4               23.546       50.917   216.058       207.859
+39         40    4               24.450       41.976   171.469       172.720
+
+    Residual
+0      2.146
+1      0.920
+2     -7.881
+3     -3.199
+4      1.336
+5     -6.741
+6     -4.895
+7     -3.232
+8     -3.014
+9     -5.263
+10     1.429
+11     4.285
+12     5.246
+13     5.198
+14    -1.429
+15     5.269
+16     8.388
+17    -2.940
+18    -0.784
+19     2.165
+20     1.779
+21    -2.791
+22    -1.938
+23    -1.186
+24     1.247
+25     2.259
+26     4.998
+27    -7.276
+28    -6.188
+29     2.406
+30    -8.902
+31     2.996
+32     2.592
+33     0.990
+34     0.416
+35     1.692
+36     1.835
+37     1.120
+38     8.199
+39    -1.251
+</pre>
+
+<p>
+The default plot is not that nice.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.plot()
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/ce78a4c1eacbbb3e62317b49f962b3502da46c3d/44bb7b6ba52d2e05618652285576d05cb02b9ae0.png" alt="44bb7b6ba52d2e05618652285576d05cb02b9ae0.png" />
+</p>
+</div>
+
+<p>
+The default is to plot each column vs the index, which is not that helpful for us. Say we just want to plot the pressure vs. the temperature.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.plot(x=<span style="color: #008000;">'Temperature'</span>, y=<span style="color: #008000;">'Pressure'</span>, style=<span style="color: #008000;">'b.'</span>)
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/ce78a4c1eacbbb3e62317b49f962b3502da46c3d/b5949cde51278b75b93debc128d22fddebd69b9b.png" alt="b5949cde51278b75b93debc128d22fddebd69b9b.png" />
+</p>
+</div>
+
+
+<p>
+We can add multiple plots to a figure, but we have to tell the subsequent calls which axes to put them on. To do that, save the first one, and pass it as an argument in subsequent plots.  That also allows you to fine-tune the plot appearance, e.g. add a y-label. See the <a href="https://matplotlib.org/contents.html">matplotlib documentation</a> to learn how to set all of these.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">p1</span> = df.plot(x=<span style="color: #008000;">'Temperature'</span>, y=<span style="color: #008000;">'Pressure'</span>, style=<span style="color: #008000;">'b.'</span>)
+df.plot(x=<span style="color: #008000;">'Temperature'</span>, y=<span style="color: #008000;">'Fitted Value'</span>, ax=p1)
+
+p1.set_ylabel(<span style="color: #008000;">'values'</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'values')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/ce78a4c1eacbbb3e62317b49f962b3502da46c3d/3b44bd715e347fc47985d165684c3122d6f44da5.png" alt="3b44bd715e347fc47985d165684c3122d6f44da5.png" />
+</p>
+</div>
+
+<p>
+It is a reasonable question to ask if this is simpler than what we did before using arrays, variables and plotting commands. Dataframes are increasingly common in data science, and are the data structure used in many data science/machine learning projects.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc2c2ea6" class="outline-2">
+<h2 id="orgc2c2ea6"><span class="section-number-2">3</span> Another real-life example</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+LAMMPS is a molecular simulation code used to run molecular dynamics. It outputs a text file that is somewhat challenging to read. There are variable numbers of time steps that depend on how the simulation was setup.
+</p>
+
+<p>
+Start by downloading and opening this file. It is a molecular dynamics trajectory at constant volume, where the pressure, temperature and energy fluctuate.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">url</span> = <span style="color: #008000;">'https://drive.google.com/uc?id=1FVQi4SsSAt7LiqZgDvltmQVaBIkM8AIk'</span>
+
+<span style="color: #0000FF;">import</span> urllib.request
+urllib.request.urlretrieve(url, <span style="color: #008000;">'03-log1.lammps'</span>)
+</pre>
+</div>
+
+<pre class="example">
+('03-log1.lammps', &lt;http.client.HTTPMessage at 0x123b32b10&gt;)
+</pre>
+
+<p>
+Open this file to get a sense for what is in it. The data starts around:
+</p>
+
+<pre class="example">
+timestep 0.005
+run ${runSteps}
+run 500000
+Per MPI rank memory allocation (min/avg/max) = 4.427 | 4.427 | 4.427 Mbytes
+Step v_mytime Temp Press Volume PotEng TotEng v_pxy v_pxz v_pyz v_v11 v_v22 v_v33 CPU
+       0            0         1025    601.28429    8894.6478   -1566.6216   -1500.5083    2065.6285    1713.4095    203.00499 1.3408976e-05 9.2260011e-06 1.2951038e-07            0 w
+</pre>
+
+
+<p>
+And it ends around this line.
+</p>
+
+<pre class="example">
+  500000         2500    978.62359   -2100.7614    8894.6478   -1570.5382   -1507.4162   -252.80665    614.87398    939.65393 0.00045263648 0.00043970796 0.00044228719    1288.0233
+Loop time of 1288.02 on 1 procs for 500000 steps with 500 atoms
+</pre>
+
+<p>
+Our job is to figure out where those lines are so we can read them into Pandas. There are many ways to do this, but we will stick with a pure Python way. The strategy is to search for the lines, and keep track of their positions.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">start</span>, <span style="color: #BA36A5;">stop</span> = <span style="color: #D0372D;">None</span>, <span style="color: #D0372D;">None</span>
+<span style="color: #0000FF;">with</span> <span style="color: #006FE0;">open</span>(<span style="color: #008000;">'03-log1.lammps'</span>) <span style="color: #0000FF;">as</span> f:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">for</span> i, line <span style="color: #0000FF;">in</span> <span style="color: #006FE0;">enumerate</span>(f):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">if</span> line.startswith(<span style="color: #008000;">'Step v_mytime'</span>):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">start</span> = i
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">if</span> line.startswith(<span style="color: #008000;">'Loop time of '</span>):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">stop</span> = i - 1  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">stop on the previous line</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">break</span>
+start, stop
+</pre>
+</div>
+
+<pre class="example">
+(69, 2570)
+</pre>
+
+<p>
+This gets tricky. We want to skip the rows up to the starting line. At that point, the line numbers restart as far as Pandas is concerned, so the header is in line 0 then, and the number of rows to read is defined by the stop line minus the start line. The values are separated by multiple spaces, so we use a <i>pattern</i> to indicate multiple spaces. Finally, we prevent the first column from being the index column by setting index_col to be False. See <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html</a> for all the details.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">df</span> = pd.read_csv(<span style="color: #008000;">'03-log1.lammps'</span>, skiprows=start, header=0, nrows=stop - start, delimiter=<span style="color: #008000;">'\s+'</span>, index_col=<span style="color: #D0372D;">False</span>)
+df
+</pre>
+</div>
+
+<p>
+:results:
+</p>
+
+<pre class="example">
+        Step  v_mytime        Temp       Press     Volume     PotEng  \
+0          0         0  1025.00000   601.28429  8894.6478 -1566.6216
+1        200         1  1045.85100 -1974.43580  8894.6478 -1569.6934
+2        400         2  1050.44480  2974.54030  8894.6478 -1564.3755
+3        600         3  1071.37780  2386.37510  8894.6478 -1566.4325
+4        800         4  1055.52810  -661.78795  8894.6478 -1569.3172
+...      ...       ...         ...         ...        ...        ...
+2496  499200      2496   977.95894 -1747.91220  8894.6478 -1570.0162
+2497  499400      2497  1066.50870   -77.15260  8894.6478 -1568.3816
+2498  499600      2498  1052.18860  1958.97410  8894.6478 -1565.8013
+2499  499800      2499  1057.30140 -1709.95670  8894.6478 -1570.6800
+2500  500000      2500   978.62359 -2100.76140  8894.6478 -1570.5382
+
+         TotEng       v_pxy        v_pxz       v_pyz     v_v11     v_v22  \
+0    -1500.5083  2065.62850  1713.409500   203.00499  0.000013  0.000009
+1    -1502.2352  2530.16720 -2203.376800 -2193.88770  0.000423 -0.000564
+2    -1496.6210  1446.73930   637.829780  1794.70610  0.001115  0.000125
+3    -1497.3278   599.73943  -462.748090   558.54192  0.000766  0.000387
+4    -1501.2348  1775.43870 -1551.263500  -493.01032  0.000569  0.000380
+...         ...         ...          ...         ...       ...       ...
+2496 -1506.9370  1411.85600  1154.883400 -2265.50500  0.000452  0.000440
+2497 -1499.5910  4071.88400  3847.295900 -1279.02860  0.000452  0.000440
+2498 -1497.9343 -2152.54460   925.775780 -1162.76120  0.000453  0.000439
+2499 -1502.4832 -1530.34090   -71.479217   731.44735  0.000453  0.000440
+2500 -1507.4162  -252.80665   614.873980   939.65393  0.000453  0.000440
+
+             v_v33          CPU
+0     1.295104e-07     0.000000
+1     9.109558e-04     0.505391
+2     4.583668e-04     1.018666
+3     3.082071e-04     1.532061
+4     2.913083e-04     2.051839
+...            ...          ...
+2496  4.424962e-04  1285.960300
+2497  4.428113e-04  1286.474100
+2498  4.427215e-04  1286.987000
+2499  4.423706e-04  1287.503200
+2500  4.422872e-04  1288.023300
+
+[2501 rows x 14 columns]
+</pre>
+</div>
+
+
+<div id="outline-container-org48ae81f" class="outline-3">
+<h3 id="org48ae81f"><span class="section-number-3">3.1</span> Visualizing the data</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<div id="outline-container-org28e8138" class="outline-4">
+<h4 id="org28e8138"><span class="section-number-4">3.1.1</span> Plot a column</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+The effort was worth it though; look how easy it is to plot the data!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.plot(x=<span style="color: #008000;">'Step'</span>, y=<span style="color: #008000;">'Press'</span>)
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/ce78a4c1eacbbb3e62317b49f962b3502da46c3d/9930e1b303661f1696cbaeee4feeb2cff37d3010.png" alt="9930e1b303661f1696cbaeee4feeb2cff37d3010.png" />
+</p>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython">%matplotlib inline
+<span style="color: #0000FF;">import</span> matplotlib.pyplot <span style="color: #0000FF;">as</span> plt
+fig, (ax0, ax1) = plt.subplots(1, 2)
+df.plot(x=<span style="color: #008000;">'Temp'</span>, y=<span style="color: #008000;">'PotEng'</span>, style=<span style="color: #008000;">'b.'</span>, ax=ax0)
+df.plot(x=<span style="color: #008000;">'Press'</span>, y=<span style="color: #008000;">'PotEng'</span>, style=<span style="color: #008000;">'b.'</span>, ax=ax1)
+plt.tight_layout()
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 2 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/ce78a4c1eacbbb3e62317b49f962b3502da46c3d/1460f670c1eacbe8404dc6b860cd9ddf2f975a91.png" alt="1460f670c1eacbe8404dc6b860cd9ddf2f975a91.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0854e5b" class="outline-4">
+<h4 id="org0854e5b"><span class="section-number-4">3.1.2</span> Plot distributions of a column</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<p>
+We can look at histograms of properties as easily.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.hist(<span style="color: #008000;">'PotEng'</span>, xrot=45, bins=20, density=<span style="color: #D0372D;">True</span>)
+</pre>
+</div>
+
+<pre class="example">
+array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x12706f550&gt;]],
+      dtype=object)
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/ce78a4c1eacbbb3e62317b49f962b3502da46c3d/a808e07bbc6b5ff378291c9a04012192cecf0df4.png" alt="a808e07bbc6b5ff378291c9a04012192cecf0df4.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org12743f8" class="outline-4">
+<h4 id="org12743f8"><span class="section-number-4">3.1.3</span> Plot column correlations</h4>
+<div class="outline-text-4" id="text-3-1-3">
+<p>
+This is just the beginning of using Pandas. Suppose we want to see which columns are correlated (<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html</a>). With variables this would be tedious.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.matshow(df.corr())
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 288x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/ce78a4c1eacbbb3e62317b49f962b3502da46c3d/57d877bcb0590a755fa7059989ca7695d46fad89.png" alt="57d877bcb0590a755fa7059989ca7695d46fad89.png" />
+</p>
+</div>
+
+<p>
+It can be helpful to see what these correlations mean. Here we plot all the columns against each other. Note, it is not possible to plot a column against itself with Pandas (I think this is a bug <a href="https://github.com/pandas-dev/pandas/issues/22088">https://github.com/pandas-dev/pandas/issues/22088</a>), so here I use matplotlib functions for the plotting. This should be symmetric, so I only plot the upper triangle.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">keys</span> = df.keys()
+
+<span style="color: #BA36A5;">fig</span>, <span style="color: #BA36A5;">axs</span> = plt.subplots(13, 13)
+fig.set_size_inches((8, 8))
+<span style="color: #0000FF;">for</span> i <span style="color: #0000FF;">in</span> <span style="color: #006FE0;">range</span>(13):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">for</span> j <span style="color: #0000FF;">in</span> <span style="color: #006FE0;">range</span>(i, 13):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   axs[i, j].plot(df[keys[i]], df[keys[j]], <span style="color: #008000;">'b.'</span>, ms=2)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">remove axes so it is easier to read</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   axs[i, j].axes.get_xaxis().set_visible(<span style="color: #D0372D;">False</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   axs[i, j].axes.get_yaxis().set_visible(<span style="color: #D0372D;">False</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   axs[j, i].axes.get_xaxis().set_visible(<span style="color: #D0372D;">False</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   axs[j, i].axes.get_yaxis().set_visible(<span style="color: #D0372D;">False</span>)
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 576x576 with 169 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/ce78a4c1eacbbb3e62317b49f962b3502da46c3d/177bbc2306b5d5a00668f0e0ac45dda36b7d555b.png" alt="177bbc2306b5d5a00668f0e0ac45dda36b7d555b.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgdc60ead" class="outline-3">
+<h3 id="orgdc60ead"><span class="section-number-3">3.2</span> Getting parts of a Pandas DataFrame</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+We have seen how to get a column from a DataFrame like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df[<span style="color: #008000;">'Press'</span>]
+</pre>
+</div>
+
+<pre class="example">
+0        601.28429
+1      -1974.43580
+2       2974.54030
+3       2386.37510
+4       -661.78795
+           ...
+2496   -1747.91220
+2497     -77.15260
+2498    1958.97410
+2499   -1709.95670
+2500   -2100.76140
+Name: Press, Length: 2501, dtype: float64
+</pre>
+
+<p>
+In this context, the DataFrame is acting like a dictionary. You can get a few columns by using a list of column names.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df[[<span style="color: #008000;">'Press'</span>, <span style="color: #008000;">'PotEng'</span>]]
+</pre>
+</div>
+
+<pre class="example">
+           Press     PotEng
+0      601.28429 -1566.6216
+1    -1974.43580 -1569.6934
+2     2974.54030 -1564.3755
+3     2386.37510 -1566.4325
+4     -661.78795 -1569.3172
+...          ...        ...
+2496 -1747.91220 -1570.0162
+2497   -77.15260 -1568.3816
+2498  1958.97410 -1565.8013
+2499 -1709.95670 -1570.6800
+2500 -2100.76140 -1570.5382
+
+[2501 rows x 2 columns]
+</pre>
+
+<p>
+What about a row? This is what we would have done with a numpy array, but it just doesn't work here.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df[0]
+</pre>
+</div>
+
+<p>
+KeyErrorTraceback (most recent call last)
+~/opt/anaconda3/lib/python3.7/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)
+   2645             try:
+-&gt; 2646                 return self._engine.get_loc(key)
+   2647             except KeyError:
+</p>
+
+<p>
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()
+</p>
+
+<p>
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()
+</p>
+
+<p>
+pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.PyObjectHashTable.get_item()
+</p>
+
+<p>
+pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.PyObjectHashTable.get_item()
+</p>
+
+<p>
+KeyError: 0
+</p>
+
+<p>
+During handling of the above exception, another exception occurred:
+</p>
+
+<p>
+KeyErrorTraceback (most recent call last)
+&lt;ipython-input-64-ad11118bc8f3&gt; in &lt;module&gt;
+-&#x2014;&gt; 1 df[0]
+</p>
+
+<p>
+~/opt/anaconda3/lib/python3.7/site-packages/pandas/core/frame.py in __getitem__(self, key)
+   2798             if self.columns.nlevels &gt; 1:
+   2799                 return self._getitem_multilevel(key)
+-&gt; 2800             indexer = self.columns.get_loc(key)
+   2801             if is_integer(indexer):
+   2802                 indexer = [indexer]
+</p>
+
+<p>
+~/opt/anaconda3/lib/python3.7/site-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)
+   2646                 return self._engine.get_loc(key)
+   2647             except KeyError:
+-&gt; 2648                 return self._engine.get_loc(self._maybe_cast_indexer(key))
+   2649         indexer = self.get_indexer([key], method=method, tolerance=tolerance)
+   2650         if indexer.ndim &gt; 1 or indexer.size &gt; 1:
+</p>
+
+<p>
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()
+</p>
+
+<p>
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()
+</p>
+
+<p>
+pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.PyObjectHashTable.get_item()
+</p>
+
+<p>
+pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.PyObjectHashTable.get_item()
+</p>
+
+<p>
+KeyError: 0
+</p>
+
+<p>
+The problem is that as a dictionary, the keys are for the <i>columns</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.keys()
+</pre>
+</div>
+
+<pre class="example">
+Index(['Step', 'v_mytime', 'Temp', 'Press', 'Volume', 'PotEng', 'TotEng',
+       'v_pxy', 'v_pxz', 'v_pyz', 'v_v11', 'v_v22', 'v_v33', 'CPU'],
+      dtype='object')
+</pre>
+
+
+<p>
+One way to get the rows by their integer index is to use the <i>integer location</i> attribute for a row.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.iloc[0]
+</pre>
+</div>
+
+<pre class="example">
+Step        0.000000e+00
+v_mytime    0.000000e+00
+Temp        1.025000e+03
+Press       6.012843e+02
+Volume      8.894648e+03
+PotEng     -1.566622e+03
+TotEng     -1.500508e+03
+v_pxy       2.065628e+03
+v_pxz       1.713409e+03
+v_pyz       2.030050e+02
+v_v11       1.340898e-05
+v_v22       9.226001e-06
+v_v33       1.295104e-07
+CPU         0.000000e+00
+Name: 0, dtype: float64
+</pre>
+
+<p>
+We can use slices on this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.iloc[0:5]
+</pre>
+</div>
+
+<pre class="example">
+   Step  v_mytime       Temp       Press     Volume     PotEng     TotEng  \
+0     0         0  1025.0000   601.28429  8894.6478 -1566.6216 -1500.5083
+1   200         1  1045.8510 -1974.43580  8894.6478 -1569.6934 -1502.2352
+2   400         2  1050.4448  2974.54030  8894.6478 -1564.3755 -1496.6210
+3   600         3  1071.3778  2386.37510  8894.6478 -1566.4325 -1497.3278
+4   800         4  1055.5281  -661.78795  8894.6478 -1569.3172 -1501.2348
+
+        v_pxy       v_pxz       v_pyz     v_v11     v_v22         v_v33  \
+0  2065.62850  1713.40950   203.00499  0.000013  0.000009  1.295104e-07
+1  2530.16720 -2203.37680 -2193.88770  0.000423 -0.000564  9.109558e-04
+2  1446.73930   637.82978  1794.70610  0.001115  0.000125  4.583668e-04
+3   599.73943  -462.74809   558.54192  0.000766  0.000387  3.082071e-04
+4  1775.43870 -1551.26350  -493.01032  0.000569  0.000380  2.913083e-04
+
+        CPU
+0  0.000000
+1  0.505391
+2  1.018666
+3  1.532061
+4  2.051839
+</pre>
+
+<p>
+This example may be a little confusing, because our index does include 0, so we can in this case also use the row label with the <i>location</i> attribute. You can use any value in the index for this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.index
+</pre>
+</div>
+
+<pre class="example">
+RangeIndex(start=0, stop=2501, step=1)
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.loc[0]
+</pre>
+</div>
+
+<pre class="example">
+Step        0.000000e+00
+v_mytime    0.000000e+00
+Temp        1.025000e+03
+Press       6.012843e+02
+Volume      8.894648e+03
+PotEng     -1.566622e+03
+TotEng     -1.500508e+03
+v_pxy       2.065628e+03
+v_pxz       1.713409e+03
+v_pyz       2.030050e+02
+v_v11       1.340898e-05
+v_v22       9.226001e-06
+v_v33       1.295104e-07
+CPU         0.000000e+00
+Name: 0, dtype: float64
+</pre>
+
+<p>
+We can access the first five rows like this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.loc[0:4]
+</pre>
+</div>
+
+<pre class="example">
+   Step  v_mytime       Temp       Press     Volume     PotEng     TotEng  \
+0     0         0  1025.0000   601.28429  8894.6478 -1566.6216 -1500.5083
+1   200         1  1045.8510 -1974.43580  8894.6478 -1569.6934 -1502.2352
+2   400         2  1050.4448  2974.54030  8894.6478 -1564.3755 -1496.6210
+3   600         3  1071.3778  2386.37510  8894.6478 -1566.4325 -1497.3278
+4   800         4  1055.5281  -661.78795  8894.6478 -1569.3172 -1501.2348
+
+        v_pxy       v_pxz       v_pyz     v_v11     v_v22         v_v33  \
+0  2065.62850  1713.40950   203.00499  0.000013  0.000009  1.295104e-07
+1  2530.16720 -2203.37680 -2193.88770  0.000423 -0.000564  9.109558e-04
+2  1446.73930   637.82978  1794.70610  0.001115  0.000125  4.583668e-04
+3   599.73943  -462.74809   558.54192  0.000766  0.000387  3.082071e-04
+4  1775.43870 -1551.26350  -493.01032  0.000569  0.000380  2.913083e-04
+
+        CPU
+0  0.000000
+1  0.505391
+2  1.018666
+3  1.532061
+4  2.051839
+</pre>
+
+<p>
+And a slice of a column like this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.loc[0:4, <span style="color: #008000;">'Press'</span>]
+</pre>
+</div>
+
+<pre class="example">
+0     601.28429
+1   -1974.43580
+2    2974.54030
+3    2386.37510
+4    -661.78795
+Name: Press, dtype: float64
+</pre>
+
+<p>
+We can access a value in a row and column with the <code>at</code> function on a DataFrame.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.at[2, <span style="color: #008000;">'Press'</span>]
+</pre>
+</div>
+
+<pre class="example">
+2974.5403
+</pre>
+
+<p>
+Or if you know the row and column numbers you can use <code>iat</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.iat[2, 3]
+</pre>
+</div>
+
+<pre class="example">
+2974.5403
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-orge4b7655" class="outline-3">
+<h3 id="orge4b7655"><span class="section-number-3">3.3</span> Operating on columns in the DataFrame</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Some functions just work across the columns. For example, DataFrames have statistics functions like this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.mean()
+</pre>
+</div>
+
+<pre class="example">
+Step        250000.000000
+v_mytime      1250.000000
+Temp          1025.136938
+Press          188.035304
+Volume        8894.647800
+PotEng       -1567.935373
+TotEng       -1501.813207
+v_pxy           16.669575
+v_pxz           -4.852837
+v_pyz           14.175372
+v_v11            0.000465
+v_v22            0.000429
+v_v33            0.000428
+CPU            644.103768
+dtype: float64
+</pre>
+
+<p>
+We should tread carefully with other functions that work on arrays. For example consider this example that computes the mean of an entire array.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">a</span> = np.array([[1, 1, 1],
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span> [2, 2, 2]])
+np.mean(a)
+</pre>
+</div>
+
+<pre class="example">
+1.5
+</pre>
+
+<p>
+It does not do the same thing on a DataFrame. The index and column labels are preserved with numpy functions.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+
+np.mean(df) <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">takes mean along axis 0</span>
+</pre>
+</div>
+
+<pre class="example">
+Step        250000.000000
+v_mytime      1250.000000
+Temp          1025.136938
+Press          188.035304
+Volume        8894.647800
+PotEng       -1567.935373
+TotEng       -1501.813207
+v_pxy           16.669575
+v_pxz           -4.852837
+v_pyz           14.175372
+v_v11            0.000465
+v_v22            0.000429
+v_v33            0.000428
+CPU            644.103768
+dtype: float64
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython">np.<span style="color: #006FE0;">max</span>(df)
+</pre>
+</div>
+
+<pre class="example">
+Step        500000.000000
+v_mytime      2500.000000
+Temp          1154.179000
+Press         6673.763400
+Volume        8894.647800
+PotEng       -1559.155500
+TotEng       -1488.958600
+v_pxy         7428.176700
+v_pxz         6523.454800
+v_pyz         6229.504300
+v_v11            0.001115
+v_v22            0.000531
+v_v33            0.000911
+CPU           1288.023300
+dtype: float64
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-ipython">np.exp(df)
+</pre>
+</div>
+
+<p>
+/Users/jkitchin/opt/anaconda3/lib/python3.7/site-packages/ipykernel_launcher.py:1: RuntimeWarning: overflow encountered in exp
+  """Entry point for launching an IPython kernel.
+</p>
+
+<pre class="example">
+               Step   v_mytime  Temp          Press  Volume  PotEng  TotEng  \
+0      1.000000e+00   1.000000   inf  1.362854e+261     inf     0.0     0.0
+1      7.225974e+86   2.718282   inf   0.000000e+00     inf     0.0     0.0
+2     5.221470e+173   7.389056   inf            inf     inf     0.0     0.0
+3     3.773020e+260  20.085537   inf            inf     inf     0.0     0.0
+4               inf  54.598150   inf  3.882801e-288     inf     0.0     0.0
+...             ...        ...   ...            ...     ...     ...     ...
+2496            inf        inf   inf   0.000000e+00     inf     0.0     0.0
+2497            inf        inf   inf   3.112086e-34     inf     0.0     0.0
+2498            inf        inf   inf            inf     inf     0.0     0.0
+2499            inf        inf   inf   0.000000e+00     inf     0.0     0.0
+2500            inf        inf   inf   0.000000e+00     inf     0.0     0.0
+
+              v_pxy          v_pxz          v_pyz     v_v11     v_v22  \
+0               inf            inf   1.458636e+88  1.000013  1.000009
+1               inf   0.000000e+00   0.000000e+00  1.000423  0.999436
+2               inf  1.013804e+277            inf  1.001116  1.000125
+3     2.907536e+260  1.074133e-201  3.729699e+242  1.000766  1.000387
+4               inf   0.000000e+00  7.732831e-215  1.000569  1.000380
+...             ...            ...            ...       ...       ...
+2496            inf            inf   0.000000e+00  1.000452  1.000440
+2497            inf            inf   0.000000e+00  1.000452  1.000440
+2498   0.000000e+00            inf   0.000000e+00  1.000453  1.000439
+2499   0.000000e+00   9.056711e-32            inf  1.000453  1.000440
+2500  1.612378e-110  1.087368e+267            inf  1.000453  1.000440
+
+         v_v33       CPU
+0     1.000000  1.000000
+1     1.000911  1.657634
+2     1.000458  2.769498
+3     1.000308  4.627705
+4     1.000291  7.782200
+...        ...       ...
+2496  1.000443       inf
+2497  1.000443       inf
+2498  1.000443       inf
+2499  1.000442       inf
+2500  1.000442       inf
+
+[2501 rows x 14 columns]
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-ipython">2 * df
+</pre>
+</div>
+
+<pre class="example">
+         Step  v_mytime        Temp       Press      Volume     PotEng  \
+0           0         0  2050.00000  1202.56858  17789.2956 -3133.2432
+1         400         2  2091.70200 -3948.87160  17789.2956 -3139.3868
+2         800         4  2100.88960  5949.08060  17789.2956 -3128.7510
+3        1200         6  2142.75560  4772.75020  17789.2956 -3132.8650
+4        1600         8  2111.05620 -1323.57590  17789.2956 -3138.6344
+...       ...       ...         ...         ...         ...        ...
+2496   998400      4992  1955.91788 -3495.82440  17789.2956 -3140.0324
+2497   998800      4994  2133.01740  -154.30520  17789.2956 -3136.7632
+2498   999200      4996  2104.37720  3917.94820  17789.2956 -3131.6026
+2499   999600      4998  2114.60280 -3419.91340  17789.2956 -3141.3600
+2500  1000000      5000  1957.24718 -4201.52280  17789.2956 -3141.0764
+
+         TotEng       v_pxy        v_pxz       v_pyz     v_v11     v_v22  \
+0    -3001.0166  4131.25700  3426.819000   406.00998  0.000027  0.000018
+1    -3004.4704  5060.33440 -4406.753600 -4387.77540  0.000846 -0.001128
+2    -2993.2420  2893.47860  1275.659560  3589.41220  0.002231  0.000249
+3    -2994.6556  1199.47886  -925.496180  1117.08384  0.001531  0.000774
+4    -3002.4696  3550.87740 -3102.527000  -986.02064  0.001137  0.000760
+...         ...         ...          ...         ...       ...       ...
+2496 -3013.8740  2823.71200  2309.766800 -4531.01000  0.000905  0.000880
+2497 -2999.1820  8143.76800  7694.591800 -2558.05720  0.000905  0.000879
+2498 -2995.8686 -4305.08920  1851.551560 -2325.52240  0.000906  0.000879
+2499 -3004.9664 -3060.68180  -142.958434  1462.89470  0.000905  0.000879
+2500 -3014.8324  -505.61330  1229.747960  1879.30786  0.000905  0.000879
+
+             v_v33          CPU
+0     2.590208e-07     0.000000
+1     1.821912e-03     1.010782
+2     9.167335e-04     2.037332
+3     6.164143e-04     3.064122
+4     5.826165e-04     4.103678
+...            ...          ...
+2496  8.849924e-04  2571.920600
+2497  8.856225e-04  2572.948200
+2498  8.854430e-04  2573.974000
+2499  8.847412e-04  2575.006400
+2500  8.845744e-04  2576.046600
+
+[2501 rows x 14 columns]
+</pre>
+
+<p>
+We can apply a function to the DataFrame. The default is the columns (axis=0). Either way, we get a new DataFrame.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">def</span> <span style="color: #006699;">minmax</span>(roworcolumn):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">return</span> np.<span style="color: #006FE0;">min</span>(roworcolumn), np.<span style="color: #006FE0;">max</span>(roworcolumn)
+
+df.<span style="color: #006FE0;">apply</span>(minmax)
+</pre>
+</div>
+
+<pre class="example">
+Step                               (0.0, 500000.0)
+v_mytime                             (0.0, 2500.0)
+Temp               (883.05875, 1154.1789999999999)
+Press                      (-6247.6768, 6673.7634)
+Volume                      (8894.6478, 8894.6478)
+PotEng                    (-1576.8745, -1559.1555)
+TotEng                    (-1513.6955, -1488.9586)
+v_pxy                      (-6747.6227, 7428.1767)
+v_pxz                      (-7547.8097, 6523.4548)
+v_pyz                      (-7509.4468, 6229.5043)
+v_v11       (1.3408976000000001e-05, 0.0011154527)
+v_v22              (-0.00056416838, 0.00053057745)
+v_v33               (1.2951038e-07, 0.00091095575)
+CPU                               (0.0, 1288.0233)
+dtype: object
+</pre>
+
+<p>
+Here we analyze across the rows.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.<span style="color: #006FE0;">apply</span>(minmax, axis=1)
+</pre>
+</div>
+
+<pre class="example">
+0       (-1566.6216, 8894.6478)
+1       (-2203.3768, 8894.6478)
+2       (-1564.3755, 8894.6478)
+3       (-1566.4325, 8894.6478)
+4       (-1569.3172, 8894.6478)
+                 ...
+2496      (-2265.505, 499200.0)
+2497     (-1568.3816, 499400.0)
+2498     (-2152.5446, 499600.0)
+2499     (-1709.9567, 499800.0)
+2500     (-2100.7614, 500000.0)
+Length: 2501, dtype: object
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Kitchin</p>
+<p class="date">Created: 2020-05-18 Mon 16:07</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

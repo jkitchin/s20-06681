@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-18 Mon 16:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Data science and machine learning in chemical engineering</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Kitchin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Data science and machine learning in chemical engineering</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgfdb3df5">1. Getting started</a>
+<ul>
+<li><a href="#orgf4eb09a">1.1. Windows</a></li>
+<li><a href="#org095083c">1.2. Mac</a></li>
+<li><a href="#org2114f09">1.3. Linux</a></li>
+<li><a href="#org5155f10">1.4. Jupyter resources</a></li>
+</ul>
+</li>
+<li><a href="#org2a56b97">2. Getting started with Jupyter Lab</a></li>
+<li><a href="#orgf1a236f">3. Break</a></li>
+<li><a href="#org331dd12">4. Data</a></li>
+<li><a href="#org333a55d">5. Breakout rooms</a></li>
+<li><a href="#org26d24bc">6. Reference material</a></li>
+<li><a href="#org757d317">7. Reading material</a></li>
+</ul>
+</div>
+</div>
+<p>
+This class is about data, models and data analysis in chemical engineering. We will cover topics including
+</p>
+
+<ul class="org-ul">
+<li>Reading data from different sources (urls, files, etc)</li>
+<li>Visualization of data</li>
+<li>Working with multidimensional data</li>
+<li>Using Pandas</li>
+<li>Using scikit-learn for machine learning</li>
+</ul>
+
+<p>
+The class will utilize Python and Jupyter notebooks. I am going to assume you have some basic fluency in Python, and Jupyter notebooks, e.g. you have at least taken 06-623 (Mathematical modeling of chemical engineering processes). If you have not had that course, you will want to review the lectures at <a href="https://github.com/jkitchin/f19-06623">https://github.com/jkitchin/f19-06623</a>.
+</p>
+
+<div id="outline-container-orgfdb3df5" class="outline-2">
+<h2 id="orgfdb3df5"><span class="section-number-2">1</span> Getting started</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+We will be using Jupyter notebooks for most lectures and assignments. We will try to run these through the Jupyter lab environment.
+</p>
+
+<p>
+You will typically need to download some class files from Canvas, and put them in a convenient place. I recommend you make a class folder in a convenient place for you.
+</p>
+
+<p>
+You should open a shell, navigate to the location of your class files, and then run <code>jupyter lab</code> in the shell.
+</p>
+
+<p>
+Your commands will look something like this:
+</p>
+
+<pre class="example">
+cd /path/to/your/class-files
+jupyter lab
+</pre>
+</div>
+
+<div id="outline-container-orgf4eb09a" class="outline-3">
+<h3 id="orgf4eb09a"><span class="section-number-3">1.1</span> Windows</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+If you find your class directory in Windows Explorer, and you have git bash installed, you should be able to right click in the folder, and select git bash. It should open in that folder, and then you can just type <code>jupyter lab</code> in the shell.
+</p>
+
+<p>
+If you get an error like:
+</p>
+
+<p>
+<code>Exception: Jupyter command 'jupyter-lab' not found.</code> then you need to run:
+</p>
+
+<p>
+<code>pip install jupyterlab</code> in your shell.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org095083c" class="outline-3">
+<h3 id="org095083c"><span class="section-number-3">1.2</span> Mac</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Open a Terminal, navigate to your class folder, and then run <code>jupyter lab</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2114f09" class="outline-3">
+<h3 id="org2114f09"><span class="section-number-3">1.3</span> Linux</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Open a shell/terminal, navigate to your class folder, and then run <code>jupyter lab</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5155f10" class="outline-3">
+<h3 id="org5155f10"><span class="section-number-3">1.4</span> Jupyter resources</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+Jupyter cheat sheet: <a href="https://medium.com/edureka/jupyter-notebook-cheat-sheet-88f60d1aca7">https://medium.com/edureka/jupyter-notebook-cheat-sheet-88f60d1aca7</a>
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org2a56b97" class="outline-2">
+<h2 id="org2a56b97"><span class="section-number-2">2</span> Getting started with Jupyter Lab</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+On the left side is a panel that should show a navigation panel. You can double click on a notebook here to open it. This is probably the best way to access notebooks. They will open in a tab on the right.
+</p>
+
+<ul class="org-ul">
+<li>You can shrink the navigation bar by clicking on the folder icon next to the left of the + symbol.</li>
+</ul>
+
+<p>
+Let's look at this notebook. It is made of cells. If you click on one you will see a blue bar indicating the scope of the cell. If you double click on a cell, you can see how it was made. It is written in Markdown, a lightweight text markup language. Type <code>C-enter</code> (Control and enter at the same time) to render the cell.
+</p>
+
+<p>
+Double click on the cell again. Now type <code>S-enter</code> (shift-enter) to render the cell and move to the next cell.
+</p>
+
+<p>
+When on a cell that is rendered, you can use the up and down arrows to move from cell to cell.
+</p>
+
+<p>
+With your cursor on this cell, type <code>Esc-b</code> and then <code>Enter</code>. This will create a new cell after the cell, and enter it so you can add something. <i>The default mode for a cell is code.</i> This is a code cell. Type <code>print('Hi there')</code> and press <code>C-enter</code> to execute it. You should see some printed output.
+</p>
+
+<p>
+Select your code cell by clicking on it. Now press <code>Esc</code> then <code>a</code>. That will insert a cell <i>above</i> the selected cell. Remember, by default this will be a code cell. We are going to change this to a Markdown cell. You can see it is a code cell at the top in the icons. The one that says "Code" tells you it is a code cell.
+</p>
+
+
+
+
+<div class="figure">
+<p><img src="./screenshots/date-18-03-2020-time-13-10-52.png" alt="date-18-03-2020-time-13-10-52.png" />
+</p>
+</div>
+
+
+
+
+<p>
+Next, press <code>m</code>. You should see the cell type change to Markdown. Note you can use this menu with your mouse to change the cell type.
+</p>
+
+
+
+
+<div class="figure">
+<p><img src="./screenshots/date-18-03-2020-time-13-11-41.png" alt="date-18-03-2020-time-13-11-41.png" />
+</p>
+</div>
+
+<p>
+Now press <code>Enter</code> to go into the cell, or double click in it. Type some regular text and press <code>C-enter</code> to render it.
+</p>
+
+<p>
+Let's review some simple markup:
+</p>
+
+<pre class="example">
+# heading
+## subheading
+
+**bold**
+
+*italics*
+
+Separate text by blank lines so they appear as "paragraphs"
+
+[a link](https://github.com)
+
+1. a
+2. numbered list
+  1. you can also have sub-items
+
+
+- a bullet list
+  - with sub-bullets
+</pre>
+
+<p>
+You will be using both code and Markdown cells to document what you are doing, why you are doing it, and what it means.
+</p>
+
+<p>
+Jupyter notebooks are a way to <i>communicate</i> your work. The are also <i>executable</i> documents. Some important points to remember:
+</p>
+
+<ol class="org-ol">
+<li>The code is for a computer, and it represents your attempt to convert some idea in your head into an executable program.</li>
+<li>You cannot expect others to read your mind and guess what your intentions were. You have to use the narrative text in the Markdown cells to explain what you are trying to do, what approximations you have to make to accomplish it.</li>
+</ol>
+
+<p>
+Let's see a real example of this. Don't worry about what this code means yet, it is an idea I want to get across.
+</p>
+
+<p>
+What is happening here?
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+
+<span style="color: #BA36A5;">x</span> = np.linspace(0, np.pi)
+<span style="color: #BA36A5;">y</span> = np.sin(x)
+0.5* ((x[1:] - x[:-1]) * (y[1:] + y[:-1])).<span style="color: #006FE0;">sum</span>()
+</pre>
+</div>
+
+<pre class="example">
+1.9993148493240622
+</pre>
+
+<p>
+It is hard to tell. I know (for now) what is in my head, but even future me will have trouble figuring out what this means.
+</p>
+
+<p>
+Compare that to:
+</p>
+
+<p>
+I want to compute the integral \(y = \int_0^\pi sin(x) dx\). I will approximate the integral using the trapezoid rule, and vectorize it as described at <a href="https://berkeley-stat159-f17.github.io/stat159-f17/lectures/09-intro-numpy/trapezoid..html">https://berkeley-stat159-f17.github.io/stat159-f17/lectures/09-intro-numpy/trapezoid..html</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+
+<span style="color: #BA36A5;">x</span> = np.linspace(0, np.pi)
+<span style="color: #BA36A5;">y</span> = np.sin(x)
+0.5* ( (x[1:] - x[:-1]) * (y[1:] + y[:-1])).<span style="color: #006FE0;">sum</span>()
+</pre>
+</div>
+
+<pre class="example">
+1.9993148493240622
+</pre>
+
+<p>
+Next we compare the method to the <code>np.trapz</code> library function.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">np.trapz(y, x)
+</pre>
+</div>
+
+<pre class="example">
+1.9993148493240622
+</pre>
+
+<p>
+This is one of the most critical points in data science. The data itself is not meaningful if you don't know what it was obtained for, and your analysis may not be useful if nobody can tell what you were trying to do. It is critical that you provide documentation to guide people reviewing your work (including future you).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf1a236f" class="outline-2">
+<h2 id="orgf1a236f"><span class="section-number-2">3</span> Break</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Please get up, stretch, etc. We will be back in two minutes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org331dd12" class="outline-2">
+<h2 id="org331dd12"><span class="section-number-2">4</span> Data</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+We will start with some high level thinking about what we mean by data, why we get it, and what we do with it.
+</p>
+
+<p>
+Data are things we measure, assume to be facts, and that we use to learn about the process the data was collected from. It is usually a set of numerical values that are collected. It is critical to know something about your data so you understand what analysis may be appropriate. Data is a plural word. Datum is the singular form of data.
+</p>
+
+<p>
+For example, here are two sets of data on my weight:
+</p>
+
+<ol class="org-ol">
+<li>[7.5, 46, 150, 157]</li>
+<li>[156, 155, 158, 157]</li>
+</ol>
+
+
+<p>
+We are missing some context on these. The first set is data over four decades, while the second set is over four days. It doesn't really make sense to average the first set, whereas the average of the second set gives you a good idea of how my weight fluctuates on a daily basis.
+</p>
+
+<p>
+Data by itself is not helpful. It is analysis of data that is helpful, but you have to know what the data is supposed to represent to know if the analysis is helpful.
+</p>
+
+<p>
+There are many kinds of analysis one can do: statistical, regression, integration, etc. Each of these has the purpose of extracting information from the data.
+</p>
+
+<p>
+Let's consider the average and standard deviation of the second weights above. To perform this analysis, we need a computational tool, we will use Python. We will extensively use numpy arrays for data analysis. We start by making an array in a variable called weights. Then, we simply call the mean and std functions of that array inside a formatted string.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+
+<span style="color: #BA36A5;">weights</span> = np.array([156, 155, 158, 157])
+<span style="color: #0000FF;">print</span>(f<span style="color: #008000;">'My average weight is </span><span style="color: #BA36A5;">{np.mean(weights)}</span><span style="color: #008000;"> \pm </span><span style="color: #BA36A5;">{np.std(weights):1.1f}</span><span style="color: #008000;"> lbs.'</span>)
+</pre>
+</div>
+
+<p>
+My average weight is 156.5 &plusmn; 1.1 lbs.
+</p>
+
+<p>
+This analysis makes sense <i>if</i> we think my weight fluctuates about some average with a normal distribution of fluctuations. We do not have enough data to determine if it is normal here, but it is worth noting that assumption underlies the analysis. Note, we also assume that each measurement is independent, and uncorrelated with the previous and next measurement. If I weigh myself only once a day, that is probably reasonable. If these are sequential weights separated by 1 minute, then either something is wrong with the scale or, I am doing something funny in how I weigh myself.
+</p>
+
+<p>
+What factors could affect the weight measurement?
+</p>
+<ol class="org-ol">
+<li>What am I wearing?</li>
+<li>What and when did I last eat/drink?</li>
+<li>When was the last time I exercised and for how long?</li>
+<li>Are all the measurements from the same scale?</li>
+</ol>
+
+<p>
+The answers for all these constitute the <i>metadata</i>, which is data about the data. If we had access to this metadata, we might ask if any of these factors influence the measurements. As we consider more dimensions like this,  it becomes inconvenient to visualize and build models with conventional tools, and we then will turn to machine learning.
+</p>
+
+<p>
+There is a lot to learn about using data before we get to machine learning though.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org333a55d" class="outline-2">
+<h2 id="org333a55d"><span class="section-number-2">5</span> Breakout rooms</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Let's take a break here from the lecture and try the breakout rooms. I am going to assign you all randomly to breakout rooms shortly.
+</p>
+
+<p>
+Take a minute to introduce your selves to each other, and say why you are interested in this class, and what you hope to get out of it. Nominate one of yourselves to be the person who will report back in about 8 minutes with a summary of the discussion. Send the name of that person to me in chat. When we reconvene, I will call on those people to report to everyone what the outcomes were. Each room will have a google doc shared with it. Please use it to take notes on your discussion.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org26d24bc" class="outline-2">
+<h2 id="org26d24bc"><span class="section-number-2">6</span> Reference material</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li><a href="https://jupyterlab.readthedocs.io/en/stable/user/interface.html">https://jupyterlab.readthedocs.io/en/stable/user/interface.html</a>
+<ul class="org-ul">
+<li>There is a lot here that some of you may find interesting.</li>
+</ul></li>
+
+<li>Keyboard shortcuts <img src="https://blog.ja-ke.tech/assets/jupyterlab-shortcuts/Shortcuts.png" alt="Shortcuts.png" />
+<ul class="org-ul">
+<li>You do not need to memorize these, but they will eventually help you do some things faster</li>
+</ul></li>
+
+<li><a href="https://docs.scipy.org/doc/numpy/reference/routines.statistics.html">https://docs.scipy.org/doc/numpy/reference/routines.statistics.html</a>
+<ul class="org-ul">
+<li>Familiarize yourself with what is possible. Do not try to memorize all these. The main point is be familiar so that you can better judge in the future if there is likely to be a library function you can use, or if you need to implement a function yourself.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org757d317" class="outline-2">
+<h2 id="org757d317"><span class="section-number-2">7</span> Reading material</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Please start reading at <a href="https://jakevdp.github.io/PythonDataScienceHandbook/02.02-the-basics-of-numpy-arrays.html">https://jakevdp.github.io/PythonDataScienceHandbook/02.02-the-basics-of-numpy-arrays.html</a> and read through Chapter 2 to the end <a href="https://jakevdp.github.io/PythonDataScienceHandbook/02.09-structured-data-numpy.html">https://jakevdp.github.io/PythonDataScienceHandbook/02.09-structured-data-numpy.html</a>. We will cover some of this material next week. Note that you can open these in "Colab" from the web site to work on the examples interactively.
+</p>
+
+<p>
+Colab is a Google product that is like a Jupyter notebook. We will not be able to use Colab for some exercises in the class, but for the Data Science Handbook it is fine to use it.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Kitchin</p>
+<p class="date">Created: 2020-05-18 Mon 16:07</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

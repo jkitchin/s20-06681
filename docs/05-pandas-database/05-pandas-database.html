@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-18 Mon 16:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Kitchin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org5a91b90">1. Using Pandas DataFrames as a small database</a>
+<ul>
+<li><a href="#org0835075">1.1. A Table for the chemical elements and their atomic masses</a></li>
+<li><a href="#org2badf70">1.2. A Table for some molecules</a>
+<ul>
+<li><a href="#orgec53028">1.2.1. What molecules are in the database?</a></li>
+<li><a href="#org9c7bafa">1.2.2. Which molecules have three H atoms?</a></li>
+</ul>
+</li>
+<li><a href="#orga7b7d51">1.3. Getting the molecular weight</a></li>
+</ul>
+</li>
+<li><a href="#orgfb385e8">2. Chaining commands in Pandas</a></li>
+<li><a href="#org52ce348">3. Subtle points</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5a91b90" class="outline-2">
+<h2 id="org5a91b90"><span class="section-number-2">1</span> Using Pandas DataFrames as a small database</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Pandas DataFrames can serve as small databases. You can use them to construct tables from which you can run queries to compute things. In this example, we will explore a database of molecules and atomic element properties.
+</p>
+</div>
+
+<div id="outline-container-org0835075" class="outline-3">
+<h3 id="org0835075"><span class="section-number-3">1.1</span> A Table for the chemical elements and their atomic masses</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+You will have to install the Atomic Simulation Environment for this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">! pip install ase
+</pre>
+</div>
+
+<p>
+We will use it because it has data about the chemical elements, and some molecules we will use.
+</p>
+
+<p>
+First, we make a DataFrame containing the chemical elements, and their atomic masses.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> ase
+<span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+<span style="color: #0000FF;">import</span> pandas <span style="color: #0000FF;">as</span> pd
+
+<span style="color: #BA36A5;">dtypes</span> = np.dtype([(<span style="color: #008000;">'symbol'</span>, <span style="color: #006FE0;">str</span>), (<span style="color: #008000;">'atomic mass'</span>, <span style="color: #006FE0;">float</span>)])
+<span style="color: #BA36A5;">data</span> = np.empty(0, dtype=dtypes)
+
+<span style="color: #BA36A5;">elements</span> = pd.DataFrame(data)
+<span style="color: #BA36A5;">elements</span>[<span style="color: #008000;">'symbol'</span>] = ase.data.chemical_symbols
+<span style="color: #BA36A5;">elements</span>[<span style="color: #008000;">'atomic mass'</span>] = ase.data.atomic_masses
+elements.info()
+</pre>
+</div>
+
+<p>
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 119 entries, 0 to 118
+Data columns (total 2 columns):
+</p>
+
+<p>
+&#x2014;  -&#x2013;&#x2014;       ---------&#x2013;&#x2014;  &#x2013;&#x2014;
+ 0   symbol       119 non-null    object
+ 1   atomic mass  119 non-null    float64
+dtypes: float64(1), object(1)
+memory usage: 2.0+ KB
+</p>
+
+<p>
+You can use a <code>query</code> function to select rows from the database that meet some criteria.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">?elements.query
+</pre>
+</div>
+
+<p>
+For example, to get Carbon we can use a query like this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">elements.query(<span style="color: #008000;">'symbol == "C"'</span>)
+</pre>
+</div>
+
+<pre class="example">
+  symbol  atomic mass
+6      C       12.011
+</pre>
+
+<p>
+We can do some things with python variables like this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">sym</span> = <span style="color: #008000;">'H'</span>
+elements.query(<span style="color: #008000;">'symbol == @sym'</span>)
+</pre>
+</div>
+
+<pre class="example">
+  symbol  atomic mass
+1      H        1.008
+</pre>
+
+<p>
+#+END_SRC
+</p>
+
+<p>
+Although, f-strings also work for this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">sym</span> = <span style="color: #008000;">'H'</span>
+elements.query(f<span style="color: #008000;">'symbol == "</span><span style="color: #BA36A5;">{sym}</span><span style="color: #008000;">"'</span>)
+</pre>
+</div>
+
+<pre class="example">
+  symbol  atomic mass
+1      H        1.008
+</pre>
+
+<p>
+The atomic mass is trickier to work with because it has a space in it. We have to use back-ticks to "quote" this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">elements.query(<span style="color: #008000;">'`</span><span style="color: #D0372D;">atomic mass` &lt; 4</span><span style="color: #008000;">'</span>)
+</pre>
+</div>
+
+<pre class="example">
+  symbol  atomic mass
+0      X        1.000
+1      H        1.008
+</pre>
+
+<p>
+Note it does not appear you can use the @ or f-string on column names. Also note the mysterious element X in the table. We can ignore that.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2badf70" class="outline-3">
+<h3 id="org2badf70"><span class="section-number-3">1.2</span> A Table for some molecules</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Next, let's build the molecule database. This will be a table where each row  corresponds to an atom in a molecule. We will be able to get the atoms in a molecule by aggregating these on a <code>Molecule-ID</code>. We build this table up row by row, by first getting a molecule, and then iterating over each atom in the molecule. It is conventional to use an integer for an ID, but we will just use the molecular formula in this example. That has some limitations for larger databases (e.g. isomers have different properties, but the same molecular formula), but we will not have that problem here.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">df</span> = pd.DataFrame(columns=[<span style="color: #008000;">'Molecule-ID'</span>, <span style="color: #008000;">'Atom symbol'</span>, <span style="color: #008000;">'x'</span>, <span style="color: #008000;">'y'</span>, <span style="color: #008000;">'z'</span>])
+
+<span style="color: #0000FF;">from</span> ase.build <span style="color: #0000FF;">import</span> molecule
+<span style="color: #BA36A5;">i</span> = 0
+
+<span style="color: #0000FF;">for</span> mlc <span style="color: #0000FF;">in</span> [<span style="color: #008000;">'H2O'</span>, <span style="color: #008000;">'NH3'</span>, <span style="color: #008000;">'CH4'</span>]:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">for</span> atom <span style="color: #0000FF;">in</span> molecule(mlc):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">df.loc</span>[i] = [mlc, atom.symbol, atom.x, atom.y, atom.z]
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">i</span> += 1
+df
+</pre>
+</div>
+
+<pre class="example">
+   Molecule-ID Atom symbol         x         y         z
+0          H2O           O  0.000000  0.000000  0.119262
+1          H2O           H  0.000000  0.763239 -0.477047
+2          H2O           H  0.000000 -0.763239 -0.477047
+3          NH3           N  0.000000  0.000000  0.116489
+4          NH3           H  0.000000  0.939731 -0.271808
+5          NH3           H  0.813831 -0.469865 -0.271808
+6          NH3           H -0.813831 -0.469865 -0.271808
+7          CH4           C  0.000000  0.000000  0.000000
+8          CH4           H  0.629118  0.629118  0.629118
+9          CH4           H -0.629118 -0.629118  0.629118
+10         CH4           H  0.629118 -0.629118 -0.629118
+11         CH4           H -0.629118  0.629118 -0.629118
+</pre>
+</div>
+
+<div id="outline-container-orgec53028" class="outline-4">
+<h4 id="orgec53028"><span class="section-number-4">1.2.1</span> What molecules are in the database?</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Ok, now we are ready to do some queries. First, let's see what molecules we have in our database. We want the unique values of the 'Molecule-ID' column.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df[<span style="color: #008000;">'Molecule-ID'</span>].unique()
+</pre>
+</div>
+
+<pre class="example">
+array(['H2O', 'NH3', 'CH4'], dtype=object)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org9c7bafa" class="outline-4">
+<h4 id="org9c7bafa"><span class="section-number-4">1.2.2</span> Which molecules have three H atoms?</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Now, how do we find molecules that have 3 H atoms? We need to do some grouping. First, we select the H rows, and then we group by the Molecule-ID Then, we need a count of each sub group. I prefer the <code>size</code> function for this over <code>count</code>. <code>size</code> returns a Series, while <code>count</code> seems to return a DataFrame.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">tf</span> = df.query(<span style="color: #008000;">'`</span><span style="color: #D0372D;">Atom symbol` == "H"</span><span style="color: #008000;">'</span>).groupby([<span style="color: #008000;">'Molecule-ID'</span>]).size()
+tf
+</pre>
+</div>
+
+<pre class="example">
+Molecule-ID
+CH4    4
+H2O    2
+NH3    3
+dtype: int64
+</pre>
+
+<p>
+Finally, we can select the rows that have 3 hydrogen atoms.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">tf[tf == 3]
+</pre>
+</div>
+
+<pre class="example">
+Molecule-ID
+NH3    3
+dtype: int64
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orga7b7d51" class="outline-3">
+<h3 id="orga7b7d51"><span class="section-number-3">1.3</span> Getting the molecular weight</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Getting the molecular weight requires us to combine information from two DataFrames. To do this, we need to merge them, aligning the rows on a common key. That key is the <code>Atom symbol</code> in the molecule DataFrame, and <code>symbol</code> in the elements DataFrame. Then we have to do the right grouping, and use the sum aggregation method on each group.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">mf</span> = pd.merge(df, elements, how=<span style="color: #008000;">'inner'</span>, left_on=<span style="color: #008000;">'Atom symbol'</span>, right_on=<span style="color: #008000;">'symbol'</span>)
+mf
+</pre>
+</div>
+
+<pre class="example">
+   Molecule-ID Atom symbol         x         y         z symbol  atomic mass
+0          H2O           O  0.000000  0.000000  0.119262      O       15.999
+1          H2O           H  0.000000  0.763239 -0.477047      H        1.008
+2          H2O           H  0.000000 -0.763239 -0.477047      H        1.008
+3          NH3           H  0.000000  0.939731 -0.271808      H        1.008
+4          NH3           H  0.813831 -0.469865 -0.271808      H        1.008
+5          NH3           H -0.813831 -0.469865 -0.271808      H        1.008
+6          CH4           H  0.629118  0.629118  0.629118      H        1.008
+7          CH4           H -0.629118 -0.629118  0.629118      H        1.008
+8          CH4           H  0.629118 -0.629118 -0.629118      H        1.008
+9          CH4           H -0.629118  0.629118 -0.629118      H        1.008
+10         NH3           N  0.000000  0.000000  0.116489      N       14.007
+11         CH4           C  0.000000  0.000000  0.000000      C       12.011
+</pre>
+
+<p>
+Now, we group by the <code>Molecule-ID</code>, select the <code>atomic mass</code> column, and aggregate with the sum.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">MW</span> = mf.groupby(<span style="color: #008000;">'Molecule-ID'</span>)[<span style="color: #008000;">'atomic mass'</span>].<span style="color: #006FE0;">sum</span>()
+MW
+</pre>
+</div>
+
+<pre class="example">
+Molecule-ID
+CH4    16.043
+H2O    18.015
+NH3    17.031
+Name: atomic mass, dtype: float64
+</pre>
+
+<p>
+Here is one of many ways to print this in a different format:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">for</span> mlc, mw <span style="color: #0000FF;">in</span> MW.iteritems():
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">print</span>(f<span style="color: #008000;">'The molecular weight of </span><span style="color: #BA36A5;">{mlc}</span><span style="color: #008000;"> is </span><span style="color: #BA36A5;">{mw}</span><span style="color: #008000;"> gm/mol'</span>)
+</pre>
+</div>
+
+<p>
+The molecular weight of CH4 is 16.043 gm/mol
+The molecular weight of H2O is 18.015 gm/mol
+The molecular weight of NH3 is 17.031 gm/mol
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfb385e8" class="outline-2">
+<h2 id="orgfb385e8"><span class="section-number-2">2</span> Chaining commands in Pandas</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+So far, we have mostly seen sequential commands in Pandas
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">tf</span> = df.query(<span style="color: #008000;">'`</span><span style="color: #D0372D;">Atom symbol` == "H"</span><span style="color: #008000;">'</span>).groupby([<span style="color: #008000;">'Molecule-ID'</span>]).size()
+tf[tf == 3]
+</pre>
+</div>
+
+<pre class="example">
+Molecule-ID
+NH3    3
+dtype: int64
+</pre>
+
+<p>
+The <code>query</code> lets us chain these all into one line.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.query(<span style="color: #008000;">'`</span><span style="color: #D0372D;">Atom symbol` == "H"</span><span style="color: #008000;">'</span>).groupby([<span style="color: #008000;">'Molecule-ID'</span>]).count().query(<span style="color: #008000;">"`Atom symbol` == 3"</span>)
+</pre>
+</div>
+
+<pre class="example">
+             Atom symbol  x  y  z
+Molecule-ID
+NH3                    3  3  3  3
+</pre>
+
+<p>
+It is common to see this syntax where parentheses allow us to separate these into multiple lines. This may enhance readability.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">(df
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.query(<span style="color: #008000;">'`</span><span style="color: #D0372D;">Atom symbol` == "H"</span><span style="color: #008000;">'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.groupby([<span style="color: #008000;">'Molecule-ID'</span>])
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.count()
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.query(<span style="color: #008000;">"`Atom symbol` == 3"</span>))
+</pre>
+</div>
+
+<pre class="example">
+             Atom symbol  x  y  z
+Molecule-ID
+NH3                    3  3  3  3
+</pre>
+
+<p>
+The main benefit of chaining is that you do not have to define temporary variables that exist only so you can reuse them in subsequent lines. The downside is it is more challenging to debug them, and it is common to build them iteratively in a notebook.
+</p>
+
+<p>
+Here is another example of chaining to get the molecular weight of water.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">(pd.merge(df, elements, how=<span style="color: #008000;">'inner'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span> left_on=<span style="color: #008000;">'Atom symbol'</span>, right_on=<span style="color: #008000;">'symbol'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.groupby(<span style="color: #008000;">'Molecule-ID'</span>)[<span style="color: #008000;">'atomic mass'</span>]
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.<span style="color: #006FE0;">sum</span>()
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>[<span style="color: #008000;">'H2O'</span>])
+</pre>
+</div>
+
+<pre class="example">
+18.015
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org52ce348" class="outline-2">
+<h2 id="org52ce348"><span class="section-number-2">3</span> Subtle points</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Pandas offers many ways to do what appear to be the same thing, but they are not. For example, this works:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">(df
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.query(<span style="color: #008000;">'`</span><span style="color: #D0372D;">Atom symbol` == "H"</span><span style="color: #008000;">'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.groupby([<span style="color: #008000;">'Molecule-ID'</span>])
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.count()
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.query(<span style="color: #008000;">"`Atom symbol` == 3"</span>))
+</pre>
+</div>
+
+<p>
+And this doesn't.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">(df
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.query(<span style="color: #008000;">'`</span><span style="color: #D0372D;">Atom symbol` == "H"</span><span style="color: #008000;">'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.groupby([<span style="color: #008000;">'Molecule-ID'</span>])
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.size()
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.query(<span style="color: #008000;">"`Atom symbol` == 3"</span>))
+</pre>
+</div>
+
+<hr />
+<p>
+AttributeError                            Traceback (most recent call last)
+&lt;ipython-input-74-2b7aa4426677&gt; in &lt;module&gt;
+      1 (df
+      2  .query('`Atom symbol` == "H"')
+-&#x2014;&gt; 3  .groupby(['Molecule-ID'])
+      4  .size()
+      5  .query("`Atom symbol` == 3"))
+</p>
+
+<p>
+~/opt/anaconda3/lib/python3.7/site-packages/pandas/core/generic.py in __getattr__(self, name)
+   5272             if self._info_axis._can_hold_identifiers_and_holds_name(name):
+   5273                 return self[name]
+-&gt; 5274             return object.__getattribute__(self, name)
+   5275
+   5276     def __setattr__(self, name: str, value) -&gt; None:
+</p>
+
+<p>
+AttributeError: 'Series' object has no attribute 'query'
+</p>
+
+<p>
+The problem is the <code>size</code> function here returns Series, and you cannot query a series. We can get back to this with some acrobatics.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">(df
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.query(<span style="color: #008000;">'`</span><span style="color: #D0372D;">Atom symbol` == "H"</span><span style="color: #008000;">'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.groupby([<span style="color: #008000;">'Molecule-ID'</span>])
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.size()  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">This is a series</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.rename(<span style="color: #008000;">'counts'</span>) <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">we give the Series a name</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.to_frame() <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Convert to dataframe so we can query</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.query(<span style="color: #008000;">'counts == 3'</span>))
+</pre>
+</div>
+
+<pre class="example">
+             counts
+Molecule-ID
+NH3               3
+</pre>
+
+<p>
+In the beginning, it will be challenging to remember all of this, and figure out how to debug it. With practice, it will get easier!
+</p>
+
+<p>
+The Pandas manual (<a href="https://pandas.pydata.org/docs/pandas.pdf">https://pandas.pydata.org/docs/pandas.pdf</a>) is ~3000 pages long! You cannot learn it all, and most likely you don't need to as it covers a lot of use cases that may fall outside your needs.
+</p>
+
+<p>
+It is also challenging that there are many ways to do the same thing. For example, here we solve this problem in a different way that has a subtly different syntax. You cannot just cut and paste bits of code between these two examples without knowing what each one does.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">(df
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.query(<span style="color: #008000;">'`</span><span style="color: #D0372D;">Atom symbol` == "H"</span><span style="color: #008000;">'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.groupby([<span style="color: #008000;">'Molecule-ID'</span>])
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.agg({<span style="color: #008000;">'Atom symbol'</span> :<span style="color: #008000;">'size'</span>}) <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Now this is dataframe</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.query(<span style="color: #008000;">'`</span><span style="color: #D0372D;">Atom symbol` == 3</span><span style="color: #008000;">'</span>))
+</pre>
+</div>
+
+<pre class="example">
+             Atom symbol
+Molecule-ID
+NH3                    3
+</pre>
+
+<p>
+How do you learn/remember these? One way is reading lots of code, and running lots of code. You can read code in the manual. You can also use the notebook to access documentation on these methods.
+</p>
+
+<p>
+Here are some of the commands we used today,
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">?pd.DataFrame.query
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-ipython">?pd.DataFrame.groupby
+</pre>
+</div>
+
+<p>
+Getting help on the <code>agg</code> command is a little trickier. There are several <code>agg</code> functions, so we want to make sure we get the one that is relevant to the result from a <code>groupby</code> call. First, we get the type of things that is returned:
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #006FE0;">type</span>(df
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.query(<span style="color: #008000;">'`</span><span style="color: #D0372D;">Atom symbol` == "H"</span><span style="color: #008000;">'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>.groupby([<span style="color: #008000;">'Molecule-ID'</span>]))
+</pre>
+</div>
+
+<pre class="example">
+pandas.core.groupby.generic.DataFrameGroupBy
+</pre>
+
+<p>
+Then, we get the help for that thing.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">?pd.core.groupby.generic.DataFrameGroupBy.agg
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-ipython">?pd.Series.to_frame
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-ipython">?pd.Series.rename
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Kitchin</p>
+<p class="date">Created: 2020-05-18 Mon 16:07</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

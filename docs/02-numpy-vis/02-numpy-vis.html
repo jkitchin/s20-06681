@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-18 Mon 16:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Kitchin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgdbbe299">1. Intermediate data reading and interactive visualization</a></li>
+<li><a href="#org7b4b9da">2. Reading loosely structured data from Excel</a>
+<ul>
+<li><a href="#orgf13761d">2.1. Planning out the arrays</a></li>
+<li><a href="#org01cfd5d">2.2. Reading the Excel file with openpyxl</a></li>
+<li><a href="#org4b966b1">2.3. First simple visualization</a></li>
+</ul>
+</li>
+<li><a href="#org84f5c0c">3. Introduction to interactive figures</a>
+<ul>
+<li><a href="#org05e0bd7">3.1. Your first event - Mouse clicking</a></li>
+<li><a href="#org4a9cefa">3.2. Second event - adding points to a plot</a></li>
+<li><a href="#org2f261f3">3.3. Third event - picking</a></li>
+<li><a href="#org1aaf7a1">3.4. Marking a point you have picked</a></li>
+</ul>
+</li>
+<li><a href="#org27246e3">4. Summary</a></li>
+<li><a href="#org1687c17">5. Exercises</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdbbe299" class="outline-2">
+<h2 id="orgdbbe299"><span class="section-number-2">1</span> Intermediate data reading and interactive visualization</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Today we will learn how to read data from Excel files, and then to build interactive graphics of the data.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7b4b9da" class="outline-2">
+<h2 id="org7b4b9da"><span class="section-number-2">2</span> Reading loosely structured data from Excel</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Today we will learn how to read "loosely structured data". This data was obtained from the Gellman research group, and it is in an Excel file. Each sheet in the file contains an XPS spectrum at 169 different points on a curved single crystal. Our goals today are:
+</p>
+
+<ol class="org-ol">
+<li>Read the data into a set of arrays</li>
+<li>Plot the data</li>
+<li>Create interactive plots that allow us to select an (x, y) point and show the corresponding XPS spectrum.</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">url</span> = <span style="color: #008000;">'https://drive.google.com/uc?id=10PtumF5esk4Q1uNf9-K_dPVigWHEUShJ'</span>
+
+<span style="color: #0000FF;">import</span> urllib.request
+urllib.request.urlretrieve(url, <span style="color: #008000;">'XPS_Data.xlsx'</span>)
+</pre>
+</div>
+
+<pre class="example">
+('XPS_Data.xlsx', &lt;http.client.HTTPMessage at 0x12d7f5410&gt;)
+</pre>
+
+<p>
+Open this file and inspect it.
+</p>
+</div>
+
+<div id="outline-container-orgf13761d" class="outline-3">
+<h3 id="orgf13761d"><span class="section-number-3">2.1</span> Planning out the arrays</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+We should come up with a plan for reading the data into arrays. Why? Because there are a lot of arrays and we want to make sure we get them in the right shape. If you open the file, you will see that it is not structured as only <i>rows</i> of data. There is a section at the top that looks like:
+</p>
+
+
+
+<p>
+<img src="./screenshots/date-23-03-2020-time-06-40-59.png">
+</p>
+
+
+<p>
+Which tells us we have 31 elements in the Binding energy column, and 169 positions.
+</p>
+
+<p>
+Next, we look at where the position data is. The x-data starts in row 11, and y in row 12. The binding energy, in contrast is in column A starting in row 15, and the counts start in column C.
+</p>
+
+
+
+<p>
+<img src="./screenshots/date-23-03-2020-time-06-41-27.png">
+</p>
+
+
+<p>
+So, we need arrays for <code>x</code>, <code>y</code>, <code>BE</code>, <code>counts</code>, and from these we can visualize the data.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org01cfd5d" class="outline-3">
+<h3 id="org01cfd5d"><span class="section-number-3">2.2</span> Reading the Excel file with openpyxl</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+We will use <a href="https://openpyxl.readthedocs.io/en/stable/index.html">openpyxl</a> to read this data in from the first sheet. If this next cell doesn't work, you may need to install it like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">!pip install openpyxl
+</pre>
+</div>
+
+<p>
+Requirement already satisfied: openpyxl in /Users/jkitchin/opt/anaconda3/lib/python3.7/site-packages (3.0.3)
+Requirement already satisfied: jdcal in /Users/jkitchin/opt/anaconda3/lib/python3.7/site-packages (from openpyxl) (1.4.1)
+Requirement already satisfied: et-xmlfile in /Users/jkitchin/opt/anaconda3/lib/python3.7/site-packages (from openpyxl) (1.0.1)
+</p>
+
+<p>
+Here we open the worksheet and load it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+<span style="color: #0000FF;">from</span> openpyxl <span style="color: #0000FF;">import</span> load_workbook
+<span style="color: #BA36A5;">wb</span> = load_workbook(filename=<span style="color: #008000;">'XPS_Data.xlsx'</span>)
+<span style="color: #BA36A5;">ws</span> = wb.worksheets[0]  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">get the first sheet</span>
+</pre>
+</div>
+
+<p>
+We can pretty easily get the number of energy and position values because they are single values in a cell.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">nenergy</span> = ws[<span style="color: #008000;">'D2'</span>].value
+<span style="color: #BA36A5;">npos</span> = ws[<span style="color: #008000;">'D3'</span>].value
+
+(nenergy, npos)  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">we show these to make sure they are right.</span>
+</pre>
+</div>
+
+<pre class="example">
+(31, 169)
+</pre>
+
+<p>
+Note I am working this out iteratively, one piece at a time. This is easier to debug.
+</p>
+
+<p>
+Next we work out how to get the arrays of data. There is a lot packed into the next cell. To get a range of cells, we use the <code>iter_rows</code> function which lets us define a range by numeric rows and columns. This is convenient since we know how many points to get. This function returns a generator, so we convert it to a list, and then to an array. Note that this returns a column vector because we are iterating down a column, so we apply the squeeze function to reduce it to a 1D array.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">v</span> = np.array([[1],[2],[3],[4]])
+v, v.shape
+</pre>
+</div>
+
+<pre class="example">
+(array([[1],
+        [2],
+        [3],
+        [4]]),
+ (4, 1))
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-ipython">?np.squeeze
+</pre>
+</div>
+
+<p>
+These are the same:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">np.squeeze(v), v[:, 0]
+</pre>
+</div>
+
+<pre class="example">
+(array([1, 2, 3, 4]), array([1, 2, 3, 4]))
+</pre>
+
+<p>
+So, back to getting the BEs. This makes a generator, which is a <i>lazy</i> iterator that doesn't do anything until you ask for it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">print</span>(ws.iter_rows(min_row=15, max_row=15 + nenergy - 1,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  min_col=1, max_col=1,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  values_only=<span style="color: #D0372D;">True</span>))
+</pre>
+</div>
+
+<p>
+&lt;generator object Worksheet._cells_by_row at 0x1314221d0&gt;
+</p>
+
+<p>
+We get the data by casting it as a list, which is like asking for all the data at once. Note this is a list of tuples, which is not that helpful.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #006FE0;">list</span>(ws.iter_rows(min_row=15, max_row=15 + nenergy - 1,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span> min_col=1, max_col=1,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span> values_only=<span style="color: #D0372D;">True</span>))
+</pre>
+</div>
+
+<pre class="example">
+[(538,),
+ (537.6,),
+ (537.2,),
+ (536.8,),
+ (536.4,),
+ (536,),
+ (535.6,),
+ (535.2,),
+ (534.8,),
+ (534.4,),
+ (534,),
+ (533.6,),
+ (533.2,),
+ (532.8,),
+ (532.4,),
+ (532,),
+ (531.6,),
+ (531.2,),
+ (530.8,),
+ (530.4,),
+ (530,),
+ (529.6,),
+ (529.2,),
+ (528.8,),
+ (528.4,),
+ (528,),
+ (527.6,),
+ (527.2,),
+ (526.8,),
+ (526.4,),
+ (526,)]
+</pre>
+
+<p>
+So, finally, we turn it into an array, and squeeze off the last dimension to get a 1D array. Note it is common to iteratively write this cell like I did above, because there are a lot of operations happening in one variable assignment.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">BE</span> = np.array(<span style="color: #006FE0;">list</span>(ws.iter_rows(min_row=15, max_row=15 + nenergy - 1,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   min_col=1, max_col=1,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   values_only=<span style="color: #D0372D;">True</span>))).squeeze()
+BE.shape, BE
+</pre>
+</div>
+
+<pre class="example">
+((31,),
+ array([538. , 537.6, 537.2, 536.8, 536.4, 536. , 535.6, 535.2, 534.8,
+        534.4, 534. , 533.6, 533.2, 532.8, 532.4, 532. , 531.6, 531.2,
+        530.8, 530.4, 530. , 529.6, 529.2, 528.8, 528.4, 528. , 527.6,
+        527.2, 526.8, 526.4, 526. ]))
+</pre>
+
+<p>
+We apply a similar method to get the x, y points. This produces a 2D row array, which we also squeeze down to a 1D array.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">x</span> = np.array(<span style="color: #006FE0;">list</span>(ws.iter_rows(min_row=11, max_row=11,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  min_col=3, max_col=3 + npos - 1,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  values_only=<span style="color: #D0372D;">True</span>))).squeeze()
+
+<span style="color: #BA36A5;">y</span> = np.array(<span style="color: #006FE0;">list</span>(ws.iter_rows(min_row=12, max_row=12,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  min_col=3, max_col=3 + npos - 1,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  values_only=<span style="color: #D0372D;">True</span>))).squeeze()
+x.shape, y.shape
+</pre>
+</div>
+
+<pre class="example">
+((169,), (169,))
+</pre>
+
+<p>
+Finally, we need the counts. This will be a 2D array that should have 31 rows, and 169 columns. A column in this array corresponds to the XPS spectrum of the (x, y) point in the same column of the x, and y arrays.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">counts</span> = np.array(<span style="color: #006FE0;">list</span>(ws.iter_rows(min_row=15, max_row=15 + nenergy - 1,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   min_col=3, max_col=3 + npos - 1,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   values_only=<span style="color: #D0372D;">True</span>)))
+counts.shape
+</pre>
+</div>
+
+<pre class="example">
+(31, 169)
+</pre>
+
+<p>
+That concludes reading the data from the first sheet in. You can see that it is a lot more work than reading a simple csv or json file!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4b966b1" class="outline-3">
+<h3 id="org4b966b1"><span class="section-number-3">2.3</span> First simple visualization</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+First, we plot the x,y points. These should look like concentric circles of points.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">%matplotlib notebook
+<span style="color: #0000FF;">import</span> matplotlib.pyplot <span style="color: #0000FF;">as</span> plt
+
+plt.plot(x, y, <span style="color: #008000;">'b.'</span>)
+plt.axis(<span style="color: #008000;">'equal'</span>);
+</pre>
+</div>
+
+<p>
+Next we plot <i>all</i> the XPS plots. Since the counts are all in columns, we can plot all 169 of them at once. Each one of these curves corresponds to one point in the previous figure. It is convention to show the x-axis reversed, which we do by changing the x-limits. There are so many curves it is not helpful to put a legend on this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.plot(BE, counts)
+plt.xlabel(<span style="color: #008000;">'Binding energy (eV)'</span>)
+plt.ylabel(<span style="color: #008000;">'Counts'</span>)
+plt.xlim([BE.<span style="color: #006FE0;">max</span>(), BE.<span style="color: #006FE0;">min</span>()])  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">this reverses the x-limits</span>
+</pre>
+</div>
+
+<pre class="example">
+(538.0, 526.0)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org84f5c0c" class="outline-2">
+<h2 id="org84f5c0c"><span class="section-number-2">3</span> Introduction to interactive figures</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The figures you have made so far are somewhat interactive. You can pan, zoom, etc., but they do not allow you to do many other things you might want to do like get information about a point or line, to click on one figure to update another one, etc. We are going to work our towards doing that.
+</p>
+
+<p>
+First, we need a mental model of how an interactive figure works. A figure is shown in a graphic window, and that window can generate an <i>event</i>. That event may be something like a mouse-click, a key-press, or hover over, entering or leaving a figure, etc. Each of these events can be connected to a <i>callback</i> function which will be run with the event as an argument when an event occurs. This function is responsible for doing the interactive features you want.
+</p>
+
+<p>
+So, the key idea we need to develop here is what events can we attach callback functions to, and how do we write callback functions to make the interactive features we want. We will focus exclusively on matplotlib because it allows us to write the callback functions in Python. There are several web-based tools for making interactive graphics that work in HTML files. I find these much more difficult to use, and they are much more limited because they are typically powered by javascript, which has limited ability to interact with files on your hard drive.
+</p>
+</div>
+
+<div id="outline-container-org05e0bd7" class="outline-3">
+<h3 id="org05e0bd7"><span class="section-number-3">3.1</span> Your first event - Mouse clicking</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+A <a href="https://matplotlib.org/3.1.0/api/backend_bases_api.html#matplotlib.backend_bases.MouseEvent">MouseEvent</a> is triggered when a mouse button is pressed on a matplotlib figure. The event is an object that has several attributes:
+</p>
+
+<dl class="org-dl">
+<dt>event.dblclick</dt><dd>True if the event is a double-click</dd>
+<dt>event.button</dt><dd>tells you which button was pressed</dd>
+<dt>event.key</dt><dd>tells you if a key was also pressed, e.g. shift</dd>
+<dt>event.xdata</dt><dd>The x-point you clicked on</dd>
+<dt>event.ydata</dt><dd>The y-point you clicked on</dd>
+</dl>
+
+<p>
+Our first interactive figure will allow us to click on a figure and change the title of the plot with information about your click.
+</p>
+
+<p>
+To do this, we need to change how we make plots. We will use <code>subplots</code> to generate a Figure and an
+Axes, which we store in variables. Then, we can use these variables inside our callback functions to modify the plot properties.
+</p>
+
+<p>
+First, we define the callback function.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">def</span> <span style="color: #006699;">onclick</span>(event):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   ax.set_title(f<span style="color: #008000;">'''{'double' if event.dblclick else 'single'}</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span><span style="color: #008000;">   event.button {event.button} key={event.key}</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span><span style="color: #008000;">   click: button={event.button}, x={event.x}, y={event.y},</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span><span style="color: #008000;">   xdata={event.xdata}, ydata={event.ydata}'''</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">print</span>(event)  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">in Jupyter, you may not see any output depending on the backend you use.</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   fig.canvas.draw() <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Make sure you redraw the canvas to see the change</span>
+</pre>
+</div>
+
+<p>
+It is somewhat tricky to debug the callback functions in a jupyter notebook. The issue is that once the figure is made, it is controlled in a gui loop that is separate from the notebook, and it tends to ignore errors, and it also tends to suppress output.
+</p>
+
+<p>
+One way we can try testing the callback function is to create a fake event that we can all here to see what is happening. This should work without any errors.
+</p>
+
+<p>
+Let's see what a MouseEvent looks like.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> matplotlib
+?matplotlib.backend_bases.MouseEvent
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">fig</span> = matplotlib.figure.Figure()
+<span style="color: #BA36A5;">fake_event</span> = matplotlib.backend_bases.MouseEvent(<span style="color: #008000;">'test'</span>, fig.canvas, 0, 0)
+fake_event
+
+onclick(fake_event)
+</pre>
+</div>
+
+<p>
+test: xy=(0, 0) xydata=(None, None) button=None dblclick=False inaxes=None
+</p>
+
+<p>
+Now, to use the callback function, we have to connect it to the canvas of the figure. Then, we just show the figure. Now, when you click on the figure you should see the title update indicating the properties of the click event.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">fig</span>, <span style="color: #BA36A5;">ax</span> = plt.subplots()
+
+ax.scatter(x, y)
+ax.axis(<span style="color: #008000;">'equal'</span>)
+
+<span style="color: #BA36A5;">cid</span> = fig.canvas.mpl_connect(<span style="color: #008000;">'button_press_event'</span>, onclick)
+fig.show()
+</pre>
+</div>
+
+<p>
+Try this out, and click in a few places, press some keys and click, and try double-clicking. Each one should update the figure. Note, however, in the notebook nothing gets printed. If you were running this in a script in a shell, you would see some output.
+</p>
+
+<p>
+Congratulations, you have successfully made your first interactive graphic!
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4a9cefa" class="outline-3">
+<h3 id="org4a9cefa"><span class="section-number-3">3.2</span> Second event - adding points to a plot</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Next, we add a way to add points to a plot. This might be to mark the point you clicked on, for example.
+</p>
+
+<p>
+We still use a <code>button_press_event</code>. The goal is to add a blue square on a regular mouse click, and a red circle if you are pressing "r" when you click. We achieve this by using some logic in the event callback function to check if "r" is pressed. You can have as many of these if/else statements as you want.
+</p>
+
+<p>
+We use the <code>event.key</code> attribute to see what key is pressed.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">fig</span>, <span style="color: #BA36A5;">ax</span> = plt.subplots()
+ax.plot(x, y, <span style="color: #008000;">'g.'</span>)
+ax.axis(<span style="color: #008000;">'equal'</span>)
+
+<span style="color: #0000FF;">def</span> <span style="color: #006699;">onclick</span>(event):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">if</span> event.key == <span style="color: #008000;">'r'</span>:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">style</span> = <span style="color: #008000;">'ro'</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">else</span>:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">style</span> = <span style="color: #008000;">'bs'</span>
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   ax.plot([event.xdata], [event.ydata], style)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   fig.canvas.draw() <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Make sure you redraw the canvas to see the change</span>
+
+
+<span style="color: #BA36A5;">cid</span> = fig.canvas.mpl_connect(<span style="color: #008000;">'button_press_event'</span>, onclick)
+fig.show()
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2f261f3" class="outline-3">
+<h3 id="org2f261f3"><span class="section-number-3">3.3</span> Third event - picking</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+One of the most useful events is called <i>picking</i>, which is an event that occurs when you click on a point or line in a plot. To enable picking, you have to add a <code>picker=N</code> argument to your plot, where <code>N</code> is a pixel radius, i.e. it will pick points within <code>N</code> pixels of where you click.
+</p>
+
+<p>
+In a <a href="https://matplotlib.org/3.1.0/api/backend_bases_api.html#matplotlib.backend_bases.PickEvent">PickEvent</a> you get all the regular attributes of an <a href="https://matplotlib.org/3.1.0/api/backend_bases_api.html#matplotlib.backend_bases.Event">Event</a>, and the following:
+</p>
+
+<dl class="org-dl">
+<dt>event.mouseevent</dt><dd>The mouse event that generated the pick</dd>
+<dt>event.artist</dt><dd>The artist you picked
+<ul class="org-ul">
+<li>This attribute also records what axis it is in.</li>
+</ul></dd>
+<dt>event.ind</dt><dd>The index of the points that fall in the picked region. This will be a list, and it can have more than one point if they are close together.</dd>
+</dl>
+
+<p>
+Let's explore how this works. We will create two subplots, and use a callback function. There is only one callback function for the pick_event, so we have to be able tell what was picked. We use the artist attached to the event to tell which axes were clicked on so we can update the correct title.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">fig, (ax0, ax1) = plt.subplots(1, 2)
+
+<span style="color: #BA36A5;">x</span> = np.linspace(0, 10, 10)
+
+ax0.plot(x, 0.5 * x, <span style="color: #008000;">'bo-'</span>, x, x**2, <span style="color: #008000;">'rs-'</span>, picker=5)
+ax1.scatter(x, x**2, picker=5)
+
+<span style="color: #0000FF;">def</span> <span style="color: #006699;">onpick</span>(event):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">if</span> event.artist.axes == ax0:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   ax0.set_title(f<span style="color: #008000;">'index </span><span style="color: #BA36A5;">{event.ind}</span><span style="color: #008000;"> in </span><span style="color: #BA36A5;">{event.artist}</span><span style="color: #008000;">'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">elif</span> event.artist.axes == ax1:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   ax1.set_title(f<span style="color: #008000;">'index </span><span style="color: #BA36A5;">{event.ind}</span><span style="color: #008000;">'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   fig.canvas.draw() <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Make sure you redraw the canvas to see the change</span>
+
+
+fig.canvas.mpl_connect(<span style="color: #008000;">'pick_event'</span>, onpick)
+
+fig.show()
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1aaf7a1" class="outline-3">
+<h3 id="org1aaf7a1"><span class="section-number-3">3.4</span> Marking a point you have picked</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+It is helpful to be able to "mark" the point you clicked. We will do that by creating a transparent marker that we will move around. This marker will be another plot that starts out invisible. We will make it visible in the callback function and set its position to the point you picked.
+</p>
+
+<p>
+We will use the same subplots as we did above. This results in quite a few additional challenges.
+</p>
+
+<ol class="org-ol">
+<li>We still have to know which subplot we clicked in.</li>
+<li>In the first subplot, we have to know which data corresponds to which line.</li>
+</ol>
+
+<p>
+An added complexity here is that there is not a consistent way to get the data for each plot. The line plot and scatter plot are different artists. For the line plot, we can use <code>get_xdata</code> and <code>get_ydata</code>, but for the scatter plot, we have to use <code>get_offsets</code>. There are only a few ways you could know this:
+</p>
+
+<ol class="org-ol">
+<li>You exhaustively read and remember all the matplotlib documentation (that is not practical, although you should do some reading)</li>
+<li>You worked out an example on a plot, perhaps by modifying another example you found, and then you got an error when you tried using it on scatter. Then you starting digging into the scatter and discovered it doesn't work the same, and found the function that gives you want you need. That is what I did.</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> matplotlib
+<span style="color: #0000FF;">import</span> matplotlib.pyplot <span style="color: #0000FF;">as</span> plt
+<span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+
+fig, (ax0, ax1) = plt.subplots(1, 2)
+
+<span style="color: #BA36A5;">x</span> = np.linspace(0, 10, 10)
+
+ax0.plot(x, 0.5 * x, <span style="color: #008000;">'bo-'</span>, x, x**2, <span style="color: #008000;">'rs-'</span>, picker=5)
+ax1.scatter(x, x**2, picker=5)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Store the markers we want in variables so we can use them in our callback function</span>
+marker0, = ax0.plot(0, 0, <span style="color: #008000;">'yo'</span>, visible=<span style="color: #D0372D;">False</span>, alpha=0.8, ms=10)
+marker1, = ax1.plot(1, 1, <span style="color: #008000;">'yo'</span>, visible=<span style="color: #D0372D;">False</span>, alpha=0.8, ms=10)
+
+
+<span style="color: #0000FF;">def</span> <span style="color: #006699;">onpick</span>(event):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">we assume you want the first point in the list</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">ind</span> = event.ind[0]
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Get the relevant data</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">if</span> <span style="color: #006FE0;">isinstance</span>(event.artist, matplotlib.lines.Line2D):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">x</span> = event.artist.get_xdata()
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">y</span> = event.artist.get_ydata()
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">elif</span> <span style="color: #006FE0;">isinstance</span>(event.artist, matplotlib.collections.PathCollection):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">data</span> = event.artist.get_offsets()
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">x</span>, <span style="color: #BA36A5;">y</span> = data.T
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">get the relevant axes marker</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">if</span> event.artist.axes == ax0:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">marker</span> = marker0
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   ax0.set_title(f<span style="color: #008000;">'(</span><span style="color: #BA36A5;">{x[ind]:1.1f}</span><span style="color: #008000;">, </span><span style="color: #BA36A5;">{y[ind]:1.1f}</span><span style="color: #008000;">)'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">else</span>:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">marker</span> = marker1
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   ax1.set_title(f<span style="color: #008000;">'(</span><span style="color: #BA36A5;">{x[ind]:1.1f}</span><span style="color: #008000;">, </span><span style="color: #BA36A5;">{y[ind]:1.1f}</span><span style="color: #008000;">)'</span>)
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   marker.set_visible(<span style="color: #D0372D;">True</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   marker.set_xdata(x[ind])
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   marker.set_ydata(y[ind])
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   fig.canvas.draw() <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Make sure you redraw the canvas to see the change</span>
+
+fig.canvas.mpl_connect(<span style="color: #008000;">'pick_event'</span>, onpick)
+plt.show()
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org27246e3" class="outline-2">
+<h2 id="org27246e3"><span class="section-number-2">4</span> Summary</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+We learned how to read data from an Excel file today. Since this data is not well structured, it was a manual task.
+</p>
+
+<p>
+We also learned how to do some simple interactive visualizations. These are very powerful, but come at some costs to you:
+</p>
+<ol class="org-ol">
+<li>They are more complex to code.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org1687c17" class="outline-2">
+<h2 id="org1687c17"><span class="section-number-2">5</span> Exercises</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li>Think of an interactive plot you could make and try making it.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Kitchin</p>
+<p class="date">Created: 2020-05-18 Mon 16:07</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,1261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-18 Mon 16:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Kitchin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgd6d8bc1">1. Introduction to data files</a></li>
+<li><a href="#org7048cb6">2. Loading data from a text file</a>
+<ul>
+<li><a href="#org52f141b">2.1. Simple loading into numpy</a></li>
+<li><a href="#org58e6fd0">2.2. Simple visualization of the data</a></li>
+<li><a href="#org7c8def3">2.3. Summary</a></li>
+</ul>
+</li>
+<li><a href="#org33c4862">3. Data formats</a>
+<ul>
+<li><a href="#org1b9528c">3.1. Simple delimited text files</a></li>
+<li><a href="#orgaf68b81">3.2. more complex delimited files</a>
+<ul>
+<li><a href="#orge68d31b">3.2.1. Summary</a></li>
+</ul>
+</li>
+<li><a href="#org0f78537">3.3. json data</a></li>
+<li><a href="#org3748439">3.4. There are many more data formats</a></li>
+</ul>
+</li>
+<li><a href="#orgce607e2">4. Summary</a></li>
+<li><a href="#orgb63ea9e">5. Exercises on your own</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd6d8bc1" class="outline-2">
+<h2 id="orgd6d8bc1"><span class="section-number-2">1</span> Introduction to data files</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Today we are going to jump right into loading data from files into numpy arrays. Once we have the arrays, then we will then start learning how to use them.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7048cb6" class="outline-2">
+<h2 id="org7048cb6"><span class="section-number-2">2</span> Loading data from a text file</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Usually, data will be in a file, and we need to read it in. There are <i>many</i> data formats to get familiar with, and <i>many</i> ways to read them in. Let's start by looking at data from a Raman spectrometer.
+</p>
+
+<p>
+Let's start by downloading a file. This is a file I have saved on my Google Drive. Note the URL is basically meaningless to us. We download the contents there and save it in the file called 01-raman.txt.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">url</span> = <span style="color: #008000;">'https://drive.google.com/uc?id=12HpXqZyjatSDcV2cb3p6LIVLyjDT1kQz'</span>
+
+<span style="color: #0000FF;">import</span> urllib.request
+urllib.request.urlretrieve(url, <span style="color: #008000;">'01-raman.txt'</span>)
+</pre>
+</div>
+
+<pre class="example">
+('01-raman.txt', &lt;http.client.HTTPMessage at 0x10776e7d0&gt;)
+</pre>
+
+<p>
+Now, in this directory there is a file called 01-raman.txt. The file name suggests it is Raman data, but only because of its name. The extension <i>suggests</i> this is text data, but does not tell us the format.
+</p>
+
+
+<p>
+<i>You cannot in general rely on the extension to tell you what format a file is in. That is an advertisement, and only a convention that is used. You can rename a file and its extension at any time and not change the data.</i>
+</p>
+
+<p>
+It is not obvious what is in the file. Unless you made the file, or someone has told you what is in it, the only thing you can do is inspect the file manually. Let's look at the number of lines and the first 10 lines here.
+</p>
+
+<p>
+We do that by opening the file, reading the lines and then closing the file. We print the number of lines and the first 10 here.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">f</span> = <span style="color: #006FE0;">open</span>(<span style="color: #008000;">'01-raman.txt'</span>)
+<span style="color: #BA36A5;">lines</span> = f.readlines()
+f.close()
+
+<span style="color: #0000FF;">print</span>(f<span style="color: #008000;">'</span><span style="color: #BA36A5;">{len(lines)}</span><span style="color: #008000;"> lines in the file'</span>)
+<span style="color: #0000FF;">print</span>(lines[0:10])
+</pre>
+</div>
+
+<p>
+7620 lines in the file
+['500\t294.37869\n', '500.39374\t288.922\n', '500.78751\t286.06622\n', '501.18124\t275.22284\n', '501.57501\t275.11938\n', '501.96875\t287.81372\n', '502.36252\t299.50803\n', '502.75626\t285.56567\n', '503.15002\t292.69519\n', '503.54376\t295.33951\n']
+</p>
+
+<p>
+You might notice the "\t" and "\n" characters. The first is a tab, and the second is a new line (the new line is what defines a line, each line ends with this character). This looks like a <i>tab-delimited</i> text file, with two columns where the numbers are separated by tabs. Unfortunately, there is no information about <i>what</i> the columns are. You have to know from some other context. This file is from a Raman spectrometer, and the first column is the wavenumber, and the second column is the intensity.
+</p>
+
+<p>
+It is important that you remember to close the file. If you are reading lots of files, you can run into operating system errors if you open too many open files. Python is at your service with a <i>context manager</i>. This approach will <i>automatically</i> close the file when it goes of scope.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">with</span> <span style="color: #006FE0;">open</span>(<span style="color: #008000;">'01-raman.txt'</span>) <span style="color: #0000FF;">as</span> f:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">f is only open and available inside this body</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">lines</span> = f.readlines()
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">print</span>(f<span style="color: #008000;">'Inside: </span><span style="color: #BA36A5;">{f.closed}</span><span style="color: #008000;">'</span>)
+
+<span style="color: #0000FF;">print</span>(f<span style="color: #008000;">'Outside: </span><span style="color: #BA36A5;">{f.closed}</span><span style="color: #008000;">'</span>)
+</pre>
+</div>
+
+<p>
+Inside: False
+Outside: True
+</p>
+</div>
+
+<div id="outline-container-org52f141b" class="outline-3">
+<h3 id="org52f141b"><span class="section-number-3">2.1</span> Simple loading into numpy</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+There is an easy way for us to read this file so we can get the data into Python for analysis, via <code>np.loadtxt</code>. Let's start with the simplest method. We simply use the filename as the only argument.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+<span style="color: #BA36A5;">data</span> = np.loadtxt(<span style="color: #008000;">'01-raman.txt'</span>)
+data
+</pre>
+</div>
+
+<pre class="example">
+array([[ 500.      ,  294.37869 ],
+       [ 500.39374 ,  288.922   ],
+       [ 500.78751 ,  286.06622 ],
+       ...,
+       [3499.2124  ,   87.969734],
+       [3499.6062  ,   83.638931],
+       [3500.      ,   84.009064]])
+</pre>
+
+
+<p>
+We can see the shape here, which confirms that we have read the number of lines, and that there are two columns.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">data.shape
+</pre>
+</div>
+
+<pre class="example">
+(7620, 2)
+</pre>
+
+<p>
+It is often helpful to separate this array into variables. The first column is the wavenumber and the second column is the intensity. We use indexing to extract these into variables. This is a 2D array, and we index using a notation of <code>[row, col]</code> where <code>row</code> indicates which row(s) we want, and <code>col</code> indicates which column(s) we want. If you use a <code>:</code> it means all of them. Indexing can be very complex (<a href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html">https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html</a>), and we will return to it many times as we do more and more sophisticated things.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">wavenumber</span> = data[:, 0]
+<span style="color: #BA36A5;">intensity</span> = data[:, 1]
+
+(wavenumber.shape, intensity.shape)
+</pre>
+</div>
+
+<pre class="example">
+((7620,), (7620,))
+</pre>
+
+<p>
+Now, these variables are 1D arrays.
+</p>
+
+<p>
+Alternatively, you can <i>unpack</i> an array. When you iterate over an array, you iterate over its rows. If we transpose this data, we will change it from two columns with a lot of rows into two rows with a lot of columns.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">wavenumber</span>, <span style="color: #BA36A5;">intensity</span> = data.T
+(wavenumber.shape, intensity.shape)
+</pre>
+</div>
+
+<pre class="example">
+((7620,), (7620,))
+</pre>
+
+<p>
+Here are some examples of indexing these arrays:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">first and last element</span>
+(wavenumber[0], wavenumber[-1])
+</pre>
+</div>
+
+<pre class="example">
+(500.0, 3500.0)
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">first five and last 5 elements</span>
+(intensity[0:5], intensity[-5:])
+</pre>
+</div>
+
+<pre class="example">
+(array([294.37869, 288.922  , 286.06622, 275.22284, 275.11938]),
+ array([86.151878, 85.178947, 87.969734, 83.638931, 84.009064]))
+</pre>
+
+<p>
+You might be tempted to get the last five elements like this, but it is wrong. Remember in indexing the last element in the slice is not included. Since you specify -1 in the slice it means up to <i>but not including</i> the last element. In contrast, <code>[-5:]</code> means from the fifth to last element to the end, <i>including the end</i>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">intensity[-5:-1]
+</pre>
+</div>
+
+<pre class="example">
+array([86.151878, 85.178947, 87.969734, 83.638931])
+</pre>
+
+<p>
+There are even fancier ways to slice this, e.g. to get every other point or every nth point, or even a set of selected points. We will see these later.
+</p>
+
+<p>
+That is a lot of data. How do we see what is in it? Visualization.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org58e6fd0" class="outline-3">
+<h3 id="org58e6fd0"><span class="section-number-3">2.2</span> Simple visualization of the data</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+<a href="https://matplotlib.org/">matplotlib</a> is the primary plotting tool we will use. There are a few others that are popular, especially <a href="https://seaborn.pydata.org/">seaborn</a>. It is good advice that when you want to make a plot, a good way to do it is find an example plot like it and see if you can adapt that code to your data.
+</p>
+
+<dl class="org-dl">
+<dt>matplotlib sample plots</dt><dd><a href="https://matplotlib.org/tutorials/introductory/sample_plots.html">https://matplotlib.org/tutorials/introductory/sample_plots.html</a></dd>
+<dt>matplotlib gallery</dt><dd><a href="https://matplotlib.org/gallery/index.html">https://matplotlib.org/gallery/index.html</a></dd>
+<dt>seaborn gallery</dt><dd><a href="https://seaborn.pydata.org/examples/index.html">https://seaborn.pydata.org/examples/index.html</a></dd>
+</dl>
+
+<p>
+There are many other plotting libraries, e.g. <a href="https://plot.ly/">plotly</a> and <a href="https://altair-viz.github.io/gallery/index.html#gallery-category-interactive-charts">altair</a> that are more suitable for web graphics. These have much more complex APIs and it takes a long time to get familiar with them.
+</p>
+
+<p>
+We will start simple. Let's start by telling the notebook how to use matplotlib and then load it. The line starting with a % is called a <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">magic command</a>, and it is only valid in Ipython, or a jupyter notebook. It is <i>not</i> valid Python. It tells the Jupyter kernel how to handle plots, and in this case we are telling it to put the plot inline as a PNG image in the notebook.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">%matplotlib inline
+<span style="color: #0000FF;">import</span> matplotlib.pyplot <span style="color: #0000FF;">as</span> plt
+</pre>
+</div>
+
+<p>
+We can make a plot as simple as this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.plot(wavenumber, intensity)
+plt.xlabel(<span style="color: #008000;">'Wavenumber'</span>)
+plt.ylabel(<span style="color: #008000;">'Intensity'</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'Intensity')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/8be4a644cf2f3b3401db7b23831e687db897aac8/e69226bf3e8c3b4a3fc681e8087b57a0e1638b3c.png" alt="e69226bf3e8c3b4a3fc681e8087b57a0e1638b3c.png" />
+</p>
+</div>
+
+
+
+
+<p>
+Now, we have a graphical representation of this data set. You can interact with it in the notebook. You can see the coordinates, and zoom in on regions. Suppose we want to make sure we <i>reproducibly</i> zoom in to a region though. That requires us to script it so that you have a written record of what you did.
+</p>
+
+<p>
+Let's make a plot of a subset of the spectrum, say the points where the wavenumber is at least 1000, and less than 1500. To do that, we need a way to select the data subset. We can use indexing for this purpose. We define a <i>boolean</i> array where it is True for the points we want, and False for the ones we do not want. The comparison operators will do this, and the logical &amp; operator combines the two conditions. Note these are all elementwise operations.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">indices of points where 1000 &gt;= wavenumber &gt; 1500</span>
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">True means it meets the criteria, False means it does not</span>
+<span style="color: #BA36A5;">ind</span> = (wavenumber &gt;= 1000) &amp; (wavenumber &lt; 1500)
+ind
+</pre>
+</div>
+
+<pre class="example">
+array([False, False, False, ..., False, False, False])
+</pre>
+
+<p>
+These two arrays have the same shape, that is we evaluated the condition on every single point.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">ind.shape, wavenumber.shape
+</pre>
+</div>
+
+<pre class="example">
+((7620,), (7620,))
+</pre>
+
+<p>
+How many points did we get? We can find out by counting the number of True values. In Python, True=1, and False=0.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #D0372D;">True</span> + <span style="color: #D0372D;">True</span>
+</pre>
+</div>
+
+<pre class="example">
+2
+</pre>
+
+<p>
+So, we get the number of True values just by summing them here.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">np.<span style="color: #006FE0;">sum</span>(ind)
+</pre>
+</div>
+
+<pre class="example">
+1270
+</pre>
+
+<p>
+We can also plot the values like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.plot(wavenumber, ind)
+plt.xlabel(<span style="color: #008000;">'wavenumber'</span>)
+plt.ylabel(<span style="color: #008000;">'ind'</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'ind')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/8be4a644cf2f3b3401db7b23831e687db897aac8/99f5801ce3fb92cf7e4ba25d9a8a0b99ecc86271.png" alt="99f5801ce3fb92cf7e4ba25d9a8a0b99ecc86271.png" />
+</p>
+</div>
+
+<p>
+These are all ways to check that we have the indices we want. Now we use that array to select the <i>portion</i> of the data we want. When we use the Boolean array to index with, the result is a shorter array containing only values where the Boolean array was True.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">wavenumber[ind].shape
+</pre>
+</div>
+
+<pre class="example">
+(1270,)
+</pre>
+
+<p>
+We have to index <i>both</i> the x and y data to make this plot, because we can only plot arrays with the matching dimensions.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.figure()
+plt.plot(wavenumber[ind], intensity[ind])
+plt.xlabel(<span style="color: #008000;">'Wavenumber'</span>)
+plt.ylabel(<span style="color: #008000;">'Intensity'</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'Intensity')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/8be4a644cf2f3b3401db7b23831e687db897aac8/406ae7b9a876d7e355441d8d1c7d48a2559f477e.png" alt="406ae7b9a876d7e355441d8d1c7d48a2559f477e.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7c8def3" class="outline-3">
+<h3 id="org7c8def3"><span class="section-number-3">2.3</span> Summary</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+There was a lot of explanation above, so the brevity of this code may have been lost. Here is what we need to read the data and plot it (assuming you have already done the imports).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">data</span> = np.loadtxt(<span style="color: #008000;">'01-raman.txt'</span>)
+
+<span style="color: #BA36A5;">wavenumber</span>, <span style="color: #BA36A5;">intensity</span> = data.T  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">the transpose has data in rows for unpacking</span>
+<span style="color: #BA36A5;">ind</span> = (wavenumber &gt;= 1000) &amp; (wavenumber &lt; 1500)
+
+plt.figure()
+plt.plot(wavenumber[ind], intensity[ind])
+plt.xlabel(<span style="color: #008000;">'Wavenumber'</span>)
+plt.ylabel(<span style="color: #008000;">'Intensity'</span>);
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/8be4a644cf2f3b3401db7b23831e687db897aac8/406ae7b9a876d7e355441d8d1c7d48a2559f477e.png" alt="406ae7b9a876d7e355441d8d1c7d48a2559f477e.png" />
+</p>
+</div>
+
+<p>
+In this simple example we have learned how to:
+</p>
+
+<ol class="org-ol">
+<li>Retrieve data from a url into a local file</li>
+<li>Read a local file of tab-delimited data into numpy arrays</li>
+<li>Visualize the arrays</li>
+<li>Select a subset of the arrays and visualize the subset.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org33c4862" class="outline-2">
+<h2 id="org33c4862"><span class="section-number-2">3</span> Data formats</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The data in the previous example was loaded from a tab-delimited text file. There are many other kinds of files you might have to read from.
+</p>
+</div>
+
+<div id="outline-container-org1b9528c" class="outline-3">
+<h3 id="org1b9528c"><span class="section-number-3">3.1</span> Simple delimited text files</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+In a delimited text file, the data is represented in each line, with the values separated by a <i>delimiter</i>. In the tab-delimited data, tab characters are the separators. The other common delimiter is a comma, and these files are often called comma-separated value (CSV) files. For now, we limit the discussion to files containing numbers that are separated by commas.
+</p>
+
+
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">url</span> = <span style="color: #008000;">'https://drive.google.com/uc?id=1fztun8RSxwtc3ol2rgRLB5W9ErkQ0CkU'</span>
+
+<span style="color: #0000FF;">import</span> urllib.request
+urllib.request.urlretrieve(url, <span style="color: #008000;">'01-raman.csv'</span>)
+</pre>
+</div>
+
+<pre class="example">
+('01-raman.csv', &lt;http.client.HTTPMessage at 0x11a423810&gt;)
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">with</span> <span style="color: #006FE0;">open</span>(<span style="color: #008000;">'01-raman.csv'</span>) <span style="color: #0000FF;">as</span> f:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">lines</span> = f.readlines()
+
+<span style="color: #0000FF;">print</span>(<span style="color: #006FE0;">len</span>(lines))
+<span style="color: #0000FF;">print</span>(lines[0:10])
+</pre>
+</div>
+
+<p>
+7620
+['5.000000000000000000e+02,2.943786900000000060e+02\n', '5.003937399999999798e+02,2.889220000000000255e+02\n', '5.007875099999999975e+02,2.860662199999999871e+02\n', '5.011812400000000025e+02,2.752228400000000192e+02\n', '5.015750100000000202e+02,2.751193799999999783e+02\n', '5.019687500000000000e+02,2.878137199999999893e+02\n', '5.023625200000000177e+02,2.995080300000000193e+02\n', '5.027562599999999975e+02,2.855656700000000114e+02\n', '5.031500199999999836e+02,2.926951900000000251e+02\n', '5.035437600000000202e+02,2.953395100000000184e+02\n']
+</p>
+
+<p>
+You can see the numbers in each line are now separated by commas. <code>np.loadtxt</code> works for this file too, but we have to specify that the delimiter is a comma. See the <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html">documentation</a> on <code>np.loadtxt</code> for more options.
+</p>
+
+<p>
+Note: CSV is surprisingly complex, and there is a <a href="https://docs.python.org/3/library/csv.html">dedicated library</a> for parsing it. We will stick to simple numerical csv files, which are easy to load in numpy.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">np.loadtxt(<span style="color: #008000;">'01-raman.csv'</span>, delimiter=<span style="color: #008000;">','</span>)
+</pre>
+</div>
+
+<pre class="example">
+array([[ 500.      ,  294.37869 ],
+       [ 500.39374 ,  288.922   ],
+       [ 500.78751 ,  286.06622 ],
+       ...,
+       [3499.2124  ,   87.969734],
+       [3499.6062  ,   83.638931],
+       [3500.      ,   84.009064]])
+</pre>
+
+
+
+<p>
+Let's do one more thing that is convenient here, which is we directly <i>unpack</i> the columns into variable names:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">wave</span>, <span style="color: #BA36A5;">intensity</span> = np.loadtxt(<span style="color: #008000;">'01-raman.csv'</span>, delimiter=<span style="color: #008000;">','</span>, unpack=<span style="color: #D0372D;">True</span>)
+plt.plot(wave, intensity)
+plt.xlabel(<span style="color: #008000;">'Wavenumber'</span>)
+plt.ylabel(<span style="color: #008000;">'intensity'</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'intensity')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/8be4a644cf2f3b3401db7b23831e687db897aac8/7ab2eeaf94b43c69d1b1a27d9de9c7252392f888.png" alt="7ab2eeaf94b43c69d1b1a27d9de9c7252392f888.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaf68b81" class="outline-3">
+<h3 id="orgaf68b81"><span class="section-number-3">3.2</span> more complex delimited files</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+First, we will retrieve this data from a URL. This time, we get a data file from NIST.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">fname</span> = <span style="color: #008000;">'01-p-t.dat'</span>
+<span style="color: #BA36A5;">url</span> = <span style="color: #008000;">'https://www.itl.nist.gov/div898/handbook/datasets/MODEL-4_4_4.DAT'</span>
+
+<span style="color: #0000FF;">import</span> urllib.request
+urllib.request.urlretrieve(url, fname)
+</pre>
+</div>
+
+<pre class="example">
+('01-p-t.dat', &lt;http.client.HTTPMessage at 0x107777f10&gt;)
+</pre>
+
+<p>
+If we examine the first few lines of this file, it appears that the first two lines are considered headers that tell you what is in the file. We need to skip these when reading the data. Also, each line appears as a string, with the values lining up in columns. This is sometimes called a fixed delimiter file.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">with</span> <span style="color: #006FE0;">open</span>(<span style="color: #008000;">'01-p-t.dat'</span>) <span style="color: #0000FF;">as</span> f:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">print</span>(<span style="color: #008000;">''</span>.join(f.readlines()[0:5]))
+</pre>
+</div>
+
+<p>
+ Run          Ambient                            Fitted
+Order  Day  Temperature  Temperature  Pressure    Value    Residual
+ 1      1      23.820      54.749      225.066   222.920     2.146
+ 2      1      24.120      23.323      100.331    99.411     0.920
+ 3      1      23.434      58.775      230.863   238.744    -7.881
+</p>
+
+<p>
+I did something kind of fancy there. First, we read the lines and slice out the first 5 of them. That gives us a list of 5 lines. Then, I rejoin them so we get a single string, and then I printed it. That is to avoid getting two newlines (one from the line, and one from the print). We can tell print not to add a new line like this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">with</span> <span style="color: #006FE0;">open</span>(<span style="color: #008000;">'01-p-t.dat'</span>) <span style="color: #0000FF;">as</span> f:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">for</span> line <span style="color: #0000FF;">in</span> f.readlines()[0:5]:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">print</span>(line, end=<span style="color: #008000;">''</span>)
+</pre>
+</div>
+
+<p>
+ Run          Ambient                            Fitted
+Order  Day  Temperature  Temperature  Pressure    Value    Residual
+ 1      1      23.820      54.749      225.066   222.920     2.146
+ 2      1      24.120      23.323      100.331    99.411     0.920
+ 3      1      23.434      58.775      230.863   238.744    -7.881
+</p>
+
+<p>
+Either way, you can see there are two non-data lines here. We can still load this file with <code>np.loadtxt</code> we just tell it to skip the first two lines.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">d</span> = np.loadtxt(<span style="color: #008000;">'01-p-t.dat'</span>, skiprows=2)
+d
+</pre>
+</div>
+
+<pre class="example">
+array([[  1.   ,   1.   ,  23.82 ,  54.749, 225.066, 222.92 ,   2.146],
+       [  2.   ,   1.   ,  24.12 ,  23.323, 100.331,  99.411,   0.92 ],
+       [  3.   ,   1.   ,  23.434,  58.775, 230.863, 238.744,  -7.881],
+       [  4.   ,   1.   ,  23.993,  25.854, 106.16 , 109.359,  -3.199],
+       [  5.   ,   1.   ,  23.375,  68.297, 277.502, 276.165,   1.336],
+       [  6.   ,   1.   ,  23.233,  37.481, 148.314, 155.056,  -6.741],
+       [  7.   ,   1.   ,  24.162,  49.542, 197.562, 202.456,  -4.895],
+       [  8.   ,   1.   ,  23.667,  34.101, 138.537, 141.77 ,  -3.232],
+       [  9.   ,   1.   ,  24.056,  33.901, 137.969, 140.983,  -3.014],
+       [ 10.   ,   1.   ,  22.786,  29.242, 117.41 , 122.674,  -5.263],
+       [ 11.   ,   2.   ,  23.785,  39.506, 164.442, 163.013,   1.429],
+       [ 12.   ,   2.   ,  22.987,  43.004, 181.044, 176.759,   4.285],
+       [ 13.   ,   2.   ,  23.799,  53.226, 222.179, 216.933,   5.246],
+       [ 14.   ,   2.   ,  23.661,  54.467, 227.01 , 221.813,   5.198],
+       [ 15.   ,   2.   ,  23.852,  57.549, 232.496, 233.925,  -1.429],
+       [ 16.   ,   2.   ,  23.379,  61.204, 253.557, 248.288,   5.269],
+       [ 17.   ,   2.   ,  24.146,  31.489, 139.894, 131.506,   8.388],
+       [ 18.   ,   2.   ,  24.187,  68.476, 273.931, 276.871,  -2.94 ],
+       [ 19.   ,   2.   ,  24.159,  51.144, 207.969, 208.753,  -0.784],
+       [ 20.   ,   2.   ,  23.803,  68.774, 280.205, 278.04 ,   2.165],
+       [ 21.   ,   3.   ,  24.381,  55.35 , 227.06 , 225.282,   1.779],
+       [ 22.   ,   3.   ,  24.027,  44.692, 180.605, 183.396,  -2.791],
+       [ 23.   ,   3.   ,  24.342,  50.995, 206.229, 208.167,  -1.938],
+       [ 24.   ,   3.   ,  23.67 ,  21.602,  91.464,  92.649,  -1.186],
+       [ 25.   ,   3.   ,  24.246,  54.673, 223.869, 222.622,   1.247],
+       [ 26.   ,   3.   ,  25.082,  41.449, 172.91 , 170.651,   2.259],
+       [ 27.   ,   3.   ,  24.575,  35.451, 152.073, 147.075,   4.998],
+       [ 28.   ,   3.   ,  23.803,  42.989, 169.427, 176.703,  -7.276],
+       [ 29.   ,   3.   ,  24.66 ,  48.599, 192.561, 198.748,  -6.188],
+       [ 30.   ,   3.   ,  24.097,  21.448,  94.448,  92.042,   2.406],
+       [ 31.   ,   4.   ,  22.816,  56.982, 222.794, 231.697,  -8.902],
+       [ 32.   ,   4.   ,  24.167,  47.901, 199.003, 196.008,   2.996],
+       [ 33.   ,   4.   ,  22.712,  40.285, 168.668, 166.077,   2.592],
+       [ 34.   ,   4.   ,  23.611,  25.609, 109.387, 108.397,   0.99 ],
+       [ 35.   ,   4.   ,  23.354,  22.971,  98.445,  98.029,   0.416],
+       [ 36.   ,   4.   ,  23.669,  25.838, 110.987, 109.295,   1.692],
+       [ 37.   ,   4.   ,  23.965,  49.127, 202.662, 200.826,   1.835],
+       [ 38.   ,   4.   ,  22.917,  54.936, 224.773, 223.653,   1.12 ],
+       [ 39.   ,   4.   ,  23.546,  50.917, 216.058, 207.859,   8.199],
+       [ 40.   ,   4.   ,  24.45 ,  41.976, 171.469, 172.72 ,  -1.251]])
+</pre>
+
+
+<p>
+You may note, however, that the first two columns are floats, and not integers. We can fix that (if it matters), at the cost of some complexity. We specify the format of each column in the <code>dtype</code> argument. This leads to a structured data array (<a href="https://docs.scipy.org/doc/numpy/user/basics.rec.html">https://docs.scipy.org/doc/numpy/user/basics.rec.html</a>).
+</p>
+
+<p>
+The dtype formats are documented at <a href="https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html#arrays-dtypes-constructing">https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html#arrays-dtypes-constructing</a>. The ones we use here are for 32-bit integers and floats.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">d</span> = np.loadtxt(<span style="color: #008000;">'01-p-t.dat'</span>, skiprows=2,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  dtype={<span style="color: #008000;">'names'</span>: (<span style="color: #008000;">'run order'</span>, <span style="color: #008000;">'day'</span>, <span style="color: #008000;">'ambient temperature'</span>, <span style="color: #008000;">'temperature'</span>, <span style="color: #008000;">'pressure'</span>, <span style="color: #008000;">'fitted value'</span>, <span style="color: #008000;">'residual'</span>),
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #008000;">'formats'</span>: (<span style="color: #008000;">'i4'</span>, <span style="color: #008000;">'i4'</span>, <span style="color: #008000;">'f4'</span>, <span style="color: #008000;">'f4'</span>, <span style="color: #008000;">'f4'</span>, <span style="color: #008000;">'f4'</span>, <span style="color: #008000;">'f4'</span>)})
+d
+</pre>
+</div>
+
+<pre class="example">
+array([( 1, 1, 23.82 , 54.749, 225.066, 222.92 ,  2.146),
+       ( 2, 1, 24.12 , 23.323, 100.331,  99.411,  0.92 ),
+       ( 3, 1, 23.434, 58.775, 230.863, 238.744, -7.881),
+       ( 4, 1, 23.993, 25.854, 106.16 , 109.359, -3.199),
+       ( 5, 1, 23.375, 68.297, 277.502, 276.165,  1.336),
+       ( 6, 1, 23.233, 37.481, 148.314, 155.056, -6.741),
+       ( 7, 1, 24.162, 49.542, 197.562, 202.456, -4.895),
+       ( 8, 1, 23.667, 34.101, 138.537, 141.77 , -3.232),
+       ( 9, 1, 24.056, 33.901, 137.969, 140.983, -3.014),
+       (10, 1, 22.786, 29.242, 117.41 , 122.674, -5.263),
+       (11, 2, 23.785, 39.506, 164.442, 163.013,  1.429),
+       (12, 2, 22.987, 43.004, 181.044, 176.759,  4.285),
+       (13, 2, 23.799, 53.226, 222.179, 216.933,  5.246),
+       (14, 2, 23.661, 54.467, 227.01 , 221.813,  5.198),
+       (15, 2, 23.852, 57.549, 232.496, 233.925, -1.429),
+       (16, 2, 23.379, 61.204, 253.557, 248.288,  5.269),
+       (17, 2, 24.146, 31.489, 139.894, 131.506,  8.388),
+       (18, 2, 24.187, 68.476, 273.931, 276.871, -2.94 ),
+       (19, 2, 24.159, 51.144, 207.969, 208.753, -0.784),
+       (20, 2, 23.803, 68.774, 280.205, 278.04 ,  2.165),
+       (21, 3, 24.381, 55.35 , 227.06 , 225.282,  1.779),
+       (22, 3, 24.027, 44.692, 180.605, 183.396, -2.791),
+       (23, 3, 24.342, 50.995, 206.229, 208.167, -1.938),
+       (24, 3, 23.67 , 21.602,  91.464,  92.649, -1.186),
+       (25, 3, 24.246, 54.673, 223.869, 222.622,  1.247),
+       (26, 3, 25.082, 41.449, 172.91 , 170.651,  2.259),
+       (27, 3, 24.575, 35.451, 152.073, 147.075,  4.998),
+       (28, 3, 23.803, 42.989, 169.427, 176.703, -7.276),
+       (29, 3, 24.66 , 48.599, 192.561, 198.748, -6.188),
+       (30, 3, 24.097, 21.448,  94.448,  92.042,  2.406),
+       (31, 4, 22.816, 56.982, 222.794, 231.697, -8.902),
+       (32, 4, 24.167, 47.901, 199.003, 196.008,  2.996),
+       (33, 4, 22.712, 40.285, 168.668, 166.077,  2.592),
+       (34, 4, 23.611, 25.609, 109.387, 108.397,  0.99 ),
+       (35, 4, 23.354, 22.971,  98.445,  98.029,  0.416),
+       (36, 4, 23.669, 25.838, 110.987, 109.295,  1.692),
+       (37, 4, 23.965, 49.127, 202.662, 200.826,  1.835),
+       (38, 4, 22.917, 54.936, 224.773, 223.653,  1.12 ),
+       (39, 4, 23.546, 50.917, 216.058, 207.859,  8.199),
+       (40, 4, 24.45 , 41.976, 171.469, 172.72 , -1.251)],
+      dtype=[('run order', '&lt;i4'), ('day', '&lt;i4'), ('ambient temperature', '&lt;f4'), ('temperature', '&lt;f4'), ('pressure', '&lt;f4'), ('fitted value', '&lt;f4'), ('residual', '&lt;f4')])
+</pre>
+
+<p>
+This array should look different to you. First, each row is in (), and the dtype at the end looks different, with names and formats.
+</p>
+
+<p>
+One benefit of this is you can now use human readable names to select the various columns. We will return to this idea later when we learn about Pandas.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.plot(d[<span style="color: #008000;">'temperature'</span>], d[<span style="color: #008000;">'pressure'</span>], <span style="color: #008000;">'b. '</span>)
+plt.xlabel(<span style="color: #008000;">'Temperatue'</span>)
+plt.ylabel(<span style="color: #008000;">'pressure'</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'pressure')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/8be4a644cf2f3b3401db7b23831e687db897aac8/b73fdebab2e40d5aab38ab02156af43b987a52d6.png" alt="b73fdebab2e40d5aab38ab02156af43b987a52d6.png" />
+</p>
+</div>
+
+<p>
+Note that this is not a 2D array, even though it looks like one! It is considered a 1D array of records.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">d.shape
+</pre>
+</div>
+
+<pre class="example">
+(40,)
+</pre>
+
+<p>
+It is not possible to slice this array like we did before. Instead we select columns by name.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">d[<span style="color: #008000;">'temperature'</span>]
+</pre>
+</div>
+
+<pre class="example">
+array([54.749, 23.323, 58.775, 25.854, 68.297, 37.481, 49.542, 34.101,
+       33.901, 29.242, 39.506, 43.004, 53.226, 54.467, 57.549, 61.204,
+       31.489, 68.476, 51.144, 68.774, 55.35 , 44.692, 50.995, 21.602,
+       54.673, 41.449, 35.451, 42.989, 48.599, 21.448, 56.982, 47.901,
+       40.285, 25.609, 22.971, 25.838, 49.127, 54.936, 50.917, 41.976],
+      dtype=float32)
+</pre>
+</div>
+
+
+<div id="outline-container-orge68d31b" class="outline-4">
+<h4 id="orge68d31b"><span class="section-number-4">3.2.1</span> Summary</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+This data file was a text file, with a <i>header</i> that described some information about the data. The data itself was still delimited, but each column had a different type of data, e.g. in this case integers and floats. Some files may also have string data in columns. As the data gets more heterogeneous, it gets more challenging to read it into variables. In the worst case scenario, you can write a custom data parser, but this is hard work that should usually be avoided if possible.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0f78537" class="outline-3">
+<h3 id="org0f78537"><span class="section-number-3">3.3</span> json data</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+json (javascript object notation) is another convenient data format (<a href="https://www.json.org/json-en.html">https://www.json.org/json-en.html</a>). This data format stores data in a "key=value" format, and when you load it, you get a dictionary of the data. Let's see the first few characters of this file. Why the first few characters? A json file may be only one line as defined by newlines.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">url</span> = <span style="color: #008000;">'https://drive.google.com/uc?id=10WuEv6r4rUBX-fuRX9rXQGxe67hmNP0h'</span>
+
+<span style="color: #0000FF;">import</span> urllib.request
+urllib.request.urlretrieve(url, <span style="color: #008000;">'01-raman.json'</span>)
+</pre>
+</div>
+
+<pre class="example">
+('01-raman.json', &lt;http.client.HTTPMessage at 0x11a7a5f50&gt;)
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">with</span> <span style="color: #006FE0;">open</span>(<span style="color: #008000;">'01-raman.json'</span>) <span style="color: #0000FF;">as</span> f:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">print</span>(<span style="color: #006FE0;">len</span>(f.readlines()))
+</pre>
+</div>
+
+<p>
+1
+</p>
+
+<p>
+But you can see there are a lot of characters:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">with</span> <span style="color: #006FE0;">open</span>(<span style="color: #008000;">'01-raman.json'</span>) <span style="color: #0000FF;">as</span> f:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">print</span>(<span style="color: #006FE0;">len</span>(f.read()))
+</pre>
+</div>
+
+<p>
+165882
+</p>
+
+<p>
+Let's see the first 50 of the characters.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">with</span> <span style="color: #006FE0;">open</span>(<span style="color: #008000;">'01-raman.json'</span>) <span style="color: #0000FF;">as</span> f:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">print</span>(<span style="color: #008000;">''</span>.join(f.read()[0:50]))
+</pre>
+</div>
+
+<p>
+{"wavenumber": [500.0, 500.39374, 500.78751, 501.1
+</p>
+
+<p>
+Here, "wavenumber" is a key, and it has a value (the thing on the other side of the :) that is an array of numbers. Luckily, it is easy to load this in Python with the json library.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> json
+
+<span style="color: #0000FF;">with</span> <span style="color: #006FE0;">open</span>(<span style="color: #008000;">'01-raman.json'</span>) <span style="color: #0000FF;">as</span> f:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">d</span> = json.load(f)
+
+<span style="color: #006FE0;">type</span>(d), d.keys()
+</pre>
+</div>
+
+<pre class="example">
+(dict, dict_keys(['wavenumber', 'intensity']))
+</pre>
+
+<p>
+Note that this does not read the data into numpy arrays. We have a list for these instead. We can convert them to arrays if we need to.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #006FE0;">type</span>([<span style="color: #008000;">'wavenumber'</span>])
+</pre>
+</div>
+
+<pre class="example">
+list
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.plot(d[<span style="color: #008000;">'wavenumber'</span>], d[<span style="color: #008000;">'intensity'</span>])
+plt.xlabel(<span style="color: #008000;">'Wavenumber'</span>)
+plt.ylabel(<span style="color: #008000;">'Intensity'</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'Intensity')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/8be4a644cf2f3b3401db7b23831e687db897aac8/e69226bf3e8c3b4a3fc681e8087b57a0e1638b3c.png" alt="e69226bf3e8c3b4a3fc681e8087b57a0e1638b3c.png" />
+</p>
+</div>
+
+
+
+<p>
+It is fine to plot with these lists, but if you need to do any array operations or analysis on them, you may need to convert them to arrays first (although many numpy functions work on lists just fine).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3748439" class="outline-3">
+<h3 id="org3748439"><span class="section-number-3">3.4</span> There are many more data formats</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+There are many more formats. For most of these, there are standard libraries for reading them data into an array form that you can use. You should usually search for a library that can read your data first, rather than try to implement your own parser.
+</p>
+
+<dl class="org-dl">
+<dt>netcdf</dt><dd><a href="https://unidata.github.io/netcdf4-python/netCDF4/index.html">https://unidata.github.io/netcdf4-python/netCDF4/index.html</a></dd>
+<dt>hdf5</dt><dd><a href="https://www.h5py.org/">https://www.h5py.org/</a></dd>
+<dt>xml</dt><dd><a href="https://docs.python.org/3/library/xml.html">https://docs.python.org/3/library/xml.html</a></dd>
+<dt>matlab .mat files</dt><dd><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.io.loadmat.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.io.loadmat.html</a></dd>
+<dt>binary data files</dt><dd><a href="https://www.devdungeon.com/content/working-binary-data-python">https://www.devdungeon.com/content/working-binary-data-python</a></dd>
+<dt>scipy io routines</dt><dd><a href="https://docs.scipy.org/doc/scipy/reference/io.html">https://docs.scipy.org/doc/scipy/reference/io.html</a></dd>
+<dt>molecular simulation files</dt><dd><a href="https://wiki.fysik.dtu.dk/ase/ase/io/io.html#module-ase.io">https://wiki.fysik.dtu.dk/ase/ase/io/io.html#module-ase.io</a></dd>
+<dt>yaml</dt><dd><a href="https://pyyaml.org/wiki/PyYAMLDocumentation">https://pyyaml.org/wiki/PyYAMLDocumentation</a></dd>
+<dt>config files</dt><dd><a href="https://docs.python.org/3/library/configparser.html">https://docs.python.org/3/library/configparser.html</a></dd>
+<dt>Excel</dt><dd><a href="https://openpyxl.readthedocs.io/en/stable/index.html">https://openpyxl.readthedocs.io/en/stable/index.html</a></dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgce607e2" class="outline-2">
+<h2 id="orgce607e2"><span class="section-number-2">4</span> Summary</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Today the focus was on orienting ourselves to the main ideas of reading data files. These are:
+</p>
+
+<ol class="org-ol">
+<li>What kind of data file is it?</li>
+<li>Is there a library function that makes it easy to read?</li>
+<li>How do you get the data into arrays and variables for further analysis.</li>
+</ol>
+
+<p>
+We also examined how to make simple visualizations of the data.
+</p>
+
+<p>
+Next time, we will focus on more advanced plotting methods that are even more interactive.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgb63ea9e" class="outline-2">
+<h2 id="orgb63ea9e"><span class="section-number-2">5</span> Exercises on your own</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Find some data files, learn how to read them into Python and make a plot of the data in them. Discuss any difficulties you are have in the class discussion board or Piazza.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Kitchin</p>
+<p class="date">Created: 2020-05-18 Mon 16:07</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

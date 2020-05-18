@@ -1,0 +1,1070 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-18 Mon 16:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Kitchin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgedabb94">1. Intermediate Pandas</a>
+<ul>
+<li><a href="#orgf7383d2">1.1. Revisiting a previous example with batches of data</a></li>
+<li><a href="#orgdc92737">1.2. Combining data sets</a></li>
+<li><a href="#orgf34b4f4">1.3. Monitoring Covid cases as a function of time</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgedabb94" class="outline-2">
+<h2 id="orgedabb94"><span class="section-number-2">1</span> Intermediate Pandas</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Today we look at some ways to use Pandas DataFrames like databases.
+</p>
+</div>
+
+<div id="outline-container-orgf7383d2" class="outline-3">
+<h3 id="orgf7383d2"><span class="section-number-3">1.1</span> Revisiting a previous example with batches of data</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+We start with the example we looked at before. It is a dataset from a set of experiments. The experiments are grouped by the Day they were run on. We will use Pandas to do some analysis by the day.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">fname</span> = <span style="color: #008000;">'04-p-t.dat'</span>
+<span style="color: #BA36A5;">url</span> = <span style="color: #008000;">'https://www.itl.nist.gov/div898/handbook/datasets/MODEL-4_4_4.DAT'</span>
+
+<span style="color: #0000FF;">import</span> urllib.request
+urllib.request.urlretrieve(url, fname)
+
+<span style="color: #0000FF;">import</span> pandas <span style="color: #0000FF;">as</span> pd
+<span style="color: #BA36A5;">df</span> = pd.read_csv(<span style="color: #008000;">'03-p-t.dat'</span>, delimiter=<span style="color: #008000;">'\s+'</span>, skiprows=2,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>names=[<span style="color: #008000;">'Run order'</span>, <span style="color: #008000;">'Day'</span>, <span style="color: #008000;">'Ambient Temperature'</span>, <span style="color: #008000;">'Temperature'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #008000;">'Pressure'</span>, <span style="color: #008000;">'Fitted Value'</span>, <span style="color: #008000;">'Residual'</span>])
+df
+</pre>
+</div>
+
+<pre class="example">
+    Run order  Day  Ambient Temperature  Temperature  Pressure  Fitted Value  \
+0           1    1               23.820       54.749   225.066       222.920
+1           2    1               24.120       23.323   100.331        99.411
+2           3    1               23.434       58.775   230.863       238.744
+3           4    1               23.993       25.854   106.160       109.359
+4           5    1               23.375       68.297   277.502       276.165
+5           6    1               23.233       37.481   148.314       155.056
+6           7    1               24.162       49.542   197.562       202.456
+7           8    1               23.667       34.101   138.537       141.770
+8           9    1               24.056       33.901   137.969       140.983
+9          10    1               22.786       29.242   117.410       122.674
+10         11    2               23.785       39.506   164.442       163.013
+11         12    2               22.987       43.004   181.044       176.759
+12         13    2               23.799       53.226   222.179       216.933
+13         14    2               23.661       54.467   227.010       221.813
+14         15    2               23.852       57.549   232.496       233.925
+15         16    2               23.379       61.204   253.557       248.288
+16         17    2               24.146       31.489   139.894       131.506
+17         18    2               24.187       68.476   273.931       276.871
+18         19    2               24.159       51.144   207.969       208.753
+19         20    2               23.803       68.774   280.205       278.040
+20         21    3               24.381       55.350   227.060       225.282
+21         22    3               24.027       44.692   180.605       183.396
+22         23    3               24.342       50.995   206.229       208.167
+23         24    3               23.670       21.602    91.464        92.649
+24         25    3               24.246       54.673   223.869       222.622
+25         26    3               25.082       41.449   172.910       170.651
+26         27    3               24.575       35.451   152.073       147.075
+27         28    3               23.803       42.989   169.427       176.703
+28         29    3               24.660       48.599   192.561       198.748
+29         30    3               24.097       21.448    94.448        92.042
+30         31    4               22.816       56.982   222.794       231.697
+31         32    4               24.167       47.901   199.003       196.008
+32         33    4               22.712       40.285   168.668       166.077
+33         34    4               23.611       25.609   109.387       108.397
+34         35    4               23.354       22.971    98.445        98.029
+35         36    4               23.669       25.838   110.987       109.295
+36         37    4               23.965       49.127   202.662       200.826
+37         38    4               22.917       54.936   224.773       223.653
+38         39    4               23.546       50.917   216.058       207.859
+39         40    4               24.450       41.976   171.469       172.720
+
+    Residual
+0      2.146
+1      0.920
+2     -7.881
+3     -3.199
+4      1.336
+5     -6.741
+6     -4.895
+7     -3.232
+8     -3.014
+9     -5.263
+10     1.429
+11     4.285
+12     5.246
+13     5.198
+14    -1.429
+15     5.269
+16     8.388
+17    -2.940
+18    -0.784
+19     2.165
+20     1.779
+21    -2.791
+22    -1.938
+23    -1.186
+24     1.247
+25     2.259
+26     4.998
+27    -7.276
+28    -6.188
+29     2.406
+30    -8.902
+31     2.996
+32     2.592
+33     0.990
+34     0.416
+35     1.692
+36     1.835
+37     1.120
+38     8.199
+39    -1.251
+</pre>
+
+
+<p>
+The first aggregation we will look at is how to make groups of data that are related by values in a column.  We use the <code>groupby</code> function (<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby</a>), and specify a column to group on. The result is a <code>DataFrameGroupBy</code> object, which we next have to work with.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">groups</span> = df.groupby(<span style="color: #008000;">'Day'</span>)
+<span style="color: #006FE0;">type</span>(groups)
+</pre>
+</div>
+
+<pre class="example">
+pandas.core.groupby.generic.DataFrameGroupBy
+</pre>
+
+<p>
+The groups can describe themselves. Here we see we get 4 groups, one for each day, and you can see some statistics about each group. We do not need those for now.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">groups.describe()
+</pre>
+</div>
+
+<pre class="example">
+    Run order                                                 \
+        count  mean      std   min    25%   50%    75%   max
+Day
+1        10.0   5.5  3.02765   1.0   3.25   5.5   7.75  10.0
+2        10.0  15.5  3.02765  11.0  13.25  15.5  17.75  20.0
+3        10.0  25.5  3.02765  21.0  23.25  25.5  27.75  30.0
+4        10.0  35.5  3.02765  31.0  33.25  35.5  37.75  40.0
+
+    Ambient Temperature           ... Fitted Value          Residual          \
+                  count     mean  ...          75%      max    count    mean
+Day                               ...
+1                  10.0  23.6646  ...    217.80400  276.165     10.0 -2.9823
+2                  10.0  23.7758  ...    244.69725  278.040     10.0  2.6827
+3                  10.0  24.2883  ...    205.81225  225.282     10.0 -0.6690
+4                  10.0  23.5207  ...    206.10075  231.697     10.0  0.9687
+
+
+          std    min      25%     50%      75%    max
+Day
+1    3.452383 -7.881 -5.17100 -3.2155 -0.06350  2.146
+2    3.606824 -2.940 -0.23075  3.2250  5.23400  8.388
+3    3.948274 -7.276 -2.57775  0.0305  2.13900  4.998
+4    4.255487 -8.902  0.55950  1.4060  2.40275  8.199
+
+[4 rows x 48 columns]
+</pre>
+
+<p>
+We can get a dictionary of the group names and labels from the groups attribute.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">groups.groups
+</pre>
+</div>
+
+<pre class="example">
+{1: Int64Index([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], dtype='int64'),
+ 2: Int64Index([10, 11, 12, 13, 14, 15, 16, 17, 18, 19], dtype='int64'),
+ 3: Int64Index([20, 21, 22, 23, 24, 25, 26, 27, 28, 29], dtype='int64'),
+ 4: Int64Index([30, 31, 32, 33, 34, 35, 36, 37, 38, 39], dtype='int64')}
+</pre>
+
+<p>
+We can get the subset of rows from those group labels.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df.loc[groups.groups[2]]
+</pre>
+</div>
+
+<pre class="example">
+    Run order  Day  Ambient Temperature  Temperature  Pressure  Fitted Value  \
+10         11    2               23.785       39.506   164.442       163.013
+11         12    2               22.987       43.004   181.044       176.759
+12         13    2               23.799       53.226   222.179       216.933
+13         14    2               23.661       54.467   227.010       221.813
+14         15    2               23.852       57.549   232.496       233.925
+15         16    2               23.379       61.204   253.557       248.288
+16         17    2               24.146       31.489   139.894       131.506
+17         18    2               24.187       68.476   273.931       276.871
+18         19    2               24.159       51.144   207.969       208.753
+19         20    2               23.803       68.774   280.205       278.040
+
+    Residual
+10     1.429
+11     4.285
+12     5.246
+13     5.198
+14    -1.429
+15     5.269
+16     8.388
+17    -2.940
+18    -0.784
+19     2.165
+</pre>
+
+<p>
+We don't usually work with groups that way though, it is more common to do some analysis on each group.
+</p>
+
+<p>
+Suppose we want to plot the Pressure vs Temperature for each group, so we can see visually if there are any trends that could be attributed to the group. To do this, we need to <i>iterate</i> over the groups and then make a plot on each one.
+</p>
+
+<p>
+A <code>DataFrameGroupBy</code> is <i>iterable</i> and when you loop over it, you get the <code>key</code> it was grouped on, and a DataFrame that contains the items in the group. Here we loop over each group, and plot each group with a different color.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">%matplotlib inline
+<span style="color: #0000FF;">import</span> matplotlib.pyplot <span style="color: #0000FF;">as</span> plt
+
+<span style="color: #BA36A5;">fig</span>, <span style="color: #BA36A5;">ax</span> = plt.subplots()
+<span style="color: #0000FF;">for</span> (day, group) <span style="color: #0000FF;">in</span> groups:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   group.plot(<span style="color: #008000;">'Temperature'</span>, <span style="color: #008000;">'Pressure'</span>, ax=ax, label=f<span style="color: #008000;">'</span><span style="color: #BA36A5;">{day}</span><span style="color: #008000;">'</span>, style=<span style="color: #008000;">'o'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure'</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'Pressure')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/3be45d76b163b8bb1df66eecadee508f4a67987e/47a4286be15c696e49c5e47c3e4075eebee13861.png" alt="47a4286be15c696e49c5e47c3e4075eebee13861.png" />
+</p>
+</div>
+
+<p>
+the point of this is we cannot see a visual clustering of the groups by day. That is important, because if we did it could suggest something was different that day.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdc92737" class="outline-3">
+<h3 id="orgdc92737"><span class="section-number-3">1.2</span> Combining data sets</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Siddhant Lambor provided from two experiments conducted to measure the properties of a worm-like micelles solution. He had carried out experiments on a rheometer to measure the viscosity of a worm-like micelles solution in a Couette cell geometry and a Cone and Plate geometry. Ideally, there should not be a difference as viscosity is intrinsic to the fluid. Analysis of this data will confirm if that is true. First, we read this data in from the two data files.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">url</span> = <span style="color: #008000;">'https://drive.google.com/uc?id=1PaBg_dpK2_Ot8yvJr5Lwsa8e_3H9OErH'</span>
+
+<span style="color: #0000FF;">import</span> urllib.request
+urllib.request.urlretrieve(url, <span style="color: #008000;">'couette.xls'</span>)
+</pre>
+</div>
+
+<pre class="example">
+('couette.xls', &lt;http.client.HTTPMessage at 0x128f1cd90&gt;)
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">couette</span> = pd.read_excel(<span style="color: #008000;">'couette.xls'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  sheet_name=<span style="color: #008000;">'Flow sweep - 1'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  header=1) <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">sheet name is case sensitive, excel file name is not</span>
+
+couette
+</pre>
+</div>
+
+<p>
+We can drop the row at index 0, it just has the units in it. With this syntax, we have to save the resulting DataFrame back into the variable, or it will not be changed.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">couette</span> = couette.drop(0)
+couette
+</pre>
+</div>
+
+<p>
+Now get the second file.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">url</span> = <span style="color: #008000;">'https://drive.google.com/uc?id=1XtGJ-PStHNO5mqlSuFFkPEf2cQYlLie_'</span>
+
+<span style="color: #0000FF;">import</span> urllib.request
+urllib.request.urlretrieve(url, <span style="color: #008000;">'cp.xls'</span>)
+</pre>
+</div>
+
+<pre class="example">
+('cp.xls', &lt;http.client.HTTPMessage at 0x128f34950&gt;)
+</pre>
+
+
+<p>
+Here, we combine the drop function all into one line.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">conePlate</span> = pd.read_excel(<span style="color: #008000;">'cp.xls'</span>, sheet_name=<span style="color: #008000;">'Flow sweep - 1'</span>, header=1).drop(0)
+conePlate.head(5)
+</pre>
+</div>
+
+<p>
+For this analysis, we are only interested in the shear rate, stress and viscosity values. Let us drop the other columns. We do that by the names, and specify inplace=True, which modifies the DataFrame itself.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">conePlate.drop([<span style="color: #008000;">'Temperature'</span>, <span style="color: #008000;">'Step time'</span>, <span style="color: #008000;">'Normal stress'</span>], axis=1, inplace=<span style="color: #D0372D;">True</span>)
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">if we do not use inplace=True, the data frame will not be changed. It would by default create a new data frame</span>
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">and we would have to assign a different variable to capture this change.</span>
+conePlate.head(5)
+</pre>
+</div>
+
+<p>
+We also do that for the couette data. Here we did not use <code>inplace=True</code>, so we have to save the result back into the variable to get the change.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">couette</span> = couette.drop([<span style="color: #008000;">'Temperature'</span>, <span style="color: #008000;">'Step time'</span>, <span style="color: #008000;">'Normal stress'</span>], axis=1)   <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">without using inplace = True</span>
+couette.head(5)
+
+</pre>
+</div>
+
+<p>
+We can see info about each DataFrame like this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">couette.info()
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-ipython">conePlate.info()
+</pre>
+</div>
+
+<p>
+We could proceed to analyze the DataFrames separately, but instead, we will combine them into one DataFrame. Before doing that, we need to add a column to each one so we know which data set is which. Simply assigning a value to a new column name will do that.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">couette</span>[<span style="color: #008000;">'type'</span>] = <span style="color: #008000;">'couette'</span>
+couette
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">conePlate</span>[<span style="color: #008000;">'type'</span>] = <span style="color: #008000;">'cone'</span>
+</pre>
+</div>
+
+<p>
+Now, we can combine these into a single DataFrame. This is not critical, and you can get by without it, but I want to explore the idea, and illustrate it is possible.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">df</span> = pd.concat([conePlate, couette])
+df
+</pre>
+</div>
+
+<p>
+Finally, we are ready for the visualization. We will group the DataFrame and then make plots for each group. Here we illustrate several new arguments, including loglog plots, secondary axes, colored tick labels, and multiple legends.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">g</span> = df.groupby(<span style="color: #008000;">'type'</span>)
+<span style="color: #BA36A5;">ax1</span> = g.get_group(<span style="color: #008000;">'cone'</span>).plot(<span style="color: #008000;">'Shear rate'</span>, <span style="color: #008000;">'Viscosity'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  logx=<span style="color: #D0372D;">True</span>, logy=<span style="color: #D0372D;">True</span>, style=<span style="color: #008000;">'b.-'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  label=<span style="color: #008000;">"CP viscosity"</span>)
+
+g.get_group(<span style="color: #008000;">'couette'</span>).plot(<span style="color: #008000;">'Shear rate'</span>, <span style="color: #008000;">'Viscosity'</span>, logx=<span style="color: #D0372D;">True</span>, logy=<span style="color: #D0372D;">True</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   style=<span style="color: #008000;">'g.-'</span>, ax=ax1, label=<span style="color: #008000;">"Couette viscosity"</span>)
+
+<span style="color: #BA36A5;">ax2</span> = g.get_group(<span style="color: #008000;">'cone'</span>).plot(<span style="color: #008000;">'Shear rate'</span>, <span style="color: #008000;">'Stress'</span>, secondary_y=<span style="color: #D0372D;">True</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  logx=<span style="color: #D0372D;">True</span>, logy=<span style="color: #D0372D;">True</span>, style=<span style="color: #008000;">'r.-'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  ax=ax1, label=<span style="color: #008000;">"CP stress"</span>)
+
+g.get_group(<span style="color: #008000;">'couette'</span>).plot(<span style="color: #008000;">'Shear rate'</span>, <span style="color: #008000;">'Stress'</span>, secondary_y=<span style="color: #D0372D;">True</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   logx=<span style="color: #D0372D;">True</span>, logy = <span style="color: #D0372D;">True</span>, style=<span style="color: #008000;">'y.'</span>, ax=ax2,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   label=<span style="color: #008000;">"Couette Stress"</span>)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Setting y axis labels</span>
+ax1.set_ylabel(<span style="color: #008000;">"Viscosity (Pa.s)"</span>, color=<span style="color: #008000;">'b'</span>)
+[ticklabel.set_color(<span style="color: #008000;">'b'</span>) <span style="color: #0000FF;">for</span> ticklabel <span style="color: #0000FF;">in</span> ax1.get_yticklabels()]
+
+ax2.set_ylabel(<span style="color: #008000;">"Stress (Pa)"</span>, color=<span style="color: #008000;">'r'</span>)
+[ticklabel.set_color(<span style="color: #008000;">'r'</span>) <span style="color: #0000FF;">for</span> ticklabel <span style="color: #0000FF;">in</span> ax1.get_yticklabels()]
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">setting legend locations</span>
+ax1.legend(loc=6)
+ax2.legend(loc=7)
+
+ax1.set_xlabel(<span style="color: #008000;">"Shear rate (1/s)"</span>)
+plt.title(<span style="color: #008000;">"Comparison of Cone and Plate with Couette Cell"</span>)
+</pre>
+</div>
+
+<p>
+So, in fact we can see these two experiments are practically equivalent.
+</p>
+</div>
+</div>
+<div id="outline-container-orgf34b4f4" class="outline-3">
+<h3 id="orgf34b4f4"><span class="section-number-3">1.3</span> Monitoring Covid cases as a function of time</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+This <a href="https://www.tableau.com/covid-19-coronavirus-data-resources">site</a> provides COVID data for all the countries in the world as a function of time.
+</p>
+
+<p>
+<a href="https://docs.google.com/spreadsheets/d/14quQPFErG-hlpsrNgYcX85vW7JMMK5X2vNZrafRcH8c/edit#gid=1592210746">https://docs.google.com/spreadsheets/d/14quQPFErG-hlpsrNgYcX85vW7JMMK5X2vNZrafRcH8c/edit#gid=1592210746</a>
+</p>
+
+<p>
+We are going to use this data set to illustrate several concepts in data analysis.
+</p>
+
+<p>
+<a href="https://www.tableau.com/about/blog/2020/3/ten-considerations-you-create-another-chart-about-covid-19">https://www.tableau.com/about/blog/2020/3/ten-considerations-you-create-another-chart-about-covid-19</a>
+</p>
+
+
+<p>
+<code>read_csv</code> is flexible enough to directly read the data from a URL that exports the google sheet as CSV data. The only new wrinkle here is we tell it some column names that should be parsed as dates.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> pandas <span style="color: #0000FF;">as</span> pd
+
+
+<span style="color: #BA36A5;">url</span> = <span style="color: #008000;">'https://docs.google.com/spreadsheets/d/14quQPFErG-hlpsrNgYcX85vW7JMMK5X2vNZrafRcH8c/export?format=csv&amp;id=14quQPFErG-hlpsrNgYcX85vW7JMMK5X2vNZrafRcH8c'</span>
+
+<span style="color: #BA36A5;">df</span> = pd.read_csv(url, parse_dates=[<span style="color: #008000;">'Date'</span>, <span style="color: #008000;">'Prep_Flow_Runtime'</span>])
+df
+</pre>
+</div>
+
+<pre class="example">
+       Case_Type  Cases  Difference       Date Country_Region Province_State  \
+0         Deaths    0.0         0.0 2020-02-27        Bahamas            NaN
+1      Confirmed   16.0         0.0 2020-02-16        Germany            NaN
+2         Deaths    0.0         0.0 2020-01-31         Canada        Alberta
+3         Deaths    0.0         0.0 2020-03-04      Australia     Queensland
+4      Confirmed    0.0         0.0 2020-01-25       Suriname            NaN
+...          ...    ...         ...        ...            ...            ...
+85013     Deaths    1.0         NaN 2020-03-23             US       Maryland
+85014     Deaths    0.0         NaN 2020-03-23             US         Oregon
+85015  Confirmed    6.0         NaN 2020-03-23             US  Massachusetts
+85016  Confirmed    0.0         NaN 2020-03-23             US         Kansas
+85017     Deaths    0.0         NaN 2020-03-23             US       Nebraska
+
+           Admin2                  Combined_Key     FIPS        Lat  \
+0             NaN                           NaN      NaN  25.034300
+1             NaN                           NaN      NaN  51.000000
+2             NaN                           NaN      NaN  53.933300
+3             NaN                           NaN      NaN -28.016700
+4             NaN                           NaN      NaN   3.919300
+...           ...                           ...      ...        ...
+85013  Montgomery      Montgomery, Maryland, US  24031.0  39.136763
+85014   Jefferson         Jefferson, Oregon, US  41031.0  44.628068
+85015   Hampshire  Hampshire, Massachusetts, US  25015.0  42.339980
+85016    Marshall          Marshall, Kansas, US  20117.0  39.783597
+85017      Garden          Garden, Nebraska, US  31069.0  41.617031
+
+             Long Prep_Flow_Runtime    Table_Names
+0      -77.396300        2020-03-29    Time Series
+1        9.000000        2020-03-29    Time Series
+2     -116.576500        2020-03-29    Time Series
+3      153.400000        2020-03-29    Time Series
+4      -56.027800        2020-03-29    Time Series
+...           ...               ...            ...
+85013  -77.203582        2020-03-29  Daily Summary
+85014 -121.178320        2020-03-29  Daily Summary
+85015  -72.658985        2020-03-29  Daily Summary
+85016  -96.522790        2020-03-29  Daily Summary
+85017 -102.331397        2020-03-29  Daily Summary
+
+[85018 rows x 13 columns]
+</pre>
+
+
+
+<p>
+Let's get the data out of this for Pennsylvania. The first step is not hard, we just select the rows for Pennsylvania.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">df[df[<span style="color: #008000;">'Province_State'</span>] == <span style="color: #008000;">'Pennsylvania'</span>]
+</pre>
+</div>
+
+<pre class="example">
+       Case_Type  Cases  Difference       Date Country_Region Province_State  \
+33278     Deaths    0.0         0.0 2020-01-28             US   Pennsylvania
+33426  Confirmed    7.0         1.0 2020-03-09             US   Pennsylvania
+33552     Deaths    0.0         0.0 2020-02-07             US   Pennsylvania
+33621  Confirmed    0.0         0.0 2020-02-25             US   Pennsylvania
+33624  Confirmed    0.0         0.0 2020-02-07             US   Pennsylvania
+...          ...    ...         ...        ...            ...            ...
+84583     Deaths    0.0         NaN 2020-03-23             US   Pennsylvania
+84775  Confirmed    3.0         NaN 2020-03-23             US   Pennsylvania
+84910     Deaths    0.0         NaN 2020-03-23             US   Pennsylvania
+84949  Confirmed   23.0         NaN 2020-03-23             US   Pennsylvania
+85000  Confirmed    1.0         NaN 2020-03-23             US   Pennsylvania
+
+            Admin2                   Combined_Key     FIPS        Lat  \
+33278          NaN                            NaN      NaN  39.907800
+33426          NaN                            NaN      NaN  39.907800
+33552          NaN                            NaN      NaN  39.907800
+33621          NaN                            NaN      NaN  39.907800
+33624          NaN                            NaN      NaN  39.907800
+...            ...                            ...      ...        ...
+84583      Clarion      Clarion, Pennsylvania, US  42031.0  41.192658
+84775       Centre       Centre, Pennsylvania, US  42027.0  40.920589
+84910        Blair        Blair, Pennsylvania, US  42013.0  40.479614
+84949  Northampton  Northampton, Pennsylvania, US  42095.0  40.751827
+85000      Fayette      Fayette, Pennsylvania, US  42051.0  39.920410
+
+            Long Prep_Flow_Runtime    Table_Names
+33278 -77.209800        2020-03-29    Time Series
+33426 -77.209800        2020-03-29    Time Series
+33552 -77.209800        2020-03-29    Time Series
+33621 -77.209800        2020-03-29    Time Series
+33624 -77.209800        2020-03-29    Time Series
+...          ...               ...            ...
+84583 -79.424135        2020-03-29  Daily Summary
+84775 -77.822006        2020-03-29  Daily Summary
+84910 -78.349174        2020-03-29  Daily Summary
+84949 -75.304718        2020-03-29  Daily Summary
+85000 -79.642912        2020-03-29  Daily Summary
+
+[1062 rows x 13 columns]
+</pre>
+
+
+
+<p>
+You can see here there are a few challenges in this data:
+</p>
+
+<ol class="org-ol">
+<li>There are two types of data: Confirmed cases, and Deaths</li>
+<li>There are two types of rows: "Time Series" and "Daily Summary"</li>
+<li>For the "Daily Summary" there are multiple entries on the same day for different regions in PA.</li>
+</ol>
+
+<p>
+Let's pull the data apart in a few ways. The Time Series data looks like it is already aggregated. How can we tell? Let's look at the series of dates in this subset. You can see that there are 61 unique values of the date, and 61 values in the data frame. That can only be true if there is a single instance of each date.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">d1</span> =  df[(df[<span style="color: #008000;">'Province_State'</span>] == <span style="color: #008000;">'Pennsylvania'</span>) &amp; (df[<span style="color: #008000;">'Table_Names'</span>] == <span style="color: #008000;">'Time Series'</span>) &amp; (df[<span style="color: #008000;">'Case_Type'</span>] == <span style="color: #008000;">'Confirmed'</span>)][<span style="color: #008000;">'Date'</span>]
+<span style="color: #006FE0;">len</span>(d1), <span style="color: #006FE0;">len</span>(d1.unique())
+</pre>
+</div>
+
+<p>
+:results:
+</p>
+
+<pre class="example">
+(61, 61)
+</pre>
+<p>
+
+</p>
+
+<p>
+Let's now group these by the Case_Type. This will split the selected rows into two groups, one for <code>Confirmed</code> and one for <code>Deaths</code>. Then we can plot these by getting each group, which returns a DataFrame. Here we string together several commands so we get the group and plot in a single line.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">d1</span> =  df[(df[<span style="color: #008000;">'Province_State'</span>] == <span style="color: #008000;">'Pennsylvania'</span>) &amp; (df[<span style="color: #008000;">'Table_Names'</span>] == <span style="color: #008000;">'Time Series'</span>)]
+<span style="color: #BA36A5;">g1</span> = d1.groupby(<span style="color: #008000;">'Case_Type'</span>)
+
+<span style="color: #BA36A5;">ax</span> = g1.get_group(<span style="color: #008000;">'Confirmed'</span>).plot(x=<span style="color: #008000;">'Date'</span>, y=<span style="color: #008000;">'Cases'</span>, label=<span style="color: #008000;">'Confirmed'</span>)
+g1.get_group(<span style="color: #008000;">'Deaths'</span>).plot(x=<span style="color: #008000;">'Date'</span>, y=<span style="color: #008000;">'Cases'</span>, ax=ax, label=<span style="color: #008000;">'Deaths'</span>)
+</pre>
+</div>
+
+<p>
+:results:
+</p>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/3be45d76b163b8bb1df66eecadee508f4a67987e/15ff592b3b38c32b4dce3add72442da79e4f3c92.png" alt="15ff592b3b38c32b4dce3add72442da79e4f3c92.png" />
+</p>
+</div>
+<p>
+To see how this compares to the <code>Daily Summary</code> we need to take several steps. Let's narrow down these into independent cells so we can easily follow what is happening. Later we will combine this into a more compact syntax.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">g1</span> = df.groupby(<span style="color: #008000;">'Province_State'</span>)
+
+<span style="color: #BA36A5;">PA</span> = g1.get_group(<span style="color: #008000;">'Pennsylvania'</span>)
+PA
+</pre>
+</div>
+
+<p>
+:results:
+</p>
+
+<p>
+Next, we get the group for the Daily Summary.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">ds</span> = PA.groupby(<span style="color: #008000;">'Table_Names'</span>).get_group(<span style="color: #008000;">'Daily Summary'</span>)
+ds
+</pre>
+</div>
+
+<p>
+:results:
+</p>
+
+<pre class="example">
+       Case_Type  Cases  Difference       Date Country_Region Province_State  \
+36623     Deaths    NaN         3.0 2020-03-23             US   Pennsylvania
+38135  Confirmed    NaN       189.0 2020-03-23             US   Pennsylvania
+41376  Confirmed    1.0         1.0 2020-03-26             US   Pennsylvania
+41377  Confirmed    1.0         0.0 2020-03-29             US   Pennsylvania
+41378  Confirmed    1.0         0.0 2020-03-28             US   Pennsylvania
+...          ...    ...         ...        ...            ...            ...
+84583     Deaths    0.0         NaN 2020-03-23             US   Pennsylvania
+84775  Confirmed    3.0         NaN 2020-03-23             US   Pennsylvania
+84910     Deaths    0.0         NaN 2020-03-23             US   Pennsylvania
+84949  Confirmed   23.0         NaN 2020-03-23             US   Pennsylvania
+85000  Confirmed    1.0         NaN 2020-03-23             US   Pennsylvania
+
+            Admin2                   Combined_Key     FIPS        Lat  \
+36623          NaN                            NaN      NaN  39.907800
+38135          NaN                            NaN      NaN  39.907800
+41376  Susquehanna  Susquehanna, Pennsylvania, US  42115.0  41.821478
+41377  Susquehanna  Susquehanna, Pennsylvania, US  42115.0  41.821478
+41378  Susquehanna  Susquehanna, Pennsylvania, US  42115.0  41.821478
+...            ...                            ...      ...        ...
+84583      Clarion      Clarion, Pennsylvania, US  42031.0  41.192658
+84775       Centre       Centre, Pennsylvania, US  42027.0  40.920589
+84910        Blair        Blair, Pennsylvania, US  42013.0  40.479614
+84949  Northampton  Northampton, Pennsylvania, US  42095.0  40.751827
+85000      Fayette      Fayette, Pennsylvania, US  42051.0  39.920410
+
+            Long Prep_Flow_Runtime    Table_Names
+36623 -77.209800        2020-03-29  Daily Summary
+38135 -77.209800        2020-03-29  Daily Summary
+41376 -75.800720        2020-03-29  Daily Summary
+41377 -75.800720        2020-03-29  Daily Summary
+41378 -75.800720        2020-03-29  Daily Summary
+...          ...               ...            ...
+84583 -79.424135        2020-03-29  Daily Summary
+84775 -77.822006        2020-03-29  Daily Summary
+84910 -78.349174        2020-03-29  Daily Summary
+84949 -75.304718        2020-03-29  Daily Summary
+85000 -79.642912        2020-03-29  Daily Summary
+
+[940 rows x 13 columns]
+</pre>
+
+
+<p>
+Now, we need to group this by case type and date, then we sum up each group. This will make two groups containing the aggregated sum by date of each case type.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">d</span> = ds.groupby([<span style="color: #008000;">'Case_Type'</span>, <span style="color: #008000;">'Date'</span>]).<span style="color: #006FE0;">sum</span>()
+d
+</pre>
+</div>
+
+<pre class="example">
+                       Cases  Difference       FIPS         Lat         Long
+Case_Type Date
+Confirmed 2020-03-23   698.0       189.0  2818489.0  2774.71905 -5277.436095
+          2020-03-24   946.0       248.0  2818489.0  2734.81125 -5200.226295
+          2020-03-25  1260.0       314.0  2818489.0  2734.81125 -5200.226295
+          2020-03-26  1795.0       535.0  2818489.0  2734.81125 -5200.226295
+          2020-03-27  2345.0       550.0  2818489.0  2734.81125 -5200.226295
+          2020-03-28  2845.0       500.0  2818489.0  2734.81125 -5200.226295
+          2020-03-29  3432.0       587.0  2818489.0  2734.81125 -5200.226295
+Deaths    2020-03-23     6.0         3.0  2818489.0  2774.71905 -5277.436095
+          2020-03-24     8.0         2.0  2818489.0  2734.81125 -5200.226295
+          2020-03-25    15.0         7.0  2818489.0  2734.81125 -5200.226295
+          2020-03-26    18.0         3.0  2818489.0  2734.81125 -5200.226295
+          2020-03-27    22.0         4.0  2818489.0  2734.81125 -5200.226295
+          2020-03-28    34.0        12.0  2818489.0  2734.81125 -5200.226295
+          2020-03-29    41.0         7.0  2818489.0  2734.81125 -5200.226295
+</pre>
+
+<p>
+Finally, we can plot these results. To access the two case types, we note that Case_Type is the index in this new DataFrame, so we can use <code>loc</code> to get each one.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">ax</span> = d.loc[<span style="color: #008000;">'Confirmed'</span>].plot(y=<span style="color: #008000;">'Cases'</span>)
+d.loc[<span style="color: #008000;">'Deaths'</span>].plot(y=<span style="color: #008000;">'Cases'</span>, ax=ax)
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/3be45d76b163b8bb1df66eecadee508f4a67987e/ba4ff33c9ca30bda8f904ad8a344d774ca1a52d6.png" alt="ba4ff33c9ca30bda8f904ad8a344d774ca1a52d6.png" />
+</p>
+</div>
+<p>
+
+</p>
+
+<p>
+So we can see over the past 5 days, the number of cases is growing fast. We can pretty easily combine these to see the longitudinal trend over time.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">g2</span> = df.groupby([<span style="color: #008000;">'Province_State'</span>, <span style="color: #008000;">'Table_Names'</span>, <span style="color: #008000;">'Case_Type'</span>, <span style="color: #008000;">'Date'</span>])
+<span style="color: #BA36A5;">df2</span> = g2.<span style="color: #006FE0;">sum</span>()
+<span style="color: #BA36A5;">ax</span> = df2.loc[(<span style="color: #008000;">'Pennsylvania'</span>, <span style="color: #008000;">'Daily Summary'</span>, <span style="color: #008000;">'Confirmed'</span>)].plot(y=<span style="color: #008000;">'Cases'</span>, label=<span style="color: #008000;">'Confirmed DS'</span>)
+df2.loc[(<span style="color: #008000;">'Pennsylvania'</span>, <span style="color: #008000;">'Daily Summary'</span>, <span style="color: #008000;">'Deaths'</span>)].plot(y=<span style="color: #008000;">'Cases'</span>, ax=ax, label=<span style="color: #008000;">'Deaths DS'</span>)
+
+df2.loc[(<span style="color: #008000;">'Pennsylvania'</span>, <span style="color: #008000;">'Time Series'</span>, <span style="color: #008000;">'Confirmed'</span>)].plot(y=<span style="color: #008000;">'Cases'</span>, ax=ax, label=<span style="color: #008000;">'Confirmed'</span>)
+df2.loc[(<span style="color: #008000;">'Pennsylvania'</span>, <span style="color: #008000;">'Time Series'</span>, <span style="color: #008000;">'Deaths'</span>)].plot(y=<span style="color: #008000;">'Cases'</span>, ax=ax, label=<span style="color: #008000;">'Deaths'</span>)
+
+
+</pre>
+</div>
+
+<p>
+:results:
+</p>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/3be45d76b163b8bb1df66eecadee508f4a67987e/82fa9703537f9604a15bc1d94225af36053c949d.png" alt="82fa9703537f9604a15bc1d94225af36053c949d.png" />
+</p>
+</div>
+<p>
+:results:
+</p>
+
+<p>
+You can see the cases are growing fast.
+</p>
+
+<p>
+<b>Exercise</b>
+</p>
+
+<ol class="org-ol">
+<li>Perform this analysis for another State</li>
+<li>Perform this analysis for a country</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Kitchin</p>
+<p class="date">Created: 2020-05-18 Mon 16:07</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
