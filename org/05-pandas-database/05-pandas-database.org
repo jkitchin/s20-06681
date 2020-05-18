@@ -1,0 +1,510 @@
+* Using Pandas DataFrames as a small database
+
+Pandas DataFrames can serve as small databases. You can use them to construct tables from which you can run queries to compute things. In this example, we will explore a database of molecules and atomic element properties.
+
+** A Table for the chemical elements and their atomic masses
+
+You will have to install the Atomic Simulation Environment for this.
+
+#+BEGIN_SRC ipython
+! pip install ase
+#+END_SRC
+
+We will use it because it has data about the chemical elements, and some molecules we will use.
+
+First, we make a DataFrame containing the chemical elements, and their atomic masses.
+
+#+BEGIN_SRC ipython
+import ase
+import numpy as np
+import pandas as pd
+
+dtypes = np.dtype([('symbol', str), ('atomic mass', float)])
+data = np.empty(0, dtype=dtypes)
+
+elements = pd.DataFrame(data)
+elements['symbol'] = ase.data.chemical_symbols
+elements['atomic mass'] = ase.data.atomic_masses
+elements.info()
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [5]:
+# output
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 119 entries, 0 to 118
+Data columns (total 2 columns):
+ #   Column       Non-Null Count  Dtype
+---  ------       --------------  -----
+ 0   symbol       119 non-null    object
+ 1   atomic mass  119 non-null    float64
+dtypes: float64(1), object(1)
+memory usage: 2.0+ KB
+
+:end:
+
+You can use a =query= function to select rows from the database that meet some criteria.
+
+#+BEGIN_SRC ipython
+?elements.query
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [9]:
+:end:
+
+
+For example, to get Carbon we can use a query like this.
+
+#+BEGIN_SRC ipython
+elements.query('symbol == "C"')
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [8]:
+# text/plain
+:   symbol  atomic mass
+: 6      C       12.011
+
+:end:
+
+We can do some things with python variables like this.
+
+#+BEGIN_SRC ipython
+sym = 'H'
+elements.query('symbol == @sym')
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [10]:
+# text/plain
+:   symbol  atomic mass
+: 1      H        1.008
+
+
+:end:
+
+#+END_SRC
+
+Although, f-strings also work for this.
+
+#+BEGIN_SRC ipython
+sym = 'H'
+elements.query(f'symbol == "{sym}"')
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [11]:
+# text/plain
+:   symbol  atomic mass
+: 1      H        1.008
+
+:end:
+
+The atomic mass is trickier to work with because it has a space in it. We have to use back-ticks to "quote" this.
+
+#+BEGIN_SRC ipython
+elements.query('`atomic mass` < 4')
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [6]:
+# text/plain
+:   symbol  atomic mass
+: 0      X        1.000
+: 1      H        1.008
+
+:end:
+
+Note it does not appear you can use the @ or f-string on column names. Also note the mysterious element X in the table. We can ignore that.
+
+** A Table for some molecules
+
+Next, let's build the molecule database. This will be a table where each row  corresponds to an atom in a molecule. We will be able to get the atoms in a molecule by aggregating these on a =Molecule-ID=. We build this table up row by row, by first getting a molecule, and then iterating over each atom in the molecule. It is conventional to use an integer for an ID, but we will just use the molecular formula in this example. That has some limitations for larger databases (e.g. isomers have different properties, but the same molecular formula), but we will not have that problem here.
+
+#+BEGIN_SRC ipython
+df = pd.DataFrame(columns=['Molecule-ID', 'Atom symbol', 'x', 'y', 'z'])
+
+from ase.build import molecule
+i = 0
+
+for mlc in ['H2O', 'NH3', 'CH4']:
+    for atom in molecule(mlc):
+        df.loc[i] = [mlc, atom.symbol, atom.x, atom.y, atom.z]
+        i += 1
+df
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [15]:
+# text/plain
+:    Molecule-ID Atom symbol         x         y         z
+: 0          H2O           O  0.000000  0.000000  0.119262
+: 1          H2O           H  0.000000  0.763239 -0.477047
+: 2          H2O           H  0.000000 -0.763239 -0.477047
+: 3          NH3           N  0.000000  0.000000  0.116489
+: 4          NH3           H  0.000000  0.939731 -0.271808
+: 5          NH3           H  0.813831 -0.469865 -0.271808
+: 6          NH3           H -0.813831 -0.469865 -0.271808
+: 7          CH4           C  0.000000  0.000000  0.000000
+: 8          CH4           H  0.629118  0.629118  0.629118
+: 9          CH4           H -0.629118 -0.629118  0.629118
+: 10         CH4           H  0.629118 -0.629118 -0.629118
+: 11         CH4           H -0.629118  0.629118 -0.629118
+
+
+:end:
+
+*** What molecules are in the database?
+
+Ok, now we are ready to do some queries. First, let's see what molecules we have in our database. We want the unique values of the 'Molecule-ID' column.
+
+#+BEGIN_SRC ipython
+df['Molecule-ID'].unique()
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [17]:
+# text/plain
+: array(['H2O', 'NH3', 'CH4'], dtype=object)
+:end:
+
+*** Which molecules have three H atoms?
+
+Now, how do we find molecules that have 3 H atoms? We need to do some grouping. First, we select the H rows, and then we group by the Molecule-ID Then, we need a count of each sub group. I prefer the =size= function for this over =count=. =size= returns a Series, while =count= seems to return a DataFrame.
+
+#+BEGIN_SRC ipython
+tf = df.query('`Atom symbol` == "H"').groupby(['Molecule-ID']).size()
+tf
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [37]:
+# text/plain
+: Molecule-ID
+: CH4    4
+: H2O    2
+: NH3    3
+: dtype: int64
+:end:
+
+Finally, we can select the rows that have 3 hydrogen atoms.
+
+#+BEGIN_SRC ipython
+tf[tf == 3]
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [38]:
+# text/plain
+: Molecule-ID
+: NH3    3
+: dtype: int64
+:end:
+
+
+** Getting the molecular weight
+
+Getting the molecular weight requires us to combine information from two DataFrames. To do this, we need to merge them, aligning the rows on a common key. That key is the =Atom symbol= in the molecule DataFrame, and =symbol= in the elements DataFrame. Then we have to do the right grouping, and use the sum aggregation method on each group.
+
+#+BEGIN_SRC ipython
+mf = pd.merge(df, elements, how='inner', left_on='Atom symbol', right_on='symbol')
+mf
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [41]:
+# text/plain
+:    Molecule-ID Atom symbol         x         y         z symbol  atomic mass
+: 0          H2O           O  0.000000  0.000000  0.119262      O       15.999
+: 1          H2O           H  0.000000  0.763239 -0.477047      H        1.008
+: 2          H2O           H  0.000000 -0.763239 -0.477047      H        1.008
+: 3          NH3           H  0.000000  0.939731 -0.271808      H        1.008
+: 4          NH3           H  0.813831 -0.469865 -0.271808      H        1.008
+: 5          NH3           H -0.813831 -0.469865 -0.271808      H        1.008
+: 6          CH4           H  0.629118  0.629118  0.629118      H        1.008
+: 7          CH4           H -0.629118 -0.629118  0.629118      H        1.008
+: 8          CH4           H  0.629118 -0.629118 -0.629118      H        1.008
+: 9          CH4           H -0.629118  0.629118 -0.629118      H        1.008
+: 10         NH3           N  0.000000  0.000000  0.116489      N       14.007
+: 11         CH4           C  0.000000  0.000000  0.000000      C       12.011
+
+
+:end:
+
+Now, we group by the =Molecule-ID=, select the =atomic mass= column, and aggregate with the sum.
+
+#+BEGIN_SRC ipython
+MW = mf.groupby('Molecule-ID')['atomic mass'].sum()
+MW
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [43]:
+# text/plain
+: Molecule-ID
+: CH4    16.043
+: H2O    18.015
+: NH3    17.031
+: Name: atomic mass, dtype: float64
+:end:
+
+Here is one of many ways to print this in a different format:
+
+#+BEGIN_SRC ipython
+for mlc, mw in MW.iteritems():
+    print(f'The molecular weight of {mlc} is {mw} gm/mol')
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [44]:
+# output
+The molecular weight of CH4 is 16.043 gm/mol
+The molecular weight of H2O is 18.015 gm/mol
+The molecular weight of NH3 is 17.031 gm/mol
+
+:end:
+
+* Chaining commands in Pandas
+
+So far, we have mostly seen sequential commands in Pandas
+
+#+BEGIN_SRC ipython
+tf = df.query('`Atom symbol` == "H"').groupby(['Molecule-ID']).size()
+tf[tf == 3]
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [45]:
+# text/plain
+: Molecule-ID
+: NH3    3
+: dtype: int64
+:end:
+
+The =query= lets us chain these all into one line.
+
+#+BEGIN_SRC ipython
+df.query('`Atom symbol` == "H"').groupby(['Molecule-ID']).count().query("`Atom symbol` == 3")
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [73]:
+# text/plain
+:              Atom symbol  x  y  z
+: Molecule-ID
+: NH3                    3  3  3  3
+
+
+:end:
+
+It is common to see this syntax where parentheses allow us to separate these into multiple lines. This may enhance readability.
+
+#+BEGIN_SRC ipython
+(df
+ .query('`Atom symbol` == "H"')
+ .groupby(['Molecule-ID'])
+ .count()
+ .query("`Atom symbol` == 3"))
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [72]:
+# text/plain
+:              Atom symbol  x  y  z
+: Molecule-ID
+: NH3                    3  3  3  3
+
+
+:end:
+
+The main benefit of chaining is that you do not have to define temporary variables that exist only so you can reuse them in subsequent lines. The downside is it is more challenging to debug them, and it is common to build them iteratively in a notebook.
+
+Here is another example of chaining to get the molecular weight of water.
+
+#+BEGIN_SRC ipython
+(pd.merge(df, elements, how='inner',
+          left_on='Atom symbol', right_on='symbol')
+ .groupby('Molecule-ID')['atomic mass']
+ .sum()
+ ['H2O'])
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [71]:
+# text/plain
+: 18.015
+:end:
+
+* Subtle points
+
+Pandas offers many ways to do what appear to be the same thing, but they are not. For example, this works:
+
+#+BEGIN_SRC ipython
+(df
+ .query('`Atom symbol` == "H"')
+ .groupby(['Molecule-ID'])
+ .count()
+ .query("`Atom symbol` == 3"))
+#+END_SRC
+
+And this doesn't.
+
+#+BEGIN_SRC ipython
+(df
+ .query('`Atom symbol` == "H"')
+ .groupby(['Molecule-ID'])
+ .size()
+ .query("`Atom symbol` == 3"))
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [74]:
+# output
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-74-2b7aa4426677> in <module>
+      1 (df
+      2  .query('`Atom symbol` == "H"')
+----> 3  .groupby(['Molecule-ID'])
+      4  .size()
+      5  .query("`Atom symbol` == 3"))
+
+~/opt/anaconda3/lib/python3.7/site-packages/pandas/core/generic.py in __getattr__(self, name)
+   5272             if self._info_axis._can_hold_identifiers_and_holds_name(name):
+   5273                 return self[name]
+-> 5274             return object.__getattribute__(self, name)
+   5275
+   5276     def __setattr__(self, name: str, value) -> None:
+
+AttributeError: 'Series' object has no attribute 'query'
+:end:
+
+The problem is the =size= function here returns Series, and you cannot query a series. We can get back to this with some acrobatics.
+
+#+BEGIN_SRC ipython
+(df
+ .query('`Atom symbol` == "H"')
+ .groupby(['Molecule-ID'])
+ .size()  # This is a series
+ .rename('counts') # we give the Series a name
+ .to_frame() # Convert to dataframe so we can query
+ .query('counts == 3'))
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [89]:
+# text/plain
+:              counts
+: Molecule-ID
+: NH3               3
+
+
+:end:
+
+In the beginning, it will be challenging to remember all of this, and figure out how to debug it. With practice, it will get easier!
+
+The Pandas manual (https://pandas.pydata.org/docs/pandas.pdf) is ~3000 pages long! You cannot learn it all, and most likely you don't need to as it covers a lot of use cases that may fall outside your needs.
+
+It is also challenging that there are many ways to do the same thing. For example, here we solve this problem in a different way that has a subtly different syntax. You cannot just cut and paste bits of code between these two examples without knowing what each one does.
+
+#+BEGIN_SRC ipython
+(df
+ .query('`Atom symbol` == "H"')
+ .groupby(['Molecule-ID'])
+ .agg({'Atom symbol' :'size'}) # Now this is dataframe
+ .query('`Atom symbol` == 3'))
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [95]:
+# text/plain
+:              Atom symbol
+: Molecule-ID
+: NH3                    3
+
+
+:end:
+
+How do you learn/remember these? One way is reading lots of code, and running lots of code. You can read code in the manual. You can also use the notebook to access documentation on these methods.
+
+Here are some of the commands we used today,
+
+#+BEGIN_SRC ipython
+?pd.DataFrame.query
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [97]:
+:end:
+
+#+BEGIN_SRC ipython
+?pd.DataFrame.groupby
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [103]:
+:end:
+
+Getting help on the =agg= command is a little trickier. There are several =agg= functions, so we want to make sure we get the one that is relevant to the result from a =groupby= call. First, we get the type of things that is returned:
+
+
+#+BEGIN_SRC ipython
+type(df
+ .query('`Atom symbol` == "H"')
+ .groupby(['Molecule-ID']))
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [106]:
+# text/plain
+: pandas.core.groupby.generic.DataFrameGroupBy
+:end:
+
+Then, we get the help for that thing.
+
+#+BEGIN_SRC ipython
+?pd.core.groupby.generic.DataFrameGroupBy.agg
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [107]:
+:end:
+
+#+BEGIN_SRC ipython
+?pd.Series.to_frame
+#+END_SRC
+
+#+RESULTS:
+:results:
+# Out [100]:
+:end:
+
+
+#+BEGIN_SRC ipython
+?pd.Series.rename
+#+END_SRC

@@ -1,0 +1,82 @@
+#+title: Data science and machine learning in chemical engineeringg
+#+author: John Kitchin
+
+These are lecture notes from a mini course I taught on data science and machine learning in chemical engineering.
+
+
+1. [[s2006681:00-introduction/00-introduction.org][Introduction]]
+2. [[s2006681:01-numpy/01-numpy.org][Using numpy]]
+3. [[s2006681:02-numpy-vis/02-numpy-vis.org][Interactive visualization with numpy and matplotlib]]
+4. [[s2006681:03-pandas-intro/03-pandas-intro.org][Introduction to Pandas]]
+5. [[s2006681:04-intermediate-pandas/04-intermediate-pandas.org][Intermediate Pandas]]
+6. [[s2006681:05-pandas-database/05-pandas-database.org][Pandas as a database]]
+
+* Setup the publishing project                                     :noexport:
+
+- org :: the org-files for the notebooks  [[./org]]
+- docs :: the place to publish the html files
+- docs/notebooks :: place to publish the notebooks
+
+https://github.com/jkitchin/f19-06623/tree/master/docs
+https://github.com/jkitchin/f19-06623/blob/master/docs/notebooks/00-intro.ipynb
+
+Note I did a fair bit of editing of results that had output that looked like links.
+
+#+BEGIN_SRC emacs-lisp
+;; This is a link for getting links right.
+(org-link-set-parameters
+ "s2006681"
+ :follow (lambda (path)
+	   (find-file path))
+ :export (lambda (path desc backend)
+	   (let* ((html-path (concat (substring path 0 -4) ".html"))
+		  (ipynb (concat (file-name-base path) ".ipynb"))
+		  (colab (format "<a href=\"https://colab.research.google.com/github/jkitchin/s20-06681/blob/master/docs/notebooks/%s\" target=\"_blank\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open in Colab\" title=\"Open and Execute in Google Colaboratory\"></a>"
+				 ipynb)))
+             (cond
+              ((eq 'md backend)
+               (format "[%s](%s)" desc ipynb))
+	      ((eq 'html backend)
+	       (if desc
+		   (format "<span><a href=\"%s\">%s</a> %s</span>" html-path desc colab)
+		 (format "%s" colab)))))))
+
+(org-link-set-parameters
+ "image"
+ :export (lambda (path desc backend)
+	   (format "<img src=\"%s\">" path)))
+
+
+(require 'ox-publish)
+(setq org-publish-project-alist
+      '(("html"
+	 :base-directory "/Users/jkitchin/Desktop/s20-06681/org/"
+	 :base-extension "org"
+	 :publishing-directory "/Users/jkitchin/Desktop/s20-06681/docs/"
+	 :recursive t
+	 :publishing-function org-html-publish-to-html
+	 :auto-preamble t)
+	("notebooks"
+	 :base-directory "/Users/jkitchin/Desktop/s20-06681/org/"
+	 :base-extension "org"
+	 :publishing-directory "/Users/jkitchin/Desktop/s20-06681/docs/notebooks"
+	 :recursive t
+	 :publishing-function ox-ipynb-publish-to-notebook
+	 :auto-preamble t)
+	("static-html"
+	 :base-directory "/Users/jkitchin/Desktop/s20-06681/org/"
+	 :base-extension "xlsx\\|css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|dat\\|mat\\|txt\\|svg"
+	 :publishing-directory "/Users/jkitchin/Desktop/s20-06681/docs/"
+	 :exclude "org\\|notebooks\\|html"
+	 :recursive t
+	 :publishing-function org-publish-attachment)
+
+
+	;; ... all the components ...
+	("s20-06681" :components ("html" "notebooks"
+			      "static-html"))))
+
+(org-publish "s20-06681" t)
+#+END_SRC
+
+#+RESULTS:
