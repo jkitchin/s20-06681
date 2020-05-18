@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-18 Mon 16:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Kitchin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org04ba555">1. Introduction to data-driven model development</a>
+<ul>
+<li><a href="#orgd090267">1.1. Initial view of the data</a></li>
+<li><a href="#org623c38e">1.2. np.polyfit</a></li>
+<li><a href="#org5786dca">1.3. A generalized numpy approach to linear regression</a></li>
+</ul>
+</li>
+<li><a href="#org9f4a414">2. scikit-learn</a>
+<ul>
+<li><a href="#orgbd20900">2.1. Splitting the data into training and test data</a></li>
+<li><a href="#org6516576">2.2. Choosing a model</a></li>
+<li><a href="#org341479f">2.3. Regularization</a>
+<ul>
+<li><a href="#org3729bf2">2.3.1. Lasso</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org04ba555" class="outline-2">
+<h2 id="org04ba555"><span class="section-number-2">1</span> Introduction to data-driven model development</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+So far we have primarily focused on data; reading it in, filtering it, plotting it, etc. This is a precursor to being able to build models from your data.
+</p>
+
+<p>
+We need models for several purposes:
+</p>
+<ol class="org-ol">
+<li>We can use models to make predictions for new inputs</li>
+<li>Some models are physics based, and we can interpret them to better understand the data</li>
+<li>With a model, we can help determine if new data is consistent with old data</li>
+</ol>
+
+<p>
+There are two classes of models: linear and nonlinear. Linear means that the predicted values are <i>linear</i> in the inputs, i.e.
+</p>
+
+<p>
+\(y = \sum a_i x_i\)
+</p>
+
+<p>
+where \(a_i\) are the model parameters, and \(x_i\) are the input variables.
+</p>
+
+<p>
+Everything else is considered a nonlinear model, and that means the output of the model has a nonlinear dependence on the model parameters.
+</p>
+
+<p>
+Today, we will do a brief review of linear models.
+</p>
+
+<p>
+We will be using data from the NIST web book 'Thermophysical Properties
+of Fluid Systems': <a href="https://webbook.nist.gov/chemistry/fluid/">https://webbook.nist.gov/chemistry/fluid/</a>
+</p>
+
+<p>
+Specifically, the data used here contains the properties of water at isochoric conditions and a density of 1000 kg/m3, between 0C to 100C. This data can be downloaded once we enter the fluid conditions in the above link.
+</p>
+</div>
+
+<div id="outline-container-orgd090267" class="outline-3">
+<h3 id="orgd090267"><span class="section-number-3">1.1</span> Initial view of the data</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Here is the data we have to work with.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+%matplotlib inline
+<span style="color: #0000FF;">import</span> matplotlib.pyplot <span style="color: #0000FF;">as</span> plt
+
+<span style="color: #BA36A5;">T</span>, <span style="color: #BA36A5;">P</span> = np.loadtxt(<span style="color: #008000;">'fluid.txt'</span>, delimiter=<span style="color: #008000;">'\t'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span> skiprows = 1, usecols=(0, 1),
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span> unpack=<span style="color: #D0372D;">True</span>)
+
+plt.plot(T, P, <span style="color: #008000;">'b.-'</span>)
+plt.xlabel(<span style="color: #008000;">'Temperature (C)'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure (atm)'</span>)
+plt.title(<span style="color: #008000;">"Isochoric Water at Density 1000 kg/m3"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0.5, 1.0, 'Isochoric Water at Density 1000 kg/m3')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/425d35f522120a5f21dfcd278c72a194ad652a5d/e6c230f51ab87f5b0504037d4f5df8362dab7037.png" alt="e6c230f51ab87f5b0504037d4f5df8362dab7037.png" />
+</p>
+</div>
+
+<p>
+Our goal is to develop a model from this data that allows us to make predictions in this temperature range.
+</p>
+
+<p>
+There are many options:
+</p>
+<ol class="org-ol">
+<li>Interpolation</li>
+<li>Fitting an equation</li>
+</ol>
+
+<p>
+We will focus on the second option here, which is fitting an equation, and in particular we are interested in linear models today.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org623c38e" class="outline-3">
+<h3 id="org623c38e"><span class="section-number-3">1.2</span> np.polyfit</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+The most common linear model is a simple polynomial. We can do this in Numpy like this.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">pars</span> = np.polyfit(T, P, 2)
+pars
+</pre>
+</div>
+
+<pre class="example">
+array([ 0.00883907,  0.15490404, -1.55802977])
+</pre>
+
+<p>
+As a reminder, these parameters are for the powers (\(T^2, T, 1\)).
+</p>
+
+<p>
+We evaluate the fit here in a qualitative way.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">tfit</span> = np.linspace(T.<span style="color: #006FE0;">min</span>(), T.<span style="color: #006FE0;">max</span>())
+<span style="color: #BA36A5;">pfit</span> = np.polyval(pars, tfit)
+
+plt.plot(T, P, <span style="color: #008000;">'bo'</span>, tfit, pfit, <span style="color: #008000;">'b-'</span>)
+plt.xlabel(<span style="color: #008000;">'Temperature (C)'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure (atm)'</span>)
+plt.title(<span style="color: #008000;">"Isochoric Water at Density 1000 kg/m3"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0.5, 1.0, 'Isochoric Water at Density 1000 kg/m3')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/425d35f522120a5f21dfcd278c72a194ad652a5d/fba2b9e42de5a32461aa049969ec7fab830feb42.png" alt="fba2b9e42de5a32461aa049969ec7fab830feb42.png" />
+</p>
+</div>
+
+<p>
+The fit looks ok, but let's check the residual errors.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.plot(T, (P - np.polyval(pars, T)))
+plt.xlabel(<span style="color: #008000;">'Temperature (C)'</span>)
+plt.ylabel(<span style="color: #008000;">'residual errors'</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'residual errors')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/425d35f522120a5f21dfcd278c72a194ad652a5d/9ba486899cb791f8c7ef6faa788ff8971d6678ac.png" alt="9ba486899cb791f8c7ef6faa788ff8971d6678ac.png" />
+</p>
+</div>
+
+<p>
+The first thing to note about this is the errors are relatively small in the absolute sense over the range of the Pressure data. The error is worse in a relative sense at low pressure, but small at high pressure.
+</p>
+
+<p>
+This plot also shows that the errors are not random; there are clear trends as a function of x, which means this model does not describe the data perfectly. In some regions there are systematic underestimates, and in others systematic overestimates.
+</p>
+
+<p>
+<code>np.polyfit</code> is convenient, but it lacks many useful features we need. First, it is limited to polynomials, and we might want additional inputs that are not simple powers of \(x\), e.g. \(1/x\).
+</p>
+
+<p>
+Second, we cannot eliminate any terms in the polynomial.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5786dca" class="outline-3">
+<h3 id="org5786dca"><span class="section-number-3">1.3</span> A generalized numpy approach to linear regression</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+We can address these with a more generalized linear regression approach.
+</p>
+
+<p>
+We will focus on using standard numpy functions.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">X</span> = np.array([T**2, T, T**0]).T
+
+<span style="color: #BA36A5;">pars1</span>, <span style="color: #BA36A5;">resid</span>, <span style="color: #BA36A5;">rank</span>, <span style="color: #BA36A5;">sv</span> = np.linalg.lstsq(X, P, rcond=<span style="color: #D0372D;">None</span>)
+pars1
+</pre>
+</div>
+
+<pre class="example">
+array([ 0.00883907,  0.15490404, -1.55802977])
+</pre>
+
+<p>
+As expected, these parameters are the same as before. Now, however, we are free to add as many columns as we want, for example, here we add T**3, and \(log(T)\) and remove T. This reduces the magnitude of the errors, but still shows some systematic variations.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">X</span> = np.array([T**3, T**2, T**0, np.log(T)]).T
+
+<span style="color: #BA36A5;">pars2</span>, <span style="color: #BA36A5;">resid</span>, <span style="color: #BA36A5;">rank</span>, <span style="color: #BA36A5;">sv</span> = np.linalg.lstsq(X, P, rcond=<span style="color: #D0372D;">None</span>)
+
+plt.plot(T, P - X @ pars2)
+plt.xlabel(<span style="color: #008000;">'Temperature (C)'</span>)
+plt.ylabel(<span style="color: #008000;">'residuals'</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'residuals')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/425d35f522120a5f21dfcd278c72a194ad652a5d/bb455b932c260a26b171929f79c22d43b9c0bec7.png" alt="bb455b932c260a26b171929f79c22d43b9c0bec7.png" />
+</p>
+</div>
+
+<p>
+This approach offers a lot of flexibility, but still lacks some desired ease of use. For example:
+</p>
+
+<ol class="org-ol">
+<li>What features should we use?</li>
+<li>How do we know if an input is necessary or not?</li>
+</ol>
+
+<p>
+In the work above, we used all of the data in our fitting, and we have no way to evaluate the quality of the models on data that was not included in the fit.
+</p>
+
+<p>
+All of these issues are addressed in modern machine learning frameworks. These frameworks automate the development of models from data.
+</p>
+
+<p>
+There are several machine learning frameworks. The most common ones are:
+</p>
+
+<ol class="org-ol">
+<li>scikit-learn (<a href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>)</li>
+<li>Tensorflow (<a href="https://www.tensorflow.org/">https://www.tensorflow.org/</a>)</li>
+<li>Pytorch (<a href="https://pytorch.org/">https://pytorch.org/</a>)</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9f4a414" class="outline-2">
+<h2 id="org9f4a414"><span class="section-number-2">2</span> scikit-learn</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+We will focus on scikit-learn. You may need to install this. <a href="https://scikit-learn.org/stable/user_guide.html">scikit-learn</a> is large, so we will only consider a few paths through it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">! pip install scikit-learn
+</pre>
+</div>
+
+<p>
+Requirement already satisfied: scikit-learn in /Users/jkitchin/opt/anaconda3/lib/python3.7/site-packages (0.22.1)
+Requirement already satisfied: numpy&gt;=1.11.0 in /Users/jkitchin/opt/anaconda3/lib/python3.7/site-packages (from scikit-learn) (1.18.1)
+Requirement already satisfied: joblib&gt;=0.11 in /Users/jkitchin/opt/anaconda3/lib/python3.7/site-packages (from scikit-learn) (0.14.1)
+Requirement already satisfied: scipy&gt;=0.17.0 in /Users/jkitchin/opt/anaconda3/lib/python3.7/site-packages (from scikit-learn) (1.4.1)
+</p>
+
+<p>
+When we use scikit-learn we create a model, then we <i>fit</i> the model to data. After the fit, we can use the model to <i>predict</i> values.
+</p>
+
+<p>
+It is common to split the available data into two sets, one for <i>fitting</i> or <i>training</i>, and one for <i>testing</i>. Let's do this first.
+</p>
+</div>
+
+<div id="outline-container-orgbd20900" class="outline-3">
+<h3 id="orgbd20900"><span class="section-number-3">2.1</span> Splitting the data into training and test data</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+The key points in splitting the data is that we want to <i>randomly</i> select data for the fitting, and use the rest for testing. We have to choose a split, e.g. 80% for fitting and 20% for testing. There is no magic in this, it is just a choice. The important thing is that these two sets are similar, and representative of the data.
+</p>
+
+<p>
+We make an array of columns for the X data here, where each column is considered a <i>feature</i> that we think the output \(y\) is related to. <code>sklearn</code> makes it easy to split the data, here we use 20% for testing.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">from</span> sklearn.model_selection <span style="color: #0000FF;">import</span> train_test_split
+
+<span style="color: #BA36A5;">X</span> = np.array([T**3, T**2, T, T**0]).T
+<span style="color: #BA36A5;">y</span> = P
+
+(X_train, X_test,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>y_train, y_test) = train_test_split(X, y,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>test_size=0.2,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>shuffle=<span style="color: #D0372D;">True</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>random_state=42)
+</pre>
+</div>
+
+<p>
+Let's see what we got, first let's look at the shapes.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">X_train.shape, X_test.shape
+</pre>
+</div>
+
+<pre class="example">
+((16, 4), (5, 4))
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-ipython">y_train.shape, y_test.shape
+</pre>
+</div>
+
+<pre class="example">
+((16,), (5,))
+</pre>
+
+<p>
+We should also see if we can visualize where the selection occurred. Here, we plot the train and test data, and we plot these two sets.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.plot(X_train[:, 2], y_train, <span style="color: #008000;">'ro'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>X_test[:, 2], y_test, <span style="color: #008000;">'bs'</span>)
+plt.xlabel(<span style="color: #008000;">'Temperature (C)'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure (atm)'</span>)
+plt.legend([<span style="color: #008000;">'train'</span>, <span style="color: #008000;">'test'</span>])
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/425d35f522120a5f21dfcd278c72a194ad652a5d/66514818e11b7e3a45b8e199742a77cca724b539.png" alt="66514818e11b7e3a45b8e199742a77cca724b539.png" />
+</p>
+</div>
+
+<p>
+You should see the same thing because we used a random seed. If you set it to a different value, you will get a different set of points. It might seem odd that you always get the same random numbers but:
+</p>
+
+<ol class="org-ol">
+<li>The numbers are not random, they are psuedorandom</li>
+<li>This is the same as reading a list of numbers of the page of a book</li>
+<li>It is helpful because it means we get the same data every time, which makes our work reproducible.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org6516576" class="outline-3">
+<h3 id="org6516576"><span class="section-number-3">2.2</span> Choosing a model</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+The task we are doing is called <i>supervised learning</i>, which means we know what the answers are, and we use an algorithm to find the relationship between the inputs and the outputs. See <a href="https://scikit-learn.org/stable/supervised_learning.html">https://scikit-learn.org/stable/supervised_learning.html</a> for a very long list of models. For now, we focus on a <a href="https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares">linear model</a>. This is the simplest way to fit the train data.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">from</span> sklearn <span style="color: #0000FF;">import</span> linear_model
+<span style="color: #BA36A5;">model</span> = linear_model.LinearRegression()
+
+model.fit(X_train, y_train)
+model.coef_
+</pre>
+</div>
+
+<pre class="example">
+array([-4.03111876e-05,  1.48141559e-02, -7.18950227e-02,  0.00000000e+00])
+</pre>
+
+<p>
+It is straightforward to see how the model fits. The only tricky thing is making sure to use the right "x" values for the train and test data. Luckily, that is one of the columns in the X array, so we just use that.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.plot(T, P, <span style="color: #008000;">'k-'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>X_train[:, 2], model.predict(X_train), <span style="color: #008000;">'ro'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>X_test[:, 2], model.predict(X_test), <span style="color: #008000;">'bs'</span>)
+plt.xlabel(<span style="color: #008000;">'Temperature (C)'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure (atm)'</span>)
+plt.legend([<span style="color: #008000;">'data'</span>, <span style="color: #008000;">'train'</span>, <span style="color: #008000;">'test'</span>])
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/425d35f522120a5f21dfcd278c72a194ad652a5d/85017a83d06a8b53cb1c6e4f2a2a73d0e11befbd.png" alt="85017a83d06a8b53cb1c6e4f2a2a73d0e11befbd.png" />
+</p>
+</div>
+
+<p>
+That fit looks good, and the score indicates it is very good.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">model.score(X_train, y_train)
+</pre>
+</div>
+
+<pre class="example">
+0.9999974771711628
+</pre>
+
+<p>
+Note, this is just a polynomial model, so you should not use it with extrapolation. Despite fitting it with a library that suggests machine learning has happened, <i>there are no physics</i> in this model. It does not behave correctly at low nor very high temperature.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">Tex</span> = np.linspace(-50, 300)
+<span style="color: #BA36A5;">Xex</span> = np.array([Tex**3, Tex**2, Tex, Tex**0]).T
+
+plt.plot(T, P, <span style="color: #008000;">'ko'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>Xex[:, 2], model.predict(Xex), <span style="color: #008000;">'r-'</span>)
+plt.xlabel(<span style="color: #008000;">'Temperature (C)'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure (atm)'</span>)
+plt.legend([<span style="color: #008000;">'data'</span>, <span style="color: #008000;">'train'</span>, <span style="color: #008000;">'test'</span>])
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/425d35f522120a5f21dfcd278c72a194ad652a5d/57fb6d0f3a8df778cb17940533883151c21e8c3a.png" alt="57fb6d0f3a8df778cb17940533883151c21e8c3a.png" />
+</p>
+</div>
+
+<p>
+Within the data range, it is reasonable though. Let's examine the residual errors.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.plot(X_train[:, 2], y_train - model.predict(X_train), <span style="color: #008000;">'ro'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>X_test[:, 2], y_test - model.predict(X_test), <span style="color: #008000;">'bs'</span>)
+plt.xlabel(<span style="color: #008000;">'Temperature (C)'</span>)
+plt.ylabel(<span style="color: #008000;">'residuals'</span>)
+plt.legend([<span style="color: #008000;">'train'</span>, <span style="color: #008000;">'test'</span>])
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/425d35f522120a5f21dfcd278c72a194ad652a5d/ef5c30b099cf419674fc0f1f4e99d5a1c6896809.png" alt="ef5c30b099cf419674fc0f1f4e99d5a1c6896809.png" />
+</p>
+</div>
+
+<p>
+As before, we see non-random, temperature dependent distributions of the errors, indicating they are systematic, and the model is still inadequate to fully model this data.
+</p>
+
+<p>
+Up to this point, we have just replaced the numpy methods with sklearn methods. sklearn is to model building much like pandas is for data. It provides a consistent, rich interface with a lot of functionality.
+</p>
+
+<p>
+Next we look at how to leverage this richness to build better models.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org341479f" class="outline-3">
+<h3 id="org341479f"><span class="section-number-3">2.3</span> Regularization</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Some questions we have not resolved yet include:
+</p>
+
+<ol class="org-ol">
+<li>What inputs should we be using?</li>
+<li>How do we eliminate unnecessary inputs?</li>
+</ol>
+
+<p>
+The inputs are frequently referred to as <i>features</i>. When we specify the columns of the input, we are doing <i>feature engineering</i>. Ideally, we choose features that we know are meaningful. When we don't know in advance which features are important, we can use a library of features (polynomial models are just one example of this), and then use algorithms to select the best ones. This approach is called <i>regularization</i> and there are several ways this can be done.
+</p>
+
+<p>
+The usual way we do the fitting is to find a set of parameters that minimizes the summed squared error between the data and model predictions. In ML-speak, we call the function we are minimizing the <i>objective</i> or <i>loss</i> function.
+</p>
+
+<p>
+When we ask a question like "Is this parameter necessary?" we are asking for a compromise on how well the model fits the data if that parameter is modified. We implement this by adding a <i>penalty term</i> to the objective function.
+</p>
+
+<p>
+For regularization, \(Loss = \sum (y_{pred} - y_{train})^2 + \alpha \sum \beta^2\), where \(\beta\) are the coefficients and \(\alpha\) is the penalizing parameter. A higher \(\alpha\) would result in a heavy cost on the coefficients and might even underfit the model. A smaller value of \(\alpha\) would on the other hand take the model back to linear regression as \(\alpha\) approaches 0. We have to find an appropriate value of \(\alpha\).
+</p>
+
+<p>
+Two common regularization approaches are Ridge and Lasso. Ridge regression, also known as L2, penalizes the sum squared error loss function. It minimizes the coefficients of non-contributing independent variables. Lasso regression, L1, penalizes the absolute error loss function. Lasso regression sets the coefficients of an independent variable to 0 if it is not contributing in the behaviour of the dependent variable.
+</p>
+</div>
+
+<div id="outline-container-org3729bf2" class="outline-4">
+<h4 id="org3729bf2"><span class="section-number-4">2.3.1</span> Lasso</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+To use LASSO, we specify a different model.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">?linear_model.Lasso
+</pre>
+</div>
+
+<p>
+We have to choose a value of &alpha; for this. Let's start with a very small value to show it is similar to the LinearRegression model. (We don't use 0 because it warns us not too.)
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">model</span> = linear_model.Lasso(alpha=1e-15, max_iter=50000)
+model.fit(X_train, y_train)
+model.coef_
+</pre>
+</div>
+
+<pre class="example">
+array([-3.95721589e-05,  1.46907001e-02, -6.60781680e-02,  0.00000000e+00])
+</pre>
+
+<p>
+Those are very close (but not identical) to the previous results.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.plot(T, P, <span style="color: #008000;">'k-'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>X_train[:, 2], model.predict(X_train), <span style="color: #008000;">'ro'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>X_test[:, 2], model.predict(X_test), <span style="color: #008000;">'bs'</span>)
+plt.xlabel(<span style="color: #008000;">'Temperature (C)'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure (atm)'</span>)
+plt.legend([<span style="color: #008000;">'data'</span>, <span style="color: #008000;">'train'</span>, <span style="color: #008000;">'test'</span>])
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/425d35f522120a5f21dfcd278c72a194ad652a5d/c0ca6e96717b30a87c441c3d15a359eb6b6ac579.png" alt="c0ca6e96717b30a87c441c3d15a359eb6b6ac579.png" />
+</p>
+</div>
+
+<p>
+Now we have to figure out how to find an appropriate value for &alpha;. First, let's see how &alpha; affects the parameters. It is useful to search across a broad range of values, so we use a logspace to look at &alpha;=1e-15 to &alpha;=100.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> pandas <span style="color: #0000FF;">as</span> pd
+<span style="color: #0000FF;">import</span> pickle
+<span style="color: #BA36A5;">alpha</span> = np.logspace(-15, 4, 10)
+
+<span style="color: #BA36A5;">df</span> = pd.DataFrame()
+
+<span style="color: #BA36A5;">models</span> = {}
+
+<span style="color: #0000FF;">for</span> a <span style="color: #0000FF;">in</span> alpha:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">model</span> = linear_model.Lasso(alpha=a, max_iter=50000)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   model.fit(X_train, y_train)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">df</span> = df.append(pd.Series(model.coef_, name=a))
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">models</span>[a] = model
+
+df
+</pre>
+</div>
+
+<pre class="example">
+                     0         1         2    3
+1.000000e-15 -0.000040  0.014691 -0.066078  0.0
+1.291550e-13 -0.000040  0.014691 -0.066078  0.0
+1.668101e-11 -0.000040  0.014691 -0.066078  0.0
+2.154435e-09 -0.000040  0.014691 -0.066078  0.0
+2.782559e-07 -0.000040  0.014691 -0.066078  0.0
+3.593814e-05 -0.000040  0.014690 -0.066063  0.0
+4.641589e-03 -0.000039  0.014667 -0.064901  0.0
+5.994843e-01 -0.000031  0.013303 -0.000000  0.0
+7.742637e+01 -0.000029  0.013052  0.000000  0.0
+1.000000e+04  0.000100  0.000000  0.000000  0.0
+</pre>
+
+<p>
+You can see that this eventually eliminates the parameter for column 2, which is the linear term.
+</p>
+
+<p>
+Now we need to look at the trends in the quality of the model. One way to do this to evaluate the score.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">for</span> a, pars <span style="color: #0000FF;">in</span> df.iterrows():
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">model</span> = models[a]
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #0000FF;">print</span>(model.score(X_train, y_train))
+</pre>
+</div>
+
+<p>
+0.9999973502351319
+0.9999973502351319
+0.9999973502351317
+0.999997350235111
+0.9999973502324528
+0.9999973496003345
+0.9999972971538175
+0.9999785178990158
+0.9999565377622336
+0.9559621585686436
+</p>
+
+<p>
+Visually we can see that if &alpha; gets too large, it has a detrimental effect, but for some intermediate values we can have a more sparse model, e.g. \(P = \beta_3 T^3 + \beta_2 T^2\).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">plt.plot(T, P, <span style="color: #008000;">'bo'</span>, label=<span style="color: #008000;">'data'</span>)
+<span style="color: #0000FF;">for</span> a, pars <span style="color: #0000FF;">in</span> df.iterrows():
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">model</span> = models[a]
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">x</span>, <span style="color: #BA36A5;">y</span> = X_train[:, 2], model.predict(X_train)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">i</span> = np.argsort(x)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   plt.plot(x[i], y[i], <span style="color: #008000;">'-'</span>, label=f<span style="color: #008000;">'</span><span style="color: #BA36A5;">{a:1.0e}</span><span style="color: #008000;">'</span>)
+
+plt.legend()
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/425d35f522120a5f21dfcd278c72a194ad652a5d/d741f9f85cabe1dd63036c1142e8da74e2178e41.png" alt="d741f9f85cabe1dd63036c1142e8da74e2178e41.png" />
+</p>
+</div>
+
+<p>
+There are still a few loose ends here. These results apply specifically to the train-test split we used, and that was chosen randomly. We would expect to get (slightly at least) different results with different choices. This is also a common machine learning problem, and next we will consider how to do many different fits with different train/test splits with a method called K-fold validation.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Kitchin</p>
+<p class="date">Created: 2020-05-18 Mon 16:32</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

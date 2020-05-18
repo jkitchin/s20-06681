@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-18 Mon 16:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Kitchin and Siddhant Lambor" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org15e363d">1. Decision Trees and Random Forests Examples</a>
+<ul>
+<li><a href="#org5c21cf1">1.1. A regression example</a></li>
+<li><a href="#org8ec0629">1.2. Random Forest regression</a></li>
+</ul>
+</li>
+<li><a href="#org4a2b3a0">2. Classification</a>
+<ul>
+<li><a href="#orga2d846b">2.1. Random forest classifiers</a></li>
+</ul>
+</li>
+<li><a href="#orgccc1ff6">3. Mleng - AKA the spAIce</a>
+<ul>
+<li><a href="#orge96880a">3.1. Data visualization</a></li>
+<li><a href="#org252fce1">3.2. Feature engineering</a></li>
+<li><a href="#orge538c46">3.3. So many other kinds of models</a>
+<ul>
+<li><a href="#org7df2d02">3.3.1. Graph/convolution models</a></li>
+<li><a href="#orge4ba7f4">3.3.2. Symbolic regression</a></li>
+<li><a href="#org27ee214">3.3.3. Reinforcement learning</a></li>
+</ul>
+</li>
+<li><a href="#org6bec636">3.4. Train, test <i>and</i> validate</a></li>
+<li><a href="#orgf03f5b1">3.5. Modern machine learning frameworks</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org15e363d" class="outline-2">
+<h2 id="org15e363d"><span class="section-number-2">1</span> Decision Trees and Random Forests Examples</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Decision trees are ML algorithms which work on classification of the data based on values of the data features. This can be as simple as a 'yes' or 'no' entry in a feature column, or it can be a decision between many options.
+</p>
+
+<p>
+<img src="indecision-tree.png">
+In trying to separate apples and oranges, we might ask is it red or green or orange? If it is red, we might subsequently ask if the skin is smooth (apple) or rough (a blood orange). You can have many levels of these decisions before you finally end at a conclusion about what you have.
+</p>
+
+<p>
+When we fit decision trees to data, we are finding a selection of a feature to split the data at a node, and we try to select a feature to split on which would give us the maximum information about the data set at that node.
+</p>
+
+<p>
+It is almost intuitive to understand how a decision tree works for classification if all the data is categorical. However, decision trees can also be used for regression on continous data. This is basically making a decision on whether a feature is greater than or less than some value.
+</p>
+
+<p>
+Here are some libraries we will use later
+</p>
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+<span style="color: #0000FF;">import</span> pandas <span style="color: #0000FF;">as</span> pd
+<span style="color: #0000FF;">import</span> matplotlib.pyplot <span style="color: #0000FF;">as</span> plt
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org5c21cf1" class="outline-3">
+<h3 id="org5c21cf1"><span class="section-number-3">1.1</span> A regression example</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+In engineering analysis, we are often trying to build models for <i>continuous</i> properties, which is a regression problem. In this example, we return to the data from the NIST web book 'Thermophysical Properties of Fluid Systems': <a href="https://webbook.nist.gov/chemistry/fluid/">https://webbook.nist.gov/chemistry/fluid/</a>
+</p>
+
+<p>
+Specifically, the data used here contains the properties of water at isochoric conditions and a density of 1000 kg/m3, between 0C to 100C.
+</p>
+
+<p>
+We are interested in the pressure and temperature of water, which is taken from the data file below.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">data</span> = np.loadtxt(<span style="color: #008000;">'fluid.txt'</span>, delimiter=<span style="color: #008000;">'\t'</span>, skiprows = 1, usecols=(0, 1))
+
+<span style="color: #BA36A5;">T</span> = data[:, 0]
+<span style="color: #BA36A5;">P</span> = data[:, 1]
+
+plt.plot(T, P, <span style="color: #008000;">'b-'</span>)
+plt.xlabel(<span style="color: #008000;">'Temperature (K)'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure (atm)'</span>)
+plt.title(<span style="color: #008000;">"Isochoric Water at Density 1000 kg/m3"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0.5, 1.0, 'Isochoric Water at Density 1000 kg/m3')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/d2fbd1a04684ce3d706edd2a408fb9db273cd365/567d8b70a3fbe761d400158f4fc13637ce645ce0.png" alt="567d8b70a3fbe761d400158f4fc13637ce645ce0.png" />
+</p>
+</div>
+
+<p>
+We will split this into train and test sets.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">from</span> sklearn.model_selection <span style="color: #0000FF;">import</span> train_test_split
+
+<span style="color: #BA36A5;">X</span> = T
+<span style="color: #BA36A5;">y</span> = P
+
+(X_train, X_test,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>y_train, y_test) = train_test_split(X, y,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>test_size=0.2,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>shuffle=<span style="color: #D0372D;">True</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>random_state=3)
+</pre>
+</div>
+
+<p>
+The sklearn class we will be using for regression with decision trees is DecisionTreeRegressor.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">from</span> sklearn.tree <span style="color: #0000FF;">import</span> DecisionTreeRegressor
+</pre>
+</div>
+
+<p>
+There are many hyperparameters in this class. One such hyperparameter is the choice of the algorithm to choose the best feature to split on. In DecisionTreeRegressor, the default is the mean square error approach, which we use here.
+</p>
+
+<p>
+As we have seen several times, there is a standard API to fit and predict values.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">tree1</span> = DecisionTreeRegressor()
+
+tree1.fit(X_train[:, np.newaxis], y_train)
+
+<span style="color: #BA36A5;">Ptest</span> = tree1.predict(X_test[:, np.newaxis])
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Plotting</span>
+plt.plot(X_train, y_train, <span style="color: #008000;">'k.'</span>, label = <span style="color: #008000;">"Train Data"</span>)
+plt.plot(X_test, Ptest, <span style="color: #008000;">'bo'</span>, label = <span style="color: #008000;">'Test Data'</span>)
+plt.legend()
+plt.xlabel(<span style="color: #008000;">'Temperature (K)'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure (atm)'</span>)
+plt.title(<span style="color: #008000;">"Isochoric Water at Density 1000 kg/m3"</span>)
+
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">R-squared score of the model</span>
+<span style="color: #0000FF;">print</span>(<span style="color: #008000;">'R-Squared Score:'</span>, tree1.score(X_test[:, np.newaxis], y_test))
+</pre>
+</div>
+
+<p>
+R-Squared Score: 0.999639135977875
+</p>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/d2fbd1a04684ce3d706edd2a408fb9db273cd365/5a377c09585682fda1a6c358bc15064206370137.png" alt="5a377c09585682fda1a6c358bc15064206370137.png" />
+</p>
+</div>
+
+<p>
+This looks like a good fit. But visually we are not able to see how a decision tree varies from any other regression approach. To see that, let us use a sparse data set, by taking a small number of points from the above data.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Training Data</span>
+<span style="color: #BA36A5;">nT</span> = T[0:-1:20]
+<span style="color: #BA36A5;">nP</span> = P[0:-1:20]
+
+plt.plot(nT, nP, <span style="color: #008000;">'b.'</span>)
+plt.xlabel(<span style="color: #008000;">'Temperature (K)'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure (atm)'</span>)
+plt.title(<span style="color: #008000;">"Isochoric Water at Density 1000 kg/m3"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0.5, 1.0, 'Isochoric Water at Density 1000 kg/m3')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/d2fbd1a04684ce3d706edd2a408fb9db273cd365/70778b8932f374abf2c07fb398400407fd717e77.png" alt="70778b8932f374abf2c07fb398400407fd717e77.png" />
+</p>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Training data</span>
+<span style="color: #BA36A5;">nT</span> = np.array(nT)[:, np.newaxis]
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Decision Tree Model</span>
+<span style="color: #BA36A5;">tree2</span> = DecisionTreeRegressor()
+
+tree2.fit(nT, nP)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Test Data, using the original data set</span>
+<span style="color: #BA36A5;">Ttest</span> = T[:, np.newaxis]
+<span style="color: #BA36A5;">Ptest</span> = tree2.predict(Ttest)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Plotting</span>
+plt.plot(nT, nP, <span style="color: #008000;">'ko'</span>, label = <span style="color: #008000;">"Train Data"</span>)
+plt.plot(Ttest, Ptest, <span style="color: #008000;">'b-'</span>,label = <span style="color: #008000;">'Test Data'</span>)
+plt.legend()
+plt.xlabel(<span style="color: #008000;">'Temperature (K)'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure (atm)'</span>)
+plt.title(<span style="color: #008000;">"Isochoric Water at Density 1000 kg/m3"</span>)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">R-squared score of the model</span>
+<span style="color: #0000FF;">print</span>(<span style="color: #008000;">'R-Squared Score:'</span>, tree2.score(Ttest, P))
+</pre>
+</div>
+
+<p>
+R-Squared Score: 0.9812453324434975
+</p>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/d2fbd1a04684ce3d706edd2a408fb9db273cd365/bec8876bb2d74b26645794b2a2a4f17ca245e08a.png" alt="bec8876bb2d74b26645794b2a2a4f17ca245e08a.png" />
+</p>
+</div>
+
+<p>
+We can now see that a decision tree does not follow the function approximation approach to regression. The decision tree divides the data set into different regions by drawing boundaries (vertical lines in the steps) to separate each data point. This is based on the mean squared error criteria. A split is chosen which gives the lowest mean squared error.
+</p>
+
+<p>
+Although Decision trees are conceptually simple, you should be aware that the first derivatives are not continuous. This is not a good model to use if you need derivatives.
+</p>
+
+
+<p>
+We can further understand how the boundaries are constructed is by actually visualizing the tree.
+</p>
+
+<p>
+This is a common approach to visualize a decision tree.
+</p>
+
+<p>
+<a href="https://medium.com/@rnbrown/creating-and-visualizing-decision-trees-with-python-f8e8fa394176">https://medium.com/@rnbrown/creating-and-visualizing-decision-trees-with-python-f8e8fa394176</a>
+</p>
+
+<p>
+Note this may not work for you if you have not installed graphviz (<a href="https://www.graphviz.org/">https://www.graphviz.org/</a>). If you don't have it, don't worry about it now. It is not critical for anything other than visualization. We use pydotplus to generate these figures.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">!pip install pydotplus
+</pre>
+</div>
+
+<p>
+Requirement already satisfied: pydotplus in /Users/jkitchin/opt/anaconda3/lib/python3.7/site-packages (2.0.2)
+Requirement already satisfied: pyparsing&gt;=2.0.1 in /Users/jkitchin/opt/anaconda3/lib/python3.7/site-packages (from pydotplus) (2.4.6)
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">from</span> io <span style="color: #0000FF;">import</span> StringIO
+<span style="color: #0000FF;">from</span> IPython.display <span style="color: #0000FF;">import</span> Image
+<span style="color: #0000FF;">from</span> sklearn.tree <span style="color: #0000FF;">import</span> export_graphviz
+<span style="color: #0000FF;">import</span> pydotplus
+
+<span style="color: #BA36A5;">dot_data</span> = StringIO()
+
+export_graphviz(tree2, out_file=dot_data,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   filled=<span style="color: #D0372D;">True</span>, rounded=<span style="color: #D0372D;">True</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   special_characters=<span style="color: #D0372D;">True</span>)
+
+<span style="color: #BA36A5;">graph</span> = pydotplus.graph_from_dot_data(dot_data.getvalue())
+
+Image(graph.create_png())
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="obipy-resources/d2fbd1a04684ce3d706edd2a408fb9db273cd365/b5cd3415259b663f36101d06d6973425b4a24c7f.png" alt="b5cd3415259b663f36101d06d6973425b4a24c7f.png" />
+</p>
+</div>
+
+<pre class="example">
+&lt;IPython.core.display.Image object&gt;
+</pre>
+
+
+<p>
+As seen in the above image, the decision tree algorithm splits the data set based on a boundary which gives the minimum mean squared error. This process goes on until every data point is represented by an interval.
+</p>
+
+<p>
+Note from Siddhant : From a classification point of view, this can be overfitting as we often need to prune the tree by reducing the number of splits or by restricting the maximum depth of the tree. However, here we know that the data is non-linear and a decision tree boundary will group together unequal data points if we stop splitting the data.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8ec0629" class="outline-3">
+<h3 id="org8ec0629"><span class="section-number-3">1.2</span> Random Forest regression</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+A Random Forest algorithm uses multiple decision trees and determines the output either based on the mean or the median of all the individual outputs. Scikit-learn gives us the mean of all the trees.
+</p>
+
+<p>
+<b>A Random Forest near a lake</b>
+<img src="random-forests.png">
+</p>
+
+
+<p>
+Some important hyperparameters for a random forest are:
+</p>
+
+<p>
+<code>n_estimators</code>: number of trees
+</p>
+
+<p>
+<code>max_features</code>: determines how many features from the original data set do we use for a single tree.
+</p>
+
+<p>
+<code>bootstrap</code>: If False, every tree will use the whole data set to determine the output.
+</p>
+
+<p>
+<code>max_samples</code>: determines how many samples will be considered by each individual tree, if bootstrap is true.
+</p>
+
+<p>
+The sklearn class we will be using for random forest regression is <code>RandomForestRegressor</code>.
+</p>
+
+<p>
+We will use the same sparse data set as earlier. Let us begin with one decision tree and bootstrap=False to replicate earlier results. Other hyperparameters can be default now as we will be using the entire data set.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">from</span> sklearn.ensemble <span style="color: #0000FF;">import</span> RandomForestRegressor
+
+<span style="color: #BA36A5;">forest</span> = RandomForestRegressor(n_estimators=1, bootstrap=<span style="color: #D0372D;">False</span>, random_state=5)
+
+forest.fit(nT, nP)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Test Data</span>
+<span style="color: #BA36A5;">Ttest</span> = T[:, np.newaxis]
+<span style="color: #BA36A5;">Ptest</span> = forest.predict(Ttest)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Plotting</span>
+plt.plot(nT, nP, <span style="color: #008000;">'ko'</span>, label=<span style="color: #008000;">'Train Data'</span>)
+plt.plot(Ttest, Ptest, <span style="color: #008000;">'b-'</span>, label=<span style="color: #008000;">'Test Data'</span>)
+plt.legend()
+plt.xlabel(<span style="color: #008000;">'Temperature (K)'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure (atm)'</span>)
+plt.title(<span style="color: #008000;">"Isochoric Water at Density 1000 kg/m3"</span>)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">R-squared score of the model</span>
+<span style="color: #0000FF;">print</span>(<span style="color: #008000;">'R-Squared Score:'</span>, forest.score(Ttest, P))
+</pre>
+</div>
+
+<p>
+R-Squared Score: 0.9812453324434975
+</p>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/d2fbd1a04684ce3d706edd2a408fb9db273cd365/bec8876bb2d74b26645794b2a2a4f17ca245e08a.png" alt="bec8876bb2d74b26645794b2a2a4f17ca245e08a.png" />
+</p>
+</div>
+
+<p>
+This is exactly the model we got using the DecisionTreeRegressor. Now let us try to increase the number of trees. Here we need to set bootstrap = True, as we need to now allow random sampling of the training data for each tree. We will let the max_sample hyperparameter be set to the default value of None, as being a small data set, we want to use all the available data for each tree.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython">
+<span style="color: #BA36A5;">forest</span> = RandomForestRegressor(n_estimators=50, bootstrap=<span style="color: #D0372D;">True</span>, random_state=3)
+
+forest.fit(nT, nP)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Test Data</span>
+<span style="color: #BA36A5;">Ttest</span> = T[:, np.newaxis]
+<span style="color: #BA36A5;">Ptest</span> = forest.predict(Ttest)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Plotting</span>
+plt.plot(nT, nP, <span style="color: #008000;">'ko'</span>, label=<span style="color: #008000;">'Train Data'</span>)
+plt.plot(Ttest, Ptest, <span style="color: #008000;">'b-'</span>, label=<span style="color: #008000;">'Test Data'</span>)
+plt.legend()
+plt.xlabel(<span style="color: #008000;">'Temperature (K)'</span>)
+plt.ylabel(<span style="color: #008000;">'Pressure (atm)'</span>)
+plt.title(<span style="color: #008000;">"Isochoric Water at Density 1000 kg/m3"</span>)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">R-squared score of the model</span>
+<span style="color: #0000FF;">print</span>(<span style="color: #008000;">'R-Squared Score:'</span>, forest.score(Ttest, P))
+</pre>
+</div>
+
+<p>
+R-Squared Score: 0.967072742873464
+</p>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/d2fbd1a04684ce3d706edd2a408fb9db273cd365/d4fdf2d236d3406be2d78517a16788313beee288.png" alt="d4fdf2d236d3406be2d78517a16788313beee288.png" />
+</p>
+</div>
+
+<p>
+We are getting a better accuracy with a 50 trees. If we look at the plot closely, we can also see that the boundaries here more in number than those obtained through a single decision tree.
+</p>
+
+<p>
+Let us see how does the accuracy of the model vary with an increase in number of the trees. Note this takes 30-60 seconds to run.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">ntrees</span> = <span style="color: #006FE0;">range</span>(1, 100)   <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">number of trees</span>
+<span style="color: #BA36A5;">score</span> = []   <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">R-squared score of the model</span>
+
+
+<span style="color: #0000FF;">for</span> i <span style="color: #0000FF;">in</span> ntrees:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">forest</span> = RandomForestRegressor(
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   n_estimators=i,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   bootstrap=<span style="color: #D0372D;">True</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   random_state=3)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   forest.fit(nT, nP)
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Accuracy of the model</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   score.append(forest.score(Ttest, P))
+
+plt.plot(ntrees, score)
+plt.title(<span style="color: #008000;">"Score for a Forest"</span>)
+plt.xlabel(<span style="color: #008000;">"Number of Trees"</span>)
+plt.ylabel(<span style="color: #008000;">"R-squared"</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'R-squared')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/d2fbd1a04684ce3d706edd2a408fb9db273cd365/fe9c25e6436ba31c64a9dd881324db82748896bb.png" alt="fe9c25e6436ba31c64a9dd881324db82748896bb.png" />
+</p>
+</div>
+
+<p>
+As we can see here, the accuracy of our model goes on increasing as we use more number of trees to predict the output, until we reach a threshold beyond which the accuracy stays almost constant.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4a2b3a0" class="outline-2">
+<h2 id="org4a2b3a0"><span class="section-number-2">2</span> Classification</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The goal here is to predict whether a chemical species is in the supercritical fluid phase based on its temperature and pressure.
+</p>
+
+<p>
+Our training data consists of 3 features and 1 binary label. Two of these features are the temperature (K) and pressure (MPa), which are continuous variables. The third feature is a binary feature with Species = 1 being water and Species = 0 being Carbon dioxide. The label for each data point consists of the phase of the fluid. 1 indicates the species at the given temperature and pressure is in its supercritical phase and 0 indicates otherwise.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">df</span> = pd.read_csv(<span style="color: #008000;">'SuperCritical-Train.csv'</span>, index_col = 0)
+df.columns
+</pre>
+</div>
+
+<pre class="example">
+Index(['Temp', 'Pres', 'Species', 'SuperCritical'], dtype='object')
+</pre>
+
+<p>
+Let us extract the data in a suitable form to feed to the sklearn function.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">T</span> = np.array(df.Temp)     <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Temperature</span>
+<span style="color: #BA36A5;">P</span> = np.array(df.Pres)     <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Pressure</span>
+<span style="color: #BA36A5;">S</span> = np.array(df.Species)  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Species</span>
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Training Features</span>
+<span style="color: #BA36A5;">X</span> = np.array([T, P, S]).T
+X
+</pre>
+</div>
+
+<pre class="example">
+array([[199.489547  ,  23.54967778,   1.        ],
+       [148.27129694,  23.49114191,   0.        ],
+       [207.74233387,   5.54742458,   1.        ],
+       ...,
+       [371.41868243,  28.33630278,   0.        ],
+       [135.84429994,  10.4922712 ,   0.        ],
+       [576.09586989,  18.45111273,   1.        ]])
+</pre>
+
+
+<p>
+We will be using the 'gini impurity' (default) to select the best feature to split on at a node. We do not want overfitting here, thus we will restrict the max_depth to 3 in this case.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Training labels</span>
+<span style="color: #BA36A5;">y</span> = np.array(df.SuperCritical)
+</pre>
+</div>
+
+<p>
+We will be using the 'gini impurity' (default) to select the best feature to split on at a node. We do not want overfitting here, thus we will restrict the max_depth to 3 in this case.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">
+<span style="color: #0000FF;">from</span> sklearn.tree <span style="color: #0000FF;">import</span> DecisionTreeClassifier
+<span style="color: #BA36A5;">tree3</span> = DecisionTreeClassifier(max_depth=3)
+tree3.fit(X, y)
+</pre>
+</div>
+
+<pre class="example">
+DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                       max_depth=3, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=None, splitter='best')
+</pre>
+
+<p>
+We evaluate this with the test data features and labels.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">df1</span> = pd.read_csv(<span style="color: #008000;">'SuperCritical-Test.csv'</span>, index_col = 0)
+df1.columns
+</pre>
+</div>
+
+<pre class="example">
+Index(['Temp', 'Pres', 'Species', 'SuperCritical'], dtype='object')
+</pre>
+
+
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Test Data</span>
+
+<span style="color: #BA36A5;">Ttest</span> = np.array(df1.Temp)     <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Temperature</span>
+<span style="color: #BA36A5;">Ptest</span> = np.array(df1.Pres)     <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Pressure</span>
+<span style="color: #BA36A5;">Stest</span> = np.array(df1.Species)  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Species</span>
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Test Features</span>
+<span style="color: #BA36A5;">Xtest</span> = np.array([Ttest, Ptest, Stest]).T
+Xtest
+</pre>
+</div>
+
+<pre class="example">
+array([[953,  12,   0],
+       [969,  29,   0],
+       [257,  23,   0],
+       ...,
+       [722,  22,   0],
+       [297,  21,   1],
+       [ 64,  35,   0]])
+</pre>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">True test labels</span>
+
+<span style="color: #BA36A5;">ytrueTest</span> = np.array(df1.SuperCritical)
+</pre>
+</div>
+
+<p>
+To see how well our model fits to the test data, let us use the .score attribute to calculate the R-squared score of the model.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">print</span>(<span style="color: #008000;">'R-Squared Score:'</span>, tree3.score(Xtest, ytrueTest))
+</pre>
+</div>
+
+<p>
+R-Squared Score: 0.889
+</p>
+
+<p>
+It is a pretty straight forward data set, and thus we have got a good accuracy on our model.
+</p>
+
+<p>
+Visualizing the tree:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">dot_data</span> = StringIO()
+
+export_graphviz(tree3, out_file=dot_data,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   filled=<span style="color: #D0372D;">True</span>, rounded=<span style="color: #D0372D;">True</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   special_characters=<span style="color: #D0372D;">True</span>)
+
+<span style="color: #BA36A5;">graph</span> = pydotplus.graph_from_dot_data(dot_data.getvalue())
+
+Image(graph.create_png())
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="obipy-resources/d2fbd1a04684ce3d706edd2a408fb9db273cd365/75feb458035566d5c03e32e44ff40dc818ba8f8b.png" alt="75feb458035566d5c03e32e44ff40dc818ba8f8b.png" />
+</p>
+</div>
+
+<pre class="example">
+&lt;IPython.core.display.Image object&gt;
+</pre>
+</div>
+
+<div id="outline-container-orga2d846b" class="outline-3">
+<h3 id="orga2d846b"><span class="section-number-3">2.1</span> Random forest classifiers</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Let us see how using multiple trees help us in this case. We will be using the RandomForestClassifier class from scikit-learn.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">from</span> sklearn.ensemble <span style="color: #0000FF;">import</span> RandomForestClassifier
+</pre>
+</div>
+
+<p>
+Let us first use a single decision tree with the whole data set to replicate our earlier results.
+</p>
+
+<p>
+To do so, we have to also change the default hyperparameter max_features = 'auto' to max_features = None. This is different than in the regression approach. In regression max_features = None and 'auto' had the same outcome, wherein all the features would be used. In this case, max_feaures = None uses all the features. The default 'auto' uses the number of features equal to the sqrt(total features).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">forest</span> = RandomForestClassifier(
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   n_estimators=1,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   bootstrap=<span style="color: #D0372D;">False</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   random_state=3,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   max_depth=3,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   max_features=<span style="color: #D0372D;">None</span>)
+
+forest.fit(X, y)
+
+<span style="color: #0000FF;">print</span>(<span style="color: #008000;">'R-Squared Score:'</span>, forest.score(Xtest, ytrueTest))
+</pre>
+</div>
+
+<p>
+R-Squared Score: 0.889
+</p>
+
+
+<p>
+Let us now add more decision trees, with a randomized feature selection and samples selection.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">forest</span> = RandomForestClassifier(n_estimators =5, bootstrap = <span style="color: #D0372D;">True</span>, random_state=3, max_depth = 3, max_features = <span style="color: #008000;">'auto'</span>)
+
+forest.fit(X, y)
+
+<span style="color: #0000FF;">print</span>(<span style="color: #008000;">'R-Squared Score:'</span>, forest.score(Xtest, ytrueTest))
+</pre>
+</div>
+
+<p>
+R-Squared Score: 0.92
+</p>
+
+<p>
+Using 5 trees gave us a better output.
+</p>
+
+<p>
+Let us try to visualize these 5 trees.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">from</span> sklearn <span style="color: #0000FF;">import</span> tree
+<span style="color: #BA36A5;">fn</span> = [<span style="color: #008000;">'Temp'</span>, <span style="color: #008000;">'Pres'</span>, <span style="color: #008000;">'Species'</span>]
+<span style="color: #BA36A5;">cn</span> = <span style="color: #008000;">'SuperCritical'</span>
+<span style="color: #BA36A5;">fig</span>, <span style="color: #BA36A5;">axes</span> = plt.subplots(nrows=1, ncols=5, figsize=(8, 2))
+<span style="color: #0000FF;">for</span> index <span style="color: #0000FF;">in</span> <span style="color: #006FE0;">range</span>(0, 5):
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   tree.plot_tree(forest.estimators_[index],
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  feature_names=fn,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  class_names=cn,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  filled=<span style="color: #D0372D;">True</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>  ax=axes[index])
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   axes[index].set_title(<span style="color: #008000;">'Estimator: '</span> + <span style="color: #006FE0;">str</span>(index), fontsize=11)
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 576x144 with 5 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/d2fbd1a04684ce3d706edd2a408fb9db273cd365/6bc8a9fa37a784e0d0e52cce08ddca53739e8c35.png" alt="6bc8a9fa37a784e0d0e52cce08ddca53739e8c35.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgccc1ff6" class="outline-2">
+<h2 id="orgccc1ff6"><span class="section-number-2">3</span> Mleng - AKA the spAIce</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+There is much for to data science and machine learning than we have been able to cover this semester.
+</p>
+</div>
+
+<div id="outline-container-orge96880a" class="outline-3">
+<h3 id="orge96880a"><span class="section-number-3">3.1</span> Data visualization</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+This is one of the most critical capabilities in data science. We are very skilled at seeing patterns. Visualization is crucial for getting insight into the data, and in what the models mean. We focused primarily on matplotlib because it is pure Python. Many other approaches also involve Javascript, which is useful for graphics you can use in a browser, but which require knowledge of Javascript.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org252fce1" class="outline-3">
+<h3 id="org252fce1"><span class="section-number-3">3.2</span> Feature engineering</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+There are many efforts aimed at automating the search for features. These are often combinations of features, or transformed features. These methods all have to be augmented by regularization for feature selection.
+</p>
+
+<p>
+The SISSO method (<a href="https://arxiv.org/pdf/1710.03319.pdf">https://arxiv.org/pdf/1710.03319.pdf</a>) of feature engineering uses an algorithm to generate many (potentially billions) of features based on algebraic construction algorithms, with a heavy regularization to remove ones that are not helpful.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge538c46" class="outline-3">
+<h3 id="orge538c46"><span class="section-number-3">3.3</span> So many other kinds of models</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+There are so many other models that are possible.
+</p>
+</div>
+
+<div id="outline-container-org7df2d02" class="outline-4">
+<h4 id="org7df2d02"><span class="section-number-4">3.3.1</span> Graph/convolution models</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<p>
+Convolutional models have functions that depend on several data points, and that develop features from them to fit the data. The original versions were used on images, where convolution filters were trained for classification. These ideas have been extended to graph representations of data, where the filters are convoluted over the connected nodes to develop features based on the neighbors of a point.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge4ba7f4" class="outline-4">
+<h4 id="orge4ba7f4"><span class="section-number-4">3.3.2</span> Symbolic regression</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<p>
+This is a method where instead of using flexible functions like neural networks where you fit the parameters, you instead use an algorithm to search for functions to generate equations. One approach to this is the ALAMO project from Prof. Sahinidis' group, which searches for the best equations to fit data.
+</p>
+
+<dl class="org-dl">
+<dt>ALAMO</dt><dd><a href="http://archimedes.cheme.cmu.edu/?q=alamo">http://archimedes.cheme.cmu.edu/?q=alamo</a></dd>
+</dl>
+
+<p>
+This is subtly different than the SISSO approach, which focuses on features.
+</p>
+
+<p>
+There are many other approaches that leverage genetic programs, and decision trees for generating equations.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org27ee214" class="outline-4">
+<h4 id="org27ee214"><span class="section-number-4">3.3.3</span> Reinforcement learning</h4>
+<div class="outline-text-4" id="text-3-3-3">
+<p>
+This is a whole new class of machine learning models where instead of fitting models to reduce an error function, the models are trained to make decisions that maximize some kind of reward function (<a href="https://en.wikipedia.org/wiki/Reinforcement_learning">https://en.wikipedia.org/wiki/Reinforcement_learning</a>). There are not many engineering applications of this method yet.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6bec636" class="outline-3">
+<h3 id="org6bec636"><span class="section-number-3">3.4</span> Train, test <i>and</i> validate</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+We only focused on train/test splits for testing the hyperparameters <i>within a single model</i>. When you are testing many models, you can run the risk of finding a model that simply fits the test data the best. In this case it is common to split the data into three sets: train, test and validate. The validate set is only used at the end to make sure that we have not overfit to the test data.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf03f5b1" class="outline-3">
+<h3 id="orgf03f5b1"><span class="section-number-3">3.5</span> Modern machine learning frameworks</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+PyTorch and TensorFlow are the two most common Python-based machine learning frameworks. These packages leverage automatic differentiation to let you build and train very flexible models. You might wonder why we didn't learn more about these?
+</p>
+
+<p>
+They are much more complex to work with, and involve a different paradigm of programming. You have to pay attention to a whole new set of things. It is easier to pick out this style of machine learning <i>after</i> you know what the algorithms are, and how they work.
+</p>
+
+<p>
+Both of these are still rapidly developing, and believe it or not, a year ago it was the case that the version you start with at the beginning of a semester would be out of date by the end of the semester.
+</p>
+
+<p>
+<b>That brings us to the end of the beginning!</b>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Kitchin and Siddhant Lambor</p>
+<p class="date">Created: 2020-05-18 Mon 16:32</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

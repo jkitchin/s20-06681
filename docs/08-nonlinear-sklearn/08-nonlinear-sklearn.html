@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-18 Mon 16:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Kitchin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org0432e02">1. Nonlinear models in sklearn</a></li>
+<li><a href="#org1ce131f">2. Neural networks</a></li>
+<li><a href="#org002ea66">3. Gaussian Process Regression</a>
+<ul>
+<li><a href="#org0ee92e2">3.1. An example</a></li>
+</ul>
+</li>
+<li><a href="#org227a1a2">4. Summary</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0432e02" class="outline-2">
+<h2 id="org0432e02"><span class="section-number-2">1</span> Nonlinear models in sklearn</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Nonlinear models have parameters that the output is not linear in. <code>sklearn</code> does not provide general nonlinear model fitting routine. That is more commonly a normal regression problem.
+</p>
+
+<p>
+We will instead focus on two types of nonlinear models: neural networks and Gaussian Process Regression. These are two different styles of model, with different pros and cons.
+</p>
+
+<p>
+Nonlinear models are harder to fit, harder to interpret, and more complex than linear models. You should think hard about whether a nonlinear model is the right next step forward. Some alternatives include using better features with linear models.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1ce131f" class="outline-2">
+<h2 id="org1ce131f"><span class="section-number-2">2</span> Neural networks</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Neural networks are very old in concept. Originally the started as an approach to model neurons in an attempt to build programs that could simulate a brain. This did not work. Since then, we have come to understand much more about what these models are, and how they are related to other models.
+</p>
+
+<p>
+<a href="https://scikit-learn.org/stable/modules/neural_networks_supervised.html">https://scikit-learn.org/stable/modules/neural_networks_supervised.html</a>
+</p>
+
+<p>
+Let's dive in and see an example straight away. I do not emphasize the importance of train-test splitting of the data in this example, but it is still an important thing to consider in real applications. We will use the same data you used before from last class. You should run this block several times to see what happens.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+<span style="color: #0000FF;">import</span> json
+%matplotlib inline
+<span style="color: #0000FF;">import</span> matplotlib.pyplot <span style="color: #0000FF;">as</span> plt
+
+<span style="color: #0000FF;">with</span> <span style="color: #006FE0;">open</span>(<span style="color: #008000;">'../07-intermediate-sklearn/data.json'</span>) <span style="color: #0000FF;">as</span> f:
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #BA36A5;">data</span> = json.load(f)
+
+<span style="color: #BA36A5;">X</span> = np.array([data[<span style="color: #008000;">'distance'</span>]]).T
+<span style="color: #BA36A5;">y</span> = data[<span style="color: #008000;">'energy'</span>]
+
+<span style="color: #0000FF;">from</span> sklearn.neural_network <span style="color: #0000FF;">import</span> MLPRegressor
+
+<span style="color: #BA36A5;">model</span> = MLPRegressor(hidden_layer_sizes=(3,), activation=<span style="color: #008000;">'tanh'</span>, solver=<span style="color: #008000;">'lbfgs'</span>)
+model.fit(X, y)
+
+<span style="color: #BA36A5;">dfit</span> = np.linspace(1.5, 7)
+
+plt.plot(data[<span style="color: #008000;">'distance'</span>], data[<span style="color: #008000;">'energy'</span>], <span style="color: #008000;">'bo'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>dfit, model.predict(dfit[:, <span style="color: #D0372D;">None</span>]))
+
+plt.xlabel(<span style="color: #008000;">'distance'</span>)
+plt.ylabel(<span style="color: #008000;">'energy'</span>)
+</pre>
+</div>
+
+<pre class="example">
+[&lt;matplotlib.lines.Line2D at 0x1a1cc90250&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1a1cc90490&gt;]
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/da6bac4077a70a9e6f7fab448bda833ab54e1f64/c467ba631a7405c780314a4856017e207e81969a.png" alt="c467ba631a7405c780314a4856017e207e81969a.png" />
+</p>
+</div>
+
+<p>
+Some notes:
+</p>
+<ol class="org-ol">
+<li>Not every fit is successful. When I run this several times, some work, and some don't.</li>
+<li>There are <i>many</i> hyperparameters we have to consider. The defaults did not work.
+<ol class="org-ol">
+<li>These hyperparameters include regularization, the optimizer algorithm, and their parameters.</li>
+</ol></li>
+<li>It looks like we really learned the data here. We did not.
+<ol class="org-ol">
+<li>We do see a plateau at large <i>d</i> here, but that is a feature of the <code>tanh</code> function which has that behavior. Other functions do not do that.</li>
+<li>We actually see the same plateau at negative values of <i>d</i> for the same reason.</li>
+<li>You can see what we did was "find" a non-linear function that matches the curvature of our data where have it. There are an <i>infinite</i> number of these functions.</li>
+</ol></li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">dfit</span> = np.linspace(-5, 9, 200)
+plt.plot(data[<span style="color: #008000;">'distance'</span>], data[<span style="color: #008000;">'energy'</span>], <span style="color: #008000;">'bo'</span>,
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>   <span style="color: #4C9ED9; background-color: #ffffff;"> </span>dfit, model.predict(dfit[:, <span style="color: #D0372D;">None</span>]))
+
+plt.xlabel(<span style="color: #008000;">'distance'</span>)
+plt.ylabel(<span style="color: #008000;">'energy'</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'energy')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/da6bac4077a70a9e6f7fab448bda833ab54e1f64/ffbff950ed5123b58d4ecfb1e591d1a2f0407130.png" alt="ffbff950ed5123b58d4ecfb1e591d1a2f0407130.png" />
+</p>
+</div>
+
+<p>
+Let's take a look under the hood here to see what is happening.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">model
+</pre>
+</div>
+
+
+<pre class="example">
+MLPRegressor(activation='tanh', alpha=0.0001, batch_size='auto', beta_1=0.9,
+             beta_2=0.999, early_stopping=False, epsilon=1e-08,
+             hidden_layer_sizes=(3,), learning_rate='constant',
+             learning_rate_init=0.001, max_fun=15000, max_iter=200,
+             momentum=0.9, n_iter_no_change=10, nesterovs_momentum=True,
+             power_t=0.5, random_state=None, shuffle=True, solver='lbfgs',
+             tol=0.0001, validation_fraction=0.1, verbose=False,
+             warm_start=False)
+</pre>
+
+<p>
+Here are the weights for our network.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">model.coefs_
+</pre>
+</div>
+
+<pre class="example">
+[array([[-4.8173617 , -3.27532669, -0.89011515]]),
+ array([[-4.46690119],
+        [ 5.01704598],
+        [-3.45233991]])]
+</pre>
+
+<p>
+These are the "biases" in the neural network.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython">model.intercepts_
+</pre>
+</div>
+
+<pre class="example">
+[array([-2.80077442,  5.54566567,  2.17705819]), array([4.10052975])]
+</pre>
+
+<p>
+We can reconstruct this simple NN in just a few lines of code. I am doing this here to demystify what a neural network is. It is <i>just</i> math.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">w0</span>, <span style="color: #BA36A5;">w1</span> = model.coefs_
+<span style="color: #BA36A5;">b0</span>, <span style="color: #BA36A5;">b1</span> = model.intercepts_
+<span style="color: #8D8D84;">#</span><span style="color: #8D8D84; font-style: italic;">np.tanh(w * X) + b</span>
+<span style="color: #BA36A5;">fit</span> = np.tanh(dfit[:, <span style="color: #D0372D;">None</span>] @ w0 + b0) @ w1 + b1
+
+plt.plot(X, y, <span style="color: #008000;">'bo'</span>, dfit, fit)
+</pre>
+</div>
+
+<pre class="example">
+[&lt;matplotlib.lines.Line2D at 0x1a205e74d0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1a205e7710&gt;]
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/da6bac4077a70a9e6f7fab448bda833ab54e1f64/560c4d573aad218f23160ef162cbf76090a20127.png" alt="560c4d573aad218f23160ef162cbf76090a20127.png" />
+</p>
+</div>
+
+<p>
+It should be evident that this NN is just a small nonlinear model, with 10 free parameters. It might not be a surprise then that it has a lot of flexibility to fit arbitrary data.
+</p>
+
+<p>
+The simple linear algebra formulation hides a way to think about this simple model. It is like a truncated (three term) expansion of a function in a <code>tanh</code> basis function set. If instead of using tanh, we used <code>sin</code> and <code>cos</code> functions, we would call this a truncated Fourier series expansion. We have to be a little liberal in this interpretation. In the expansions, the coefficients are well-defined as integrals that are practically projections of the unknown function on the basis function. Here, we treat them as fitting coefficients.
+</p>
+
+<p>
+You can choose from dozens of activation functions (not all of them are available in sklearn though). Probably any nonlinear function will work. How to choose them is the subject of a lot of study. The classic functions are <code>tanh</code> and <code>sigmoid</code>. These are good functions, but they tend to saturate for large magnitude inputs, which makes fitting slow. It is therefore essential to scale the data before fitting so that it all fits in the "active regions" which is roughly between x=-2 and x=2.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">x</span> = np.linspace(-5, 5)
+plt.plot(x, np.tanh(x))
+</pre>
+</div>
+
+<pre class="example">
+[&lt;matplotlib.lines.Line2D at 0x1a2050d150&gt;]
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/da6bac4077a70a9e6f7fab448bda833ab54e1f64/09b95f5c2f77a78edee595bb0fd487fd8786516b.png" alt="09b95f5c2f77a78edee595bb0fd487fd8786516b.png" />
+</p>
+</div>
+
+
+<p>
+A newer function is called ReLU, which is a piece wise linear function. This function does not saturate, but for negative inputs, the function is zero and its derivative is zero. Neurons that get negative values are called "dead" neurons because they don't contribute to the output.
+</p>
+
+<p>
+The activation function is the feature that provides the extrapolative behavior of these models. If you don't do extrapolation, it is not that important, but it also can affect how easy the fitting works. The more like your data the activation function is, the better it will be able to fit the data. This is similar to how expansions work.
+</p>
+
+<p>
+<code>sklearn</code> is good for standard models, and it covers a lot of territory. It is not that great when you stray from the standard territory though. It is just not that easy to extend to new models.
+</p>
+
+
+<p>
+The main choices we have to make are:
+</p>
+
+<ol class="org-ol">
+<li>The number of nodes in each layer</li>
+<li>The number of layers</li>
+<li>The activation function</li>
+<li>What kind of regularization to use</li>
+<li>Which optimizer and its tuning parameters</li>
+<li>How to standardize the data input, and what data input to use</li>
+</ol>
+
+<p>
+These are all hyperparameters that require careful study and analysis to learn how to make the right decisions. There are no simple answers, and the choices are often different for different cases.
+</p>
+
+<p>
+Neural networks are frequently criticized for not being "interpretable". This means the parameters typically have no physical meaning, and it is not easy to see how the input is related to the output. This is not much worse than polynomial models though, where the parameters only have as much meaning as the input features provide.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org002ea66" class="outline-2">
+<h2 id="org002ea66"><span class="section-number-2">3</span> Gaussian Process Regression</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+In sklearn: <a href="https://scikit-learn.org/stable/modules/gaussian_process.html">https://scikit-learn.org/stable/modules/gaussian_process.html</a>
+</p>
+
+<p>
+So far, we have considered models where conceptually we get a set of parameters that represent the "best" curve that fits the data. These are called <i>parametric</i> models. We can see from the neural network discussion above though that there could be an infinite number of curves that effectively fit the data well. In the so-called Bayesian perspective on this, we could consider a <i>distribution</i> of functions then, instead of a single function. Then, instead of a single prediction value, we will get a distribution of predicted values from the distribution of functions. These models are called <i>non-parametric</i>, because they don't have fitting parameters in the same sense, they only have hyperparameters that affect the distribution of functions.
+</p>
+
+<p>
+The approach we will consider here is called <a href="http://www.gaussianprocess.org/gpml/">Gaussian process regression</a>. We will take a practical perspective with an emphasis on using it, rather than a deep understanding of the theoretical foundations. You can find all of that in this <a href="http://www.gaussianprocess.org/gpml/">book</a>.
+</p>
+
+<p>
+The core idea in GPR is that if we have some data that represents a function we can predict new values by computing a similarity metric between the new inputs and the known inputs, and use those to compute a weighted sum of known outputs as a prediction for the new output.
+</p>
+
+<p>
+The similarity metric is computed with a <i>kernel</i>, and similar to the neural network activation function  we have to choose what kernel to use. The classic kernel is a Gaussian function, also called a radial basis function kernel.
+</p>
+</div>
+
+<div id="outline-container-org0ee92e2" class="outline-3">
+<h3 id="org0ee92e2"><span class="section-number-3">3.1</span> An example</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Our goal is to fit to a function representing the results of the experiments done by Hoffman and Rehage <i>(Rheological properties of viscoelastic surfactant systems. The Journal of Physical Chemistry, 92(16):4712–4719, 1988.)</i> to calculate the zero shear viscosity of a worm-like micelles solution. These notes were prepared by Siddhant Lambor.
+</p>
+
+<p>
+<img src="../../slambor-notes/Gaussian Process regression/GPR3.PNG">
+</p>
+
+<p>
+We will be using experimental data which was gathered through gaussian process regression based design of experiments to replicate the above plot.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">import</span> pandas <span style="color: #0000FF;">as</span> pd
+<span style="color: #BA36A5;">df</span> = pd.read_csv(<span style="color: #008000;">'logzsv.csv'</span>, index_col=0)
+df
+</pre>
+</div>
+
+<pre class="example">
+           conc         zsv  log-conc   log-zsv
+ExptNo.
+1          1.80    1.343571  0.587787  0.295331
+2          7.50  470.248800  2.014903  6.153262
+3         31.60    4.892228  3.453157  1.587648
+4        133.40    9.687286  4.893352  2.270814
+5        562.30    1.586862  6.332036  0.461759
+6          3.16    1.385140  1.150572  0.325801
+7          5.21    4.537974  1.650580  1.512481
+8         11.02   57.865808  2.399712  4.058127
+9         18.17    8.042775  2.899772  2.084774
+10        60.34    7.768176  4.099995  2.050035
+11         4.06    1.544971  1.401183  0.435005
+12         8.05  537.217396  2.085672  6.286403
+13        23.34    5.851642  3.150169  1.766722
+14        94.63   11.911588  4.549975  2.477512
+15       295.89    3.646146  5.689988  1.293671
+16        43.82    5.809897  3.780090  1.759563
+</pre>
+
+<p>
+Let's take a look at the data. You can see it resembles the figure from the paper. Our goal is to build a model that fits this data, so we can predict values between the data points. This data is clearly not linear in the feature space, and it is not obvious what functional form would fit this data well. A conventional model might be a sum of two Gaussian functions, but we take a different approach here with GPR.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">X</span> = np.array(df[<span style="color: #008000;">'log-conc'</span>])[:, <span style="color: #D0372D;">None</span>]
+<span style="color: #BA36A5;">y</span> = np.array(df[<span style="color: #008000;">'log-zsv'</span>])[:, <span style="color: #D0372D;">None</span>]
+
+plt.plot(X, y, <span style="color: #008000;">'ko'</span>, label=<span style="color: #008000;">'Training Data'</span>)
+plt.xlabel(<span style="color: #008000;">'X'</span>)
+plt.ylabel(<span style="color: #008000;">'y'</span>)
+</pre>
+</div>
+
+<pre class="example">
+Text(0, 0.5, 'y')
+</pre>
+
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/da6bac4077a70a9e6f7fab448bda833ab54e1f64/65e1828bbd2a3a2f53388447185707355c132214.png" alt="65e1828bbd2a3a2f53388447185707355c132214.png" />
+</p>
+</div>
+
+<p>
+As with other <code>sklearn</code> models, we can simply import the library. We do that here, and look at the options.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">from</span> sklearn.gaussian_process <span style="color: #0000FF;">import</span> GaussianProcessRegressor
+?GaussianProcessRegressor
+</pre>
+</div>
+
+<p>
+We also need to import the kernel function. We use a standard Gaussian kernel, known here as a Radial Basis Function, or RBF.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #0000FF;">from</span> sklearn.gaussian_process.kernels <span style="color: #0000FF;">import</span> RBF
+?RBF
+</pre>
+</div>
+
+<p>
+We start here with an initial guess for the required hyperparameters. We also look at the "settable" parameters.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">kernel</span> = RBF()
+<span style="color: #BA36A5;">gp</span> = GaussianProcessRegressor(alpha=1e-1, kernel=kernel)
+gp.get_params()
+</pre>
+</div>
+
+<pre class="example">
+{'alpha': 0.1,
+ 'copy_X_train': True,
+ 'kernel__length_scale': 1.0,
+ 'kernel__length_scale_bounds': (1e-05, 100000.0),
+ 'kernel': RBF(length_scale=1),
+ 'n_restarts_optimizer': 0,
+ 'normalize_y': False,
+ 'optimizer': 'fmin_l_bfgs_b',
+ 'random_state': None}
+</pre>
+
+
+<p>
+We use the standard <code>sklearn</code> fit function to train this model.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">gp</span> = gp.fit(X, y)
+<span style="color: #0000FF;">print</span>(<span style="color: #008000;">'Optimized kernel parameters:'</span>,gp.kernel_.get_params())
+</pre>
+</div>
+
+<p>
+Optimized kernel parameters: {'length_scale': 9.999999999999997e-06, 'length_scale_bounds': (1e-05, 100000.0)}
+</p>
+
+<p>
+Next, we examine how well this model worked. <i>Unlike</i> other models, this model also provides an estimate of the uncertainty on the predictions.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Test data</span>
+<span style="color: #BA36A5;">x1</span> = np.linspace(-1, 8)
+<span style="color: #BA36A5;">y1</span>, <span style="color: #BA36A5;">y1std</span> = gp.predict(x1[:, np.newaxis], return_std=<span style="color: #D0372D;">True</span>)
+
+plt.plot(X, y, <span style="color: #008000;">'ko'</span>, label = <span style="color: #008000;">'Training Data'</span>)
+plt.plot(x1, y1, <span style="color: #008000;">'b-'</span>, label = <span style="color: #008000;">"Predicted Function Mean"</span>)
+plt.title(<span style="color: #008000;">"Zero Shear Viscosity of Wormlike Micelles"</span>)
+plt.xlabel(<span style="color: #008000;">'X'</span>)
+plt.ylabel(<span style="color: #008000;">'y'</span>)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Plotting the uncertainty</span>
+<span style="color: #BA36A5;">y1</span> = y1.flatten()
+plt.fill_between(x1, y1 - y1std, y1 + y1std, alpha=0.3, color=<span style="color: #008000;">'k'</span>, label=<span style="color: #008000;">"Uncertainty"</span>)
+
+plt.xlabel(<span style="color: #008000;">"log (Salt concentration)"</span>)
+plt.ylabel(<span style="color: #008000;">"log (zero shear viscosity)"</span>)
+plt.legend()
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/da6bac4077a70a9e6f7fab448bda833ab54e1f64/707675da089109dc99434bdb081e3cd17794fec6.png" alt="707675da089109dc99434bdb081e3cd17794fec6.png" />
+</p>
+</div>
+
+<p>
+This model does not work well. We need to work on the model hyperparameters.
+</p>
+
+<p>
+Let us look at the parameters of the RBF kernel. We have an argument called 'lengthscale' and length_scale_bounds.
+</p>
+
+<p>
+Lengthscale is basically the length of the smallest wiggle in the function. It tells us, beyond what distance would two points not be correlated. Thus, we won’t be able to efficiently extrapolate beyond one lengthscale outside the data set. scikit-learn optimizes the lengthscale when we use .fit() within the length_scale_bounds. The default bounds of 1e-5 to 1e5 are too wide for our data set.
+</p>
+
+<p>
+We can guide the optimization of the model by setting stricter bounds on the lengthscale. Let us go with 0.1 to 1.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">kernel</span> = RBF(length_scale_bounds = (0.1, 1.0))
+
+<span style="color: #BA36A5;">gp</span> = GaussianProcessRegressor(alpha = 0.1, kernel = kernel)
+
+<span style="color: #BA36A5;">gp</span> = gp.fit(X, y)
+
+<span style="color: #0000FF;">print</span>(<span style="color: #008000;">'Optimized kernel parameters:'</span>,gp.kernel_.get_params())
+</pre>
+</div>
+
+<p>
+Optimized kernel parameters: {'length_scale': 0.34751658616597225, 'length_scale_bounds': (0.1, 1.0)}
+</p>
+
+<p>
+Now, we can re-evaluate the fit.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">x1</span> = np.linspace(-1, 8)
+<span style="color: #BA36A5;">y1</span>, <span style="color: #BA36A5;">y1std</span> = gp.predict(x1[:, np.newaxis], return_std=<span style="color: #D0372D;">True</span>)
+
+plt.plot(X, y, <span style="color: #008000;">'ko'</span>, label = <span style="color: #008000;">'Training Data'</span>)
+plt.plot(x1, y1, <span style="color: #008000;">'b-'</span>, label = <span style="color: #008000;">"Predicted Function Mean"</span>)
+plt.title(<span style="color: #008000;">"Zero Shear Viscosity of Wormlike Micelles"</span>)
+plt.xlabel(<span style="color: #008000;">'X'</span>)
+plt.ylabel(<span style="color: #008000;">'y'</span>)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Plotting the uncertainty</span>
+<span style="color: #BA36A5;">y1</span> = y1.flatten()
+plt.fill_between(x1, y1 - y1std, y1 + y1std, alpha=0.3, color=<span style="color: #008000;">'k'</span>, label = <span style="color: #008000;">"Uncertainty"</span>)
+
+plt.xlabel(<span style="color: #008000;">"log (Salt concentration)"</span>)
+plt.ylabel(<span style="color: #008000;">"log (zero shear viscosity)"</span>)
+plt.legend()
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/da6bac4077a70a9e6f7fab448bda833ab54e1f64/0c91860e551ca6d687d4cb2e91108e01cd53832e.png" alt="0c91860e551ca6d687d4cb2e91108e01cd53832e.png" />
+</p>
+</div>
+
+<p>
+As we can see now, this is a much better model. With the uncertainty regions along the function, we would know which areas would require more data and can target gathering data (in this case through experiments) only in the regions of high uncertainty. The final acceptable uncertainty in the model is upto the user to decide.
+</p>
+
+<p>
+Over here we have chosen the bounds (0.1 to 1.0) based on some domain insight and hyperparameter optimization using log marginal likelihood. The actual mechanics behind LML might require a deeper dive into Bayesian approaches in ML.
+</p>
+
+
+<p>
+Let's consider extrapolation. GP is not a magic bullet either. Once you get far from your known data, the correlation with known data decays to zero, and the model extrapolates like the kernel function. Since the Gaussian function has not physics in it, this model does not extrapolate with physical meaning.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-ipython"><span style="color: #BA36A5;">x1</span> = np.linspace(-10, 18, 1500)
+<span style="color: #BA36A5;">y1</span>, <span style="color: #BA36A5;">y1std</span> = gp.predict(x1[:, np.newaxis], return_std=<span style="color: #D0372D;">True</span>)
+
+plt.plot(X, y, <span style="color: #008000;">'ko'</span>, label = <span style="color: #008000;">'Training Data'</span>)
+plt.plot(x1, y1, <span style="color: #008000;">'b-'</span>, label = <span style="color: #008000;">"Predicted Function Mean"</span>)
+plt.title(<span style="color: #008000;">"Zero Shear Viscosity of Wormlike Micelles"</span>)
+plt.xlabel(<span style="color: #008000;">'X'</span>)
+plt.ylabel(<span style="color: #008000;">'y'</span>)
+
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Plotting the uncertainty</span>
+<span style="color: #BA36A5;">y1</span> = y1.flatten()
+plt.fill_between(x1, y1 - y1std, y1 + y1std, alpha=0.3, color=<span style="color: #008000;">'k'</span>, label = <span style="color: #008000;">"Uncertainty"</span>)
+
+plt.xlabel(<span style="color: #008000;">"log (Salt concentration)"</span>)
+plt.ylabel(<span style="color: #008000;">"log (zero shear viscosity)"</span>)
+plt.legend()
+</pre>
+</div>
+
+<pre class="example">
+&lt;Figure size 432x288 with 1 Axes&gt;
+</pre>
+
+
+
+<div class="figure">
+<p><img src="obipy-resources/da6bac4077a70a9e6f7fab448bda833ab54e1f64/fd7ebfa842298ddefd1a7e05d09eb4e91d25877f.png" alt="fd7ebfa842298ddefd1a7e05d09eb4e91d25877f.png" />
+</p>
+</div>
+
+<p>
+The RBF is a generic kernel that always works when you have enough data. It is similar to using tanh in a neural network, which also always works when you have enough data.
+</p>
+
+<p>
+GPR and neural networks are related conceptually. You can think of the GP as an expansion of the data in an <i>infinite</i> set of basis functions. Nns, in contrast, are like an expansion in a <i>finite</i> basis set. In the limit of an infinitely wide NN, i.e. if you could have an infinite number of neurons in a layer, it is basically equivalent to a GP. OF course, we cannot compute an infinitely wide NN, and the GP is only possible because there is clever math that converts the infinite sum to an equivalent finite sum, this is called the "kernel trick".
+</p>
+
+<p>
+There are some critical differences between GP and neural networks though. While neural networks have parameters, in the form of weights and biases, a GP only has hyperparameters in the form of things like the lengthscale of correlation.
+</p>
+
+<p>
+The cost of evaluating a NN is a constant and does not depend on the size of the training data. In contrast, the cost of evaluating a GP <i>depends</i> on the size of the training data because you have to compute the correlation between the new point and <i>all</i> of the existing points. This can be expensive for large data sets.
+</p>
+
+<p>
+Many people like GP because it comes with an estimate of the uncertainty in the prediction. You should take this with some care, it is the uncertainty associated with an imperfect and assumed correlation between data points. If you have a very poor kernel, the uncertainty may not be useful.
+</p>
+
+<p>
+Neural networks do not have an easy way to estimate uncertainty. There are some approaches to doing it, also based on some assumptions, but most require access to the second derivative of the training function with respect to the model parameters, which can be expensive to compute. It is not common to see uncertainty estimates for neural networks yet.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org227a1a2" class="outline-2">
+<h2 id="org227a1a2"><span class="section-number-2">4</span> Summary</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+This was a brief introduction to two styles of nonlinear modeling in <code>sklearn</code>. There are many, more powerful things that you can do with them, including using multi-dimensional inputs, adding regularization, kernel engineering, etc.
+</p>
+
+<p>
+There is not much on neural networks for regression in sklearn, but there are some examples at <a href="https://scikit-learn.org/stable/auto_examples/index.html#neural-networks">https://scikit-learn.org/stable/auto_examples/index.html#neural-networks</a> on classification.
+</p>
+
+<p>
+For more examples on Gaussian process in sklearn see <a href="https://scikit-learn.org/stable/auto_examples/index.html#gaussian-process-for-machine-learning">https://scikit-learn.org/stable/auto_examples/index.html#gaussian-process-for-machine-learning</a>.
+</p>
+
+
+<p>
+There are many other algorithms available for regression in sklearn: <a href="https://scikit-learn.org/stable/supervised_learning.html">https://scikit-learn.org/stable/supervised_learning.html</a>
+</p>
+
+<p>
+You should be wary of approaches that try all these and then report the best one. In principle, many can work equally well with enough data. Unless you can explain why an approach is mathematically better suited for a data set, odds are the better fit is due to luck and/or overfitting. Neither of these is helpful when you want to make reliable predictions!
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Kitchin</p>
+<p class="date">Created: 2020-05-18 Mon 16:32</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

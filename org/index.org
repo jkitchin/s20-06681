@@ -3,6 +3,10 @@
 
 These are lecture notes from a mini course I taught on data science and machine learning in chemical engineering.
 
+[[./data-hydra.png]]
+
+These are the official lectures from the class. I hope they work for you, but there may be links to files in a google drive that only CMU students can access. Let me know in an [[https://github.com/jkitchin/s20-06681/issues][issue]] if you find one.
+
 
 1. [[s2006681:00-introduction/00-introduction.org][Introduction]]
 2. [[s2006681:01-numpy/01-numpy.org][Using numpy]]
@@ -10,6 +14,12 @@ These are lecture notes from a mini course I taught on data science and machine 
 4. [[s2006681:03-pandas-intro/03-pandas-intro.org][Introduction to Pandas]]
 5. [[s2006681:04-intermediate-pandas/04-intermediate-pandas.org][Intermediate Pandas]]
 6. [[s2006681:05-pandas-database/05-pandas-database.org][Pandas as a database]]
+7. [[s2006681:06-linear-regression/06-linear-regression.org][Introduction to linear regression with sklearn]]
+8. [[s2006681:07-intermediate-sklearn/07-intermediate-sklearn.org][Intermediate sklearn]]
+9. [[s2006681:08-nonlinear-sklearn/08-nonlinear-sklearn.org][Nonlinear models in sklearn]]
+10. [[s2006681:09-random-forests/09-random-forests.org][Random Forest regression]]
+
+Good luck!
 
 * Setup the publishing project                                     :noexport:
 
@@ -30,7 +40,7 @@ Note I did a fair bit of editing of results that had output that looked like lin
 	   (find-file path))
  :export (lambda (path desc backend)
 	   (let* ((html-path (concat (substring path 0 -4) ".html"))
-		  (ipynb (concat (file-name-base path) ".ipynb"))
+		  (ipynb (concat (substring path 0 -4) ".ipynb"))
 		  (colab (format "<a href=\"https://colab.research.google.com/github/jkitchin/s20-06681/blob/master/docs/notebooks/%s\" target=\"_blank\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open in Colab\" title=\"Open and Execute in Google Colaboratory\"></a>"
 				 ipynb)))
              (cond

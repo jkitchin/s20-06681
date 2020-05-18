@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-05-18 Mon 16:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="John Kitchin" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#preparing-the-2-data-sets">1. Preparing the 2 data sets</a>
+<ul>
+<li><a href="#practical-complication-in-the-data">1.1. Practical Complication in the data</a></li>
+</ul>
+</li>
+<li><a href="#joining-the-data-frames">2. Joining the data frames</a>
+<ul>
+<li><a href="#plotting">2.1. Plotting</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #0000FF;">import</span> numpy <span style="color: #0000FF;">as</span> np
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #0000FF;">import</span> pandas <span style="color: #0000FF;">as</span> pd
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #0000FF;">import</span> matplotlib.pyplot <span style="color: #0000FF;">as</span> plt
+</pre>
+</div>
+
+<p>
+This file involves the use of the pandas package to compare the results
+from two experiments conducted to measure the properties of a worm-like
+micelles solution. I had carried out experiments on a rheometer to
+measure the viscosity of a worm-like micelles solution in a Couette cell
+geometry and a Cone and Plate geometry. Ideally, there should not be a
+difference as viscosity is intrinsic to the fluid. This is confirmed
+here as well.
+</p>
+
+<p>
+<b>Pandas concepts covered:</b>
+</p>
+
+<ol class="org-ol">
+<li>Importing data and organizing the data frame as required (naming
+columns, correcting index, dropping columns, reordering columns)</li>
+<li>Joining two Data Sets</li>
+<li>Plotting on a secondary y-axis and on log scale</li>
+</ol>
+
+<p>
+An experiment on a rheomter can export data in an excel sheet, and
+contains multiple variables such as viscosity, temperature, time,
+stress, shear rate and many more depending on the experiment. We are
+often interested in just a few of these variables. Here we want to plot
+the viscosity and stress in the sample with respect to the shear rate,
+for both the geometries.
+</p>
+
+
+<div class="figure">
+<p><img src="comparison.png" alt="comparison.png" />
+</p>
+</div>
+
+<div id="outline-container-org6ad8d9a" class="outline-2">
+<h2 id="preparing-the-2-data-sets"><span class="section-number-2">1</span> Preparing the 2 data sets</h2>
+<div class="outline-text-2" id="text-preparing-the-2-data-sets">
+<p>
+Importing the data from the couette cell experiment. We will only assume
+that we know the sheet name that we want to work with in the excel file.
+This notebook is made without directly referencing anything else in the
+excel file, to emphasize the use of pandas.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">df</span> = pd.read_excel(<span style="color: #008000;">'couette.xls'</span>, sheet_name = <span style="color: #008000;">'Flow sweep - 1'</span>) <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">sheet name is case sensitive, excel file name is not</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> df
+</pre>
+</div>
+
+<pre class="example">
+     Flow sweep - 1  Unnamed: 1 Unnamed: 2 Unnamed: 3   Unnamed: 4  \
+  0          Stress  Shear rate  Viscosity  Step time  Temperature
+  1              Pa         1/s       Pa.s          s           °C
+  2      0.00998055   0.0495302   0.201504    35.1469       25.001
+  3       0.0158174   0.0798746   0.198028    70.1689       25.001
+  4       0.0250712    0.127313   0.196926    105.253           25
+  5       0.0397339    0.204094   0.194685     140.26           25
+  6       0.0629772    0.327253   0.192442    175.313           25
+  7       0.0998057    0.530364   0.188183     210.32       24.998
+  8        0.158165    0.875494   0.180658    245.373           25
+  9        0.250637     1.49135   0.168061    280.426       25.002
+  10       0.397131     2.64707   0.150027    315.433       25.001
+  11       0.629111     5.00904   0.125595    350.501       25.003
+  12       0.996153     10.3993  0.0957901    385.508       24.996
+  13        1.57528     24.5624  0.0641337    420.608       24.998
+  14        2.47652     67.2972  0.0367998     455.63       25.003
+  15        3.75092     210.991  0.0177776    490.668           25
+
+         Unnamed: 5
+  0   Normal stress
+  1              Pa
+  2      -0.0012628
+  3    -0.000834764
+  4    -0.000912531
+  5      -0.0011322
+  6     -0.00202574
+  7     -0.00242923
+  8     -0.00183708
+  9     -0.00165476
+  10    -0.00188881
+  11    -0.00223333
+  12    -0.00180735
+  13    -0.00182336
+  14    -0.00182047
+  15    -0.00293949
+</pre>
+
+<p>
+Clearly, we would have to modify the table a bit to make the data easier
+to read and use. Following are the steps taken to do so.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">df.columns</span> = df.iloc[0]  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">changing the column names to the correct variables present in the row 0</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> df.head(5)   <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">to display just the top 5 entries in the data frame</span>
+</pre>
+</div>
+
+<pre class="example">
+  0      Stress  Shear rate  Viscosity  Step time  Temperature  Normal stress
+  0      Stress  Shear rate  Viscosity  Step time  Temperature  Normal stress
+  1          Pa         1/s       Pa.s          s           °C             Pa
+  2  0.00998055   0.0495302   0.201504    35.1469       25.001     -0.0012628
+  3   0.0158174   0.0798746   0.198028    70.1689       25.001   -0.000834764
+  4   0.0250712    0.127313   0.196926    105.253           25   -0.000912531
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">df</span> = df[2:]    <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">We will assume that we know the units are consistent and can be ignored for the time being</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> df.head(5)
+</pre>
+</div>
+
+<pre class="example">
+  0      Stress Shear rate Viscosity Step time Temperature Normal stress
+  2  0.00998055  0.0495302  0.201504   35.1469      25.001    -0.0012628
+  3   0.0158174  0.0798746  0.198028   70.1689      25.001  -0.000834764
+  4   0.0250712   0.127313  0.196926   105.253          25  -0.000912531
+  5   0.0397339   0.204094  0.194685    140.26          25    -0.0011322
+  6   0.0629772   0.327253  0.192442   175.313          25   -0.00202574
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">df.index</span> = <span style="color: #006FE0;">range</span>(1, <span style="color: #006FE0;">len</span>(df[<span style="color: #008000;">'Viscosity'</span>])+1)  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">We would need to rename the index column</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> df.head(5)
+</pre>
+</div>
+
+<pre class="example">
+  0      Stress Shear rate Viscosity Step time Temperature Normal stress
+  1  0.00998055  0.0495302  0.201504   35.1469      25.001    -0.0012628
+  2   0.0158174  0.0798746  0.198028   70.1689      25.001  -0.000834764
+  3   0.0250712   0.127313  0.196926   105.253          25  -0.000912531
+  4   0.0397339   0.204094  0.194685    140.26          25    -0.0011322
+  5   0.0629772   0.327253  0.192442   175.313          25   -0.00202574
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">couette</span> = df <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">for better understanding, lets name this data frame as couette</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> couette.head(5)
+</pre>
+</div>
+
+<pre class="example">
+  0      Stress Shear rate Viscosity Step time Temperature Normal stress
+  1  0.00998055  0.0495302  0.201504   35.1469      25.001    -0.0012628
+  2   0.0158174  0.0798746  0.198028   70.1689      25.001  -0.000834764
+  3   0.0250712   0.127313  0.196926   105.253          25  -0.000912531
+  4   0.0397339   0.204094  0.194685    140.26          25    -0.0011322
+  5   0.0629772   0.327253  0.192442   175.313          25   -0.00202574
+</pre>
+
+<p>
+Similarly, importing and arranging the data for the cone and plate
+geometry.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">df</span> = pd.read_excel(<span style="color: #008000;">'cp.xls'</span>, sheet_name = <span style="color: #008000;">'Flow sweep - 1'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">df.columns</span> = df.iloc[0]
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">df</span> = df[2:]
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">df.index</span> = <span style="color: #006FE0;">range</span>(1, <span style="color: #006FE0;">len</span>(df[<span style="color: #008000;">'Viscosity'</span>])+1)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">conePlate</span> = df   <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">for better understanding, lets name this data frame as conePlate</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> conePlate.head(5)
+</pre>
+</div>
+
+<pre class="example">
+  0      Stress Shear rate Viscosity Step time Temperature Normal stress
+  1  0.00998397   0.053193  0.187693   34.9909          25        1.2658
+  2   0.0158219  0.0820001   0.19295   70.0909      25.001      0.569149
+  3   0.0250778   0.129969  0.192952    105.16          25      0.295899
+  4   0.0397587    0.20176   0.19706   140.213          25        1.0171
+  5   0.0629878   0.336087  0.187415   175.282          25      0.546196
+</pre>
+
+<p>
+We are only interested in the shear rate, stress and viscosity values.
+Let us drop the other columns.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> conePlate.drop([<span style="color: #008000;">'Temperature'</span>, <span style="color: #008000;">'Step time'</span>, <span style="color: #008000;">'Normal stress'</span>], axis=1, inplace=<span style="color: #D0372D;">True</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">if we do not use inplace=True, the data frame will not be changed. It would by default create a new data frame</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">and we would have to assign a different variable to capture this change.</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> conePlate.head(5)
+</pre>
+</div>
+
+<pre class="example">
+  0      Stress Shear rate Viscosity
+  1  0.00998397   0.053193  0.187693
+  2   0.0158219  0.0820001   0.19295
+  3   0.0250778   0.129969  0.192952
+  4   0.0397587    0.20176   0.19706
+  5   0.0629878   0.336087  0.187415
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">couette</span> = couette.drop([<span style="color: #008000;">'Temperature'</span>, <span style="color: #008000;">'Step time'</span>, <span style="color: #008000;">'Normal stress'</span>], axis=1)   <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">without using inplace = True</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> couette.head(5)
+</pre>
+</div>
+
+<pre class="example">
+  0      Stress Shear rate Viscosity
+  1  0.00998055  0.0495302  0.201504
+  2   0.0158174  0.0798746  0.198028
+  3   0.0250712   0.127313  0.196926
+  4   0.0397339   0.204094  0.194685
+  5   0.0629772   0.327253  0.192442
+</pre>
+</div>
+
+<div id="outline-container-org700ef5e" class="outline-3">
+<h3 id="practical-complication-in-the-data"><span class="section-number-3">1.1</span> Practical Complication in the data</h3>
+<div class="outline-text-3" id="text-practical-complication-in-the-data">
+<p>
+A quick way to get an idea of the attributes and data points in a data
+frame is through the df.info() command.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> couette.info()
+</pre>
+</div>
+
+<pre class="example">
+  &lt;class 'pandas.core.frame.DataFrame'&gt;
+  RangeIndex: 14 entries, 1 to 14
+  Data columns (total 3 columns):
+  Stress        14 non-null object
+  Shear rate    14 non-null object
+  Viscosity     14 non-null object
+  dtypes: object(3)
+  memory usage: 420.0+ bytes
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> conePlate.info()
+</pre>
+</div>
+
+<pre class="example">
+  &lt;class 'pandas.core.frame.DataFrame'&gt;
+  RangeIndex: 17 entries, 1 to 17
+  Data columns (total 3 columns):
+  Stress        17 non-null object
+  Shear rate    17 non-null object
+  Viscosity     17 non-null object
+  dtypes: object(3)
+  memory usage: 492.0+ bytes
+</pre>
+
+<p>
+This is where it becomes interesting. The two data frames have different
+number of data entries. This is because often when running experiments
+we do not mind to stop the experiment before it is completed if we have
+already got the expected results. It is also not unusual to run the
+experiments beyond the required range of measurement to be safe that we
+are not missing out on any erratic behaviour of the sample around the
+limits. This might result in some extra data, which is not particularly
+useful. We will address this later using a different approach than
+splicing.
+</p>
+
+<p>
+As we are interested in plotting viscosity and stress against shear
+rate, let us confirm whether the shear rate values are consistent in
+both the experiments for <b>just the overlapping shear rate range</b>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">a</span> = conePlate[<span style="color: #008000;">'Shear rate'</span>].values
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">b</span> = couette[<span style="color: #008000;">'Shear rate'</span>].values
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Assuming we do not know which data set has less or more data entries, </span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">let us take a slightly complicated but generalised route.</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">x</span> = <span style="color: #006FE0;">range</span>(1, <span style="color: #006FE0;">min</span>(<span style="color: #006FE0;">len</span>(a), <span style="color: #006FE0;">len</span>(b))+1)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> plt.plot(x, a[0:<span style="color: #006FE0;">min</span>(<span style="color: #006FE0;">len</span>(a), <span style="color: #006FE0;">len</span>(b))], <span style="color: #008000;">'b.-'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> plt.plot(x, b[0:<span style="color: #006FE0;">min</span>(<span style="color: #006FE0;">len</span>(a), <span style="color: #006FE0;">len</span>(b))], <span style="color: #008000;">'r.-'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> plt.ylabel(<span style="color: #008000;">"Shear rate (1/s)"</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> plt.xlabel(<span style="color: #008000;">"Data Points"</span>)
+</pre>
+</div>
+
+<pre class="example">
+  Text(0.5, 0, 'Data Points')
+</pre>
+
+
+<div class="figure">
+<p><img src="49a184037fea07b57aeeb2d8ca4016bd5b3aa0b8.png" alt="49a184037fea07b57aeeb2d8ca4016bd5b3aa0b8.png" />
+</p>
+</div>
+
+<p>
+The shear rates are more or less similar for both the experiments. Let
+us remove any ambiguity, just in this example, for further processing
+and set similar values of shear rate to the respective data entries for
+both the experiments.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">taking the average of both the shear rate values</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">av</span> = (a[0:<span style="color: #006FE0;">min</span>(<span style="color: #006FE0;">len</span>(a), <span style="color: #006FE0;">len</span>(b))] + b[0:<span style="color: #006FE0;">min</span>(<span style="color: #006FE0;">len</span>(a), <span style="color: #006FE0;">len</span>(b))]) / 2
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">setting the actual data frame values to the average</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> conePlate[<span style="color: #008000;">'Shear rate'</span>][0:<span style="color: #006FE0;">min</span>(<span style="color: #006FE0;">len</span>(a), <span style="color: #006FE0;">len</span>(b))] = av
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> couette[<span style="color: #008000;">'Shear rate'</span>][0:<span style="color: #006FE0;">min</span>(<span style="color: #006FE0;">len</span>(a), <span style="color: #006FE0;">len</span>(b))] = av
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> plt.plot(x, conePlate[<span style="color: #008000;">'Shear rate'</span>][0:<span style="color: #006FE0;">min</span>(<span style="color: #006FE0;">len</span>(a), <span style="color: #006FE0;">len</span>(b))], <span style="color: #008000;">'r.'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> plt.plot(x, couette[<span style="color: #008000;">'Shear rate'</span>][0:<span style="color: #006FE0;">min</span>(<span style="color: #006FE0;">len</span>(a), <span style="color: #006FE0;">len</span>(b))], <span style="color: #008000;">'b-'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> plt.ylabel(<span style="color: #008000;">"Shear rate (1/s)"</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> plt.xlabel(<span style="color: #008000;">"Data Points"</span>)
+</pre>
+</div>
+
+<pre class="example">
+  Text(0.5, 0, 'Data Points')
+</pre>
+
+
+<div class="figure">
+<p><img src="c2846b01f90f4bfc252d028525e53d86ebbeedd6.png" alt="c2846b01f90f4bfc252d028525e53d86ebbeedd6.png" />
+</p>
+</div>
+
+<p>
+Now the shear rate is consistent for both the datas sets. We can proceed
+to joining.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb8d2838" class="outline-2">
+<h2 id="joining-the-data-frames"><span class="section-number-2">2</span> Joining the data frames</h2>
+<div class="outline-text-2" id="text-joining-the-data-frames">
+<p>
+We still have the extra data entries in the cone and plate data. Instead
+of splicing it and then plotting two different data frames. Let us join
+the two data frames in a way that the extra entries would be removed and
+then we would have just one data frame to plot.
+</p>
+
+<p>
+For this we use the 'inner join'. The inner join combines two data
+frames based on only the matching values in the shared column. Here we
+are asking pandas to join the data frames on the variable 'Shear rate'.
+Thus, any entry in the shear rate column which would not be present in
+both the data frames would not be a part of the new data frame. Though
+this seems to be a detour as opposed to splicing, it is very useful for
+data science operations when we need to combine related data frames for
+analysis.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">joined</span> = pd.merge(conePlate, couette, how = <span style="color: #008000;">'inner'</span>, on = <span style="color: #008000;">'Shear rate'</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> joined
+</pre>
+</div>
+
+<pre class="example">
+  0     Stress_x Shear rate Viscosity_x    Stress_y Viscosity_y
+  0   0.00998397  0.0513616    0.187693  0.00998055    0.201504
+  1    0.0158219  0.0809374     0.19295   0.0158174    0.198028
+  2    0.0250778   0.128641    0.192952   0.0250712    0.196926
+  3    0.0397587   0.202927     0.19706   0.0397339    0.194685
+  4    0.0629878    0.33167    0.187415   0.0629772    0.192442
+  5      0.09982   0.543556    0.179291   0.0998057    0.188183
+  6      0.15819   0.900448    0.170942    0.158165    0.180658
+  7     0.250701     1.5333    0.159148    0.250637    0.168061
+  8     0.397263    2.71453    0.142798    0.397131    0.150027
+  9     0.629346    5.08619    0.121888    0.629111    0.125595
+  10    0.996863    10.4011   0.0958258    0.996153   0.0957901
+  11     1.57768    24.1091   0.0666931     1.57528   0.0641337
+  12     2.49053    64.9437   0.0397912     2.47652   0.0367998
+  13     3.85502    202.628   0.0198441     3.75092   0.0177776
+</pre>
+
+<p>
+Renaming and rearranging columns:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">joined.columns</span> = [<span style="color: #008000;">'StressCP'</span>, <span style="color: #008000;">'Shear rate'</span>, <span style="color: #008000;">'ViscosityCP'</span>, <span style="color: #008000;">'StressCouette'</span>, <span style="color: #008000;">'ViscosityCouette'</span>]
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">rearranging</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">joined</span> = joined[[<span style="color: #008000;">'Shear rate'</span>, <span style="color: #008000;">'StressCP'</span>,  <span style="color: #008000;">'ViscosityCP'</span>, <span style="color: #008000;">'StressCouette'</span>, <span style="color: #008000;">'ViscosityCouette'</span>]]
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> joined.head()
+</pre>
+</div>
+
+<pre class="example">
+    Shear rate    StressCP ViscosityCP StressCouette ViscosityCouette
+  0  0.0513616  0.00998397    0.187693    0.00998055         0.201504
+  1  0.0809374   0.0158219     0.19295     0.0158174         0.198028
+  2   0.128641   0.0250778    0.192952     0.0250712         0.196926
+  3   0.202927   0.0397587     0.19706     0.0397339         0.194685
+  4    0.33167   0.0629878    0.187415     0.0629772         0.192442
+</pre>
+</div>
+
+<div id="outline-container-org5402bd1" class="outline-3">
+<h3 id="plotting"><span class="section-number-3">2.1</span> Plotting</h3>
+<div class="outline-text-3" id="text-plotting">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">ax1</span> = joined.plot(<span style="color: #008000;">'Shear rate'</span>, <span style="color: #008000;">'ViscosityCP'</span>, logx=<span style="color: #D0372D;">True</span>, logy = <span style="color: #D0372D;">True</span>, style = <span style="color: #008000;">'b.-'</span>, label = <span style="color: #008000;">"CP viscosity"</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> joined.plot(<span style="color: #008000;">'Shear rate'</span>, <span style="color: #008000;">'ViscosityCouette'</span>, logx=<span style="color: #D0372D;">True</span>, logy = <span style="color: #D0372D;">True</span>, style = <span style="color: #008000;">'g.-'</span>, ax = ax1, label = <span style="color: #008000;">"Couette viscosity"</span>)
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">With a secondary y-axis</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #BA36A5;">ax2</span> = joined.plot(<span style="color: #008000;">'Shear rate'</span>, <span style="color: #008000;">'StressCP'</span>, secondary_y = <span style="color: #D0372D;">True</span>, logx=<span style="color: #D0372D;">True</span>, logy = <span style="color: #D0372D;">True</span>, style = <span style="color: #008000;">'r.-'</span>, ax = ax1, label = <span style="color: #008000;">"CP Stress"</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> joined.plot(<span style="color: #008000;">'Shear rate'</span>, <span style="color: #008000;">'StressCouette'</span>, secondary_y = <span style="color: #D0372D;">True</span>, logx=<span style="color: #D0372D;">True</span>, logy = <span style="color: #D0372D;">True</span>, style = <span style="color: #008000;">'y.'</span>, ax = ax2, label = <span style="color: #008000;">"Couette Stress"</span>)
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">Setting y axis labels</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> ax1.set_ylabel(<span style="color: #008000;">"Viscosity (Pa.s)"</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> ax2.set_ylabel(<span style="color: #008000;">"Stress (Pa)"</span>)
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">setting legend locations</span>
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> ax1.legend(loc=6)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> ax2.legend(loc=7)
+
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> ax1.set_xlabel(<span style="color: #008000;">"Shear rate (1/s)"</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> plt.title(<span style="color: #008000;">"Comparison of Cone and Plate with Couette Cell"</span>)
+<span style="color: #4C9ED9; background-color: #ffffff;"> </span> <span style="color: #8D8D84;">#</span><span style="color: #8D8D84; font-style: italic;">plt.savefig('comparison.png')</span>
+</pre>
+</div>
+
+
+<div class="figure">
+<p><img src="50b3cbe0b588e345cd4926d923448bf37ae5e25f.png" alt="50b3cbe0b588e345cd4926d923448bf37ae5e25f.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: John Kitchin</p>
+<p class="date">Created: 2020-05-18 Mon 16:32</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
